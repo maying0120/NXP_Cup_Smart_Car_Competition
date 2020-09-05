@@ -1,0 +1,269 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.2.7424/W32 for ARM        10/Jul/2017  21:37:33
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Pit_5ms.c
+#    Command line =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Pit_5ms.c
+#        -D LPLD_K60 -D USE_K60F12 -lCN
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\
+#        -lB
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\
+#        -o
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M4F -e --fpu=None --dlib_config
+#        D:\IAR\arm\INC\c\DLib_Config_Normal.h -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\app\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\CPU\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\HW\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\DEV\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\FUNC\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\uCOS-II\Ports\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\uCOS-II\Source\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\FatFs\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\FatFs\option\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\driver\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\descriptor\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\class\
+#        -Ol -I D:\IAR\arm\CMSIS\Include\ -D ARM_MATH_CM4
+#    List file    =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\Pit_5ms.lst
+#    Object file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\Obj\Pit_5ms.o
+#
+###############################################################################
+
+C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Pit_5ms.c
+      1          #include "Includes.h"
+      2          
+
+   \                                 In section .bss, align 4
+      3          int Count = 0;
+   \                     Count:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+      4          int Stop_Distance = 0;
+   \                     Stop_Distance:
+   \   00000000                      DS8 4
+      5          extern int Ms100_Distance;
+      6          extern uint16 Ultra_Distance;
+      7          extern uint8 Turn_Around;
+      8          extern uint8 OverTake;
+      9          extern int Ultra_Count;
+     10          extern uint8 SendCommand_Arise;
+     11          extern uint8 SendData_Clear;
+     12          extern uint8 SendCommand_Arise_Cnt;
+     13          extern uint8 SendCommand;
+     14          extern int Cnt_Encoder;
+     15          extern long int Sum_Distance;
+     16          
+     17          /*
+     18          功能：10ms触发一次该中断函数，周期循环：路径采集、角度、速度控制
+     19          返回值：无 
+     20          */
+
+   \                                 In section .text, align 2, keep-with-next
+     21          void pit_10ms()
+     22          {  
+   \                     pit_10ms: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     23              //开机采集10次peak,求平均值
+     24              if(Count<10)
+   \   00000002   0x....             LDR.N    R0,??DataTable1
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x280A             CMP      R0,#+10
+   \   00000008   0xDA0B             BGE.N    ??pit_10ms_0
+     25                {
+     26                   Set_SensorPara(Count);
+   \   0000000A   0x....             LDR.N    R0,??DataTable1
+   \   0000000C   0x6800             LDR      R0,[R0, #+0]
+   \   0000000E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000010   0x.... 0x....      BL       Set_SensorPara
+     27                   if(Count == 9)
+   \   00000014   0x....             LDR.N    R0,??DataTable1
+   \   00000016   0x6800             LDR      R0,[R0, #+0]
+   \   00000018   0x2809             CMP      R0,#+9
+   \   0000001A   0xD10A             BNE.N    ??pit_10ms_1
+     28                      AveEmax_Calcu();          
+   \   0000001C   0x.... 0x....      BL       AveEmax_Calcu
+   \   00000020   0xE007             B.N      ??pit_10ms_1
+     29                }
+     30              
+     31              //周期循环：路径采集、角度、速度控制
+     32              else
+     33                {
+     34                   Spd_Get(); 
+   \                     ??pit_10ms_0: (+1)
+   \   00000022   0x.... 0x....      BL       Spd_Get
+     35                   Rudder_Ctrl();
+   \   00000026   0x.... 0x....      BL       Rudder_Ctrl
+     36                   Motor_Ctrl();    
+   \   0000002A   0x.... 0x....      BL       Motor_Ctrl
+     37                   Dis_Calc();       //AD采样放在while(1)Limian
+   \   0000002E   0x.... 0x....      BL       Dis_Calc
+     38                }
+     39          
+     40          
+     41              Cnt_Encoder = 1;
+   \                     ??pit_10ms_1: (+1)
+   \   00000032   0x2001             MOVS     R0,#+1
+   \   00000034   0x....             LDR.N    R1,??DataTable1_1
+   \   00000036   0x6008             STR      R0,[R1, #+0]
+     42              Count++;
+   \   00000038   0x....             LDR.N    R0,??DataTable1
+   \   0000003A   0x6800             LDR      R0,[R0, #+0]
+   \   0000003C   0x1C40             ADDS     R0,R0,#+1
+   \   0000003E   0x....             LDR.N    R1,??DataTable1
+   \   00000040   0x6008             STR      R0,[R1, #+0]
+     43              if(Count>60000)
+   \   00000042   0x....             LDR.N    R0,??DataTable1
+   \   00000044   0x6800             LDR      R0,[R0, #+0]
+   \   00000046   0xF64E 0x2161      MOVW     R1,#+60001
+   \   0000004A   0x4288             CMP      R0,R1
+   \   0000004C   0xDB03             BLT.N    ??pit_10ms_2
+     44                 Count = 1000;
+   \   0000004E   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000052   0x....             LDR.N    R1,??DataTable1
+   \   00000054   0x6008             STR      R0,[R1, #+0]
+     45          }
+   \                     ??pit_10ms_2: (+1)
+   \   00000056   0xBD01             POP      {R0,PC}          ;; return
+     46          
+
+   \                                 In section .bss, align 4
+     47          int isrcnt;
+   \                     isrcnt:
+   \   00000000                      DS8 4
+
+   \                                 In section .text, align 2, keep-with-next
+     48          void Stop_Isr()
+     49          {
+     50            isrcnt++;
+   \                     Stop_Isr: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable1_2
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x1C40             ADDS     R0,R0,#+1
+   \   00000006   0x....             LDR.N    R1,??DataTable1_2
+   \   00000008   0x6008             STR      R0,[R1, #+0]
+     51             if(Sum_Distance > 10*10000)
+   \   0000000A   0x....             LDR.N    R0,??DataTable1_3
+   \   0000000C   0x6800             LDR      R0,[R0, #+0]
+   \   0000000E   0x....             LDR.N    R1,??DataTable1_4  ;; 0x186a1
+   \   00000010   0x4288             CMP      R0,R1
+   \   00000012   0xDB0A             BLT.N    ??Stop_Isr_0
+     52               {
+     53                  Stop_Distance = Pulse_Distance*100; 
+   \   00000014   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000018   0x....             LDR.N    R1,??DataTable1_5
+   \   0000001A   0x6008             STR      R0,[R1, #+0]
+     54                  if(Turn_Around == 0)
+   \   0000001C   0x....             LDR.N    R0,??DataTable1_6
+   \   0000001E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000020   0x2800             CMP      R0,#+0
+   \   00000022   0xD102             BNE.N    ??Stop_Isr_0
+     55                    SendCommand = Ahead_Stop;
+   \   00000024   0x206E             MOVS     R0,#+110
+   \   00000026   0x....             LDR.N    R1,??DataTable1_7
+   \   00000028   0x7008             STRB     R0,[R1, #+0]
+     56               }
+     57          }
+   \                     ??Stop_Isr_0: (+1)
+   \   0000002A   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     Count
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \   00000000   0x........         DC32     Cnt_Encoder
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_2:
+   \   00000000   0x........         DC32     isrcnt
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_3:
+   \   00000000   0x........         DC32     Sum_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_4:
+   \   00000000   0x000186A1         DC32     0x186a1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_5:
+   \   00000000   0x........         DC32     Stop_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_6:
+   \   00000000   0x........         DC32     Turn_Around
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_7:
+   \   00000000   0x........         DC32     SendCommand
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   Stop_Isr
+       8   pit_10ms
+         8   -> AveEmax_Calcu
+         8   -> Dis_Calc
+         8   -> Motor_Ctrl
+         8   -> Rudder_Ctrl
+         8   -> Set_SensorPara
+         8   -> Spd_Get
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+       4  ??DataTable1_3
+       4  ??DataTable1_4
+       4  ??DataTable1_5
+       4  ??DataTable1_6
+       4  ??DataTable1_7
+       4  Count
+       4  Stop_Distance
+      44  Stop_Isr
+       4  isrcnt
+      88  pit_10ms
+
+ 
+  12 bytes in section .bss
+ 164 bytes in section .text
+ 
+ 164 bytes of CODE memory
+  12 bytes of DATA memory
+
+Errors: none
+Warnings: none

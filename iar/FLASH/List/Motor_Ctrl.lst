@@ -1,0 +1,141 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.2.7424/W32 for ARM        10/Jul/2017  21:37:33
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Motor_Ctrl.c
+#    Command line =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Motor_Ctrl.c
+#        -D LPLD_K60 -D USE_K60F12 -lCN
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\
+#        -lB
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\
+#        -o
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M4F -e --fpu=None --dlib_config
+#        D:\IAR\arm\INC\c\DLib_Config_Normal.h -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\app\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\CPU\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\HW\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\DEV\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\FUNC\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\uCOS-II\Ports\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\uCOS-II\Source\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\FatFs\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\FatFs\option\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\driver\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\descriptor\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\class\
+#        -Ol -I D:\IAR\arm\CMSIS\Include\ -D ARM_MATH_CM4
+#    List file    =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\Motor_Ctrl.lst
+#    Object file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\Obj\Motor_Ctrl.o
+#
+###############################################################################
+
+C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Motor_Ctrl.c
+      1          #include "Includes.h"
+      2          
+      3          extern uint8 Turn_Around;
+      4          extern uint8 Family_Status;
+      5          
+      6          /*
+      7          Function：速度控制总函数
+      8          Return：Null
+      9          */
+
+   \                                 In section .text, align 4, keep-with-next
+     10          void Motor_Ctrl()
+     11          {   
+   \                     Motor_Ctrl: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     12             //---速度设置---//
+     13             if(Turn_Around == 0)
+   \   00000002   0x480A             LDR.N    R0,??Motor_Ctrl_0
+   \   00000004   0x7800             LDRB     R0,[R0, #+0]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD102             BNE.N    ??Motor_Ctrl_1
+     14                Ahead_Spd_Set();   //前车速度设置
+   \   0000000A   0x.... 0x....      BL       Ahead_Spd_Set
+   \   0000000E   0xE001             B.N      ??Motor_Ctrl_2
+     15             else 
+     16                Behind_Spd_Set();  //后车速度设置
+   \                     ??Motor_Ctrl_1: (+1)
+   \   00000010   0x.... 0x....      BL       Behind_Spd_Set
+     17             
+     18             //---PIDT控制---//
+     19             if(Family_Status == 0)
+   \                     ??Motor_Ctrl_2: (+1)
+   \   00000014   0x4806             LDR.N    R0,??Motor_Ctrl_0+0x4
+   \   00000016   0x7800             LDRB     R0,[R0, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD102             BNE.N    ??Motor_Ctrl_3
+     20                Elder_Spd_Ctrl();   //老大PIDT
+   \   0000001C   0x.... 0x....      BL       Elder_Spd_Ctrl
+   \   00000020   0xE001             B.N      ??Motor_Ctrl_4
+     21             else
+     22                Younger_Spd_Ctrl(); //老二PIDT
+   \                     ??Motor_Ctrl_3: (+1)
+   \   00000022   0x.... 0x....      BL       Younger_Spd_Ctrl
+     23            
+     24             //-----输出-----//
+     25             Motor_Output();
+   \                     ??Motor_Ctrl_4: (+1)
+   \   00000026   0x.... 0x....      BL       Motor_Output
+     26          }
+   \   0000002A   0xBD01             POP      {R0,PC}          ;; return
+   \                     ??Motor_Ctrl_0:
+   \   0000002C   0x........         DC32     Turn_Around
+   \   00000030   0x........         DC32     Family_Status
+     27          
+     28          
+     29          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Motor_Ctrl
+         8   -> Ahead_Spd_Set
+         8   -> Behind_Spd_Set
+         8   -> Elder_Spd_Ctrl
+         8   -> Motor_Output
+         8   -> Younger_Spd_Ctrl
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      52  Motor_Ctrl
+
+ 
+ 52 bytes in section .text
+ 
+ 52 bytes of CODE memory
+
+Errors: none
+Warnings: none

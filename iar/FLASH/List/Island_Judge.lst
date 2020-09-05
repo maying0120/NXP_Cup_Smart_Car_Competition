@@ -1,0 +1,2573 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.2.7424/W32 for ARM        10/Jul/2017  21:37:32
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Island_Judge.c
+#    Command line =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Island_Judge.c
+#        -D LPLD_K60 -D USE_K60F12 -lCN
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\
+#        -lB
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\
+#        -o
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M4F -e --fpu=None --dlib_config
+#        D:\IAR\arm\INC\c\DLib_Config_Normal.h -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\app\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\CPU\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\HW\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\DEV\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\FUNC\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\uCOS-II\Ports\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\uCOS-II\Source\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\FatFs\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\FatFs\option\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\driver\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\descriptor\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\class\
+#        -Ol -I D:\IAR\arm\CMSIS\Include\ -D ARM_MATH_CM4
+#    List file    =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\Island_Judge.lst
+#    Object file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\Obj\Island_Judge.o
+#
+###############################################################################
+
+C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Island_Judge.c
+      1          #include "Includes.h"
+      2          
+
+   \                                 In section .bss, align 1
+      3          uint8 Flag_Island_Position = 0;
+   \                     Flag_Island_Position:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+      4          uint8 final = 0;
+   \                     final:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+      5          uint8 step3_biaozhi;
+   \                     step3_biaozhi:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+      6          uint8 Case1_Behind_IslandFollow = 0;
+   \                     Case1_Behind_IslandFollow:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+      7          uint8 Case1_Behind_IslandStop = 0;
+   \                     Case1_Behind_IslandStop:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+      8          uint8 Dir_IslandTurn = 0;
+   \                     Dir_IslandTurn:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+      9          uint8 Case1_AheadLeave_Wait = 0;
+   \                     Case1_AheadLeave_Wait:
+   \   00000000                      DS8 1
+
+   \                                 In section .data, align 1
+     10          uint8 Case1_OverTake_Num = 1;
+   \                     Case1_OverTake_Num:
+   \   00000000   0x01               DC8 1
+
+   \                                 In section .bss, align 1
+     11          uint8 Island_Error_Turn = 0;
+   \                     Island_Error_Turn:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+     12          uint8 CrossRoad_Num = 0;
+   \                     CrossRoad_Num:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+     13          uint8 Flag_Island_Confirm_Dir = 0;
+   \                     Flag_Island_Confirm_Dir:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 4
+     14          float Ave_absError;
+   \                     Ave_absError:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     15          int Case1_AheadLeave_Dis = 0;
+   \                     Case1_AheadLeave_Dis:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     16          int Ahead_TurnError;
+   \                     Ahead_TurnError:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     17          int Ms100_Distance;
+   \                     Ms100_Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     18          int EncoderDis_Ahead;
+   \                     EncoderDis_Ahead:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     19          int EncoderDis_Behind;
+   \                     EncoderDis_Behind:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     20          int final_Distance = 0;
+   \                     final_Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     21          int Distance;
+   \                     Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     22          int CrossRoad_Distance;
+   \                     CrossRoad_Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     23          int CrossRoadGap_Dis;
+   \                     CrossRoadGap_Dis:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     24          int Pre_Distance[100];
+   \                     Pre_Distance:
+   \   00000000                      DS8 400
+
+   \                                 In section .bss, align 4
+     25          long int Sum_Distance;
+   \                     Sum_Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     26          long int Behind_EnterRamp_AdmitDis;
+   \                     Behind_EnterRamp_AdmitDis:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     27          long int IslandAdmit_Distance = 0;     //后车可以识别环岛的距离
+   \                     IslandAdmit_Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     28          long int IslandAdmit_Distance_Last = 0;
+   \                     IslandAdmit_Distance_Last:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     29          long int IslandGap_Distance = 0;       //识别两个环岛之间的最短距离
+   \                     IslandGap_Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     30          long int IslandIn_Distance;            //后车在环岛内等待的距离
+   \                     IslandIn_Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     31          int Flag_Island_Confirm = 0;
+   \                     Flag_Island_Confirm:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     32          int Flag_Island_Confirm_Last = 0;
+   \                     Flag_Island_Confirm_Last:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     33          int trendSum_Peak1[2];
+   \                     trendSum_Peak1:
+   \   00000000                      DS8 8
+
+   \                                 In section .bss, align 4
+     34          int trendSum_Peak2[2];
+   \                     trendSum_Peak2:
+   \   00000000                      DS8 8
+
+   \                                 In section .bss, align 4
+     35          int trendSum_Peak3[2];
+   \                     trendSum_Peak3:
+   \   00000000                      DS8 8
+
+   \                                 In section .bss, align 4
+     36          int trendSum_Peak7[2];
+   \                     trendSum_Peak7:
+   \   00000000                      DS8 8
+
+   \                                 In section .bss, align 4
+     37          int Pre_Peak1[6];
+   \                     Pre_Peak1:
+   \   00000000                      DS8 24
+
+   \                                 In section .bss, align 4
+     38          int Pre_Peak2[6];
+   \                     Pre_Peak2:
+   \   00000000                      DS8 24
+
+   \                                 In section .bss, align 4
+     39          int Pre_Peak3[6];
+   \                     Pre_Peak3:
+   \   00000000                      DS8 24
+
+   \                                 In section .bss, align 4
+     40          int Pre_Peak7[6];
+   \                     Pre_Peak7:
+   \   00000000                      DS8 24
+     41          extern uint8 SendCommand;
+     42          extern uint8 Flag_Ramp;
+     43          extern uint8 Turn_Around;
+     44          extern uint8 Flag_Island;
+     45          extern uint8 Flag_Island_Last;
+     46          extern uint8 Family_Status;
+     47          extern uint8 Spd_Set_ZeroStart;
+     48          extern uint8 Stop_Behind;
+     49          extern uint8 Flag_Turn;
+     50          extern uint8 final_Last;
+     51          extern uint8 Single_Run;
+     52          extern uint8 Spd_Switch;
+     53          extern uint8 OverTake_Island;
+     54          extern uint8 OverTake_Straight;
+     55          extern uint8 Case2_Ahead_KeepSide;  
+     56          extern uint8 Case2_Behind_KeepSide;
+     57          extern uint8 OverTake_CrossRoad;
+     58          extern uint8 Case3_Ahead_Stop;
+     59          extern uint8 Case3_Behind_Pass;
+     60          extern uint8 Case3_Turn;
+     61          extern uint8 Ahead_LeaveIsland_WaitFlag;
+     62          extern uint8 Behind_LeaveIsland_ChaseFlag;
+     63          extern int peak[];
+     64          extern int RampIn_Distance;
+     65          extern int EnterStrai_SumDis;
+     66          extern int Case3_Behind_PassDis;
+     67          extern int RampAdmit_Distance;
+     68          extern int   EnterCurve_SumDis;
+     69          extern int Case1_TurnSwitch_Dis;
+     70          extern int Mixed_Distance;
+     71          extern int Pre_Error[];
+     72          extern int Error;
+     73          extern int Count;
+     74          extern int Stop_Distance;
+     75          extern int Island_Distance;
+     76          extern int Grid_Error_Last;
+     77          extern int Grid_Error_Last2;
+     78          extern int Grid_Error_Last3;
+     79          extern float percent_ahead;
+     80          extern float percent_behind;
+     81          extern struct Speed Spd;
+     82          
+     83          
+
+   \                                 In section .text, align 2, keep-with-next
+     84          void Island_Handle()
+     85          { 
+   \                     Island_Handle: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     86            //------------数据更新-------------//
+     87            Flag_Island_Confirm_Last = Flag_Island_Confirm;
+   \   00000002   0x.... 0x....      LDR.W    R0,??DataTable4
+   \   00000006   0x6800             LDR      R0,[R0, #+0]
+   \   00000008   0x.... 0x....      LDR.W    R1,??DataTable4_1
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+     88            final_Last = final;
+   \   0000000E   0x.... 0x....      LDR.W    R0,??DataTable5
+   \   00000012   0x7800             LDRB     R0,[R0, #+0]
+   \   00000014   0x.... 0x....      LDR.W    R1,??DataTable4_2
+   \   00000018   0x7008             STRB     R0,[R1, #+0]
+     89            Flag_Island_Last = Flag_Island;
+   \   0000001A   0x.... 0x....      LDR.W    R0,??DataTable4_3
+   \   0000001E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000020   0x.... 0x....      LDR.W    R1,??DataTable5_1
+   \   00000024   0x7008             STRB     R0,[R1, #+0]
+     90            
+     91          /******************各种距离*******************/  
+     92            Calcu_AllDis();
+   \   00000026   0x.... 0x....      BL       Calcu_AllDis
+     93             
+     94          /****************环岛处理部分******************/     
+     95            //--进环岛--//
+     96            Enter_Island();
+   \   0000002A   0x.... 0x....      BL       Enter_Island
+     97            
+     98            //--允许超车的前提下，切换前后车--//
+     99            if(OverTake_Island != No)              
+   \   0000002E   0x.... 0x....      LDR.W    R0,??DataTable6
+   \   00000032   0x7800             LDRB     R0,[R0, #+0]
+   \   00000034   0x2800             CMP      R0,#+0
+   \   00000036   0xD001             BEQ.N    ??Island_Handle_0
+    100              TurnSwitch_InIsland();
+   \   00000038   0x.... 0x....      BL       TurnSwitch_InIsland
+    101            
+    102            //--出环岛--//
+    103            Leave_Island();
+   \                     ??Island_Handle_0: (+1)
+   \   0000003C   0x.... 0x....      BL       Leave_Island
+    104                   
+    105          /****************LED标志信号*******************/    
+    106            Led_Show();
+   \   00000040   0x.... 0x....      BL       Led_Show
+    107          }
+   \   00000044   0xBD01             POP      {R0,PC}          ;; return
+    108          
+    109          
+    110          
+    111          /*
+    112          Function: 计算各种Distance
+    113          Return: Null
+    114          */
+
+   \                                 In section .text, align 2, keep-with-next
+    115          void Calcu_AllDis(void)
+    116          {
+   \                     Calcu_AllDis: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    117            //一个pit内小车行进的距离
+    118            Distance = Spd.feedback;
+   \   00000002   0x.... 0x....      LDR.W    R0,??DataTable4_4
+   \   00000006   0x6980             LDR      R0,[R0, #+24]
+   \   00000008   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+    119            if(Distance > 4*100)    Distance = 4*100;    
+   \   0000000E   0x.... 0x....      LDR.W    R0,??DataTable4_5
+   \   00000012   0x6800             LDR      R0,[R0, #+0]
+   \   00000014   0xF5B0 0x7FC8      CMP      R0,#+400
+   \   00000018   0xDD04             BLE.N    ??Calcu_AllDis_0
+   \   0000001A   0xF44F 0x70C8      MOV      R0,#+400
+   \   0000001E   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   00000022   0x6008             STR      R0,[R1, #+0]
+    120           
+    121            Sum_Distance += Distance;
+   \                     ??Calcu_AllDis_0: (+1)
+   \   00000024   0x.... 0x....      LDR.W    R0,??DataTable4_6
+   \   00000028   0x6800             LDR      R0,[R0, #+0]
+   \   0000002A   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   0000002E   0x6809             LDR      R1,[R1, #+0]
+   \   00000030   0x1808             ADDS     R0,R1,R0
+   \   00000032   0x.... 0x....      LDR.W    R1,??DataTable4_6
+   \   00000036   0x6008             STR      R0,[R1, #+0]
+    122            
+    123            //停车距离
+    124              if(Stop_Distance != 0)
+   \   00000038   0x.... 0x....      LDR.W    R0,??DataTable4_7
+   \   0000003C   0x6800             LDR      R0,[R0, #+0]
+   \   0000003E   0x2800             CMP      R0,#+0
+   \   00000040   0xD009             BEQ.N    ??Calcu_AllDis_1
+    125                Stop_Distance += Distance;
+   \   00000042   0x.... 0x....      LDR.W    R0,??DataTable4_7
+   \   00000046   0x6800             LDR      R0,[R0, #+0]
+   \   00000048   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   0000004C   0x6809             LDR      R1,[R1, #+0]
+   \   0000004E   0x1808             ADDS     R0,R1,R0
+   \   00000050   0x.... 0x....      LDR.W    R1,??DataTable4_7
+   \   00000054   0x6008             STR      R0,[R1, #+0]
+    126              
+    127            
+    128            //进入环岛前40cm需要直线行驶
+    129            for(uint8 i=0; i<ErrorNum-1; i++)
+   \                     ??Calcu_AllDis_1: (+1)
+   \   00000056   0x2000             MOVS     R0,#+0
+   \   00000058   0xE00B             B.N      ??Calcu_AllDis_2
+    130               Pre_Distance[i] = Pre_Distance[i+1];
+   \                     ??Calcu_AllDis_3: (+1)
+   \   0000005A   0x.... 0x....      LDR.W    R1,??DataTable4_8
+   \   0000005E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000060   0xEB11 0x0180      ADDS     R1,R1,R0, LSL #+2
+   \   00000064   0x6849             LDR      R1,[R1, #+4]
+   \   00000066   0x.... 0x....      LDR.W    R2,??DataTable4_8
+   \   0000006A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000006C   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+   \   00000070   0x1C40             ADDS     R0,R0,#+1
+   \                     ??Calcu_AllDis_2: (+1)
+   \   00000072   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000074   0x2863             CMP      R0,#+99
+   \   00000076   0xDBF0             BLT.N    ??Calcu_AllDis_3
+    131            Pre_Distance[ErrorNum-1] = Distance;
+   \   00000078   0x.... 0x....      LDR.W    R0,??DataTable4_5
+   \   0000007C   0x6800             LDR      R0,[R0, #+0]
+   \   0000007E   0x.... 0x....      LDR.W    R1,??DataTable4_8
+   \   00000082   0xF8C1 0x018C      STR      R0,[R1, #+396]
+    132            Ave_absError = Ave_absError_Calcu(40);
+   \   00000086   0x2028             MOVS     R0,#+40
+   \   00000088   0x.... 0x....      BL       Ave_absError_Calcu
+   \   0000008C   0x.... 0x....      LDR.W    R1,??DataTable4_9
+   \   00000090   0x6008             STR      R0,[R1, #+0]
+    133             
+    134            //允许识别两个环岛的最小距离
+    135            if(IslandGap_Distance != 0)
+   \   00000092   0x.... 0x....      LDR.W    R0,??DataTable4_10
+   \   00000096   0x6800             LDR      R0,[R0, #+0]
+   \   00000098   0x2800             CMP      R0,#+0
+   \   0000009A   0xD009             BEQ.N    ??Calcu_AllDis_4
+    136               IslandGap_Distance += Distance;
+   \   0000009C   0x.... 0x....      LDR.W    R0,??DataTable4_10
+   \   000000A0   0x6800             LDR      R0,[R0, #+0]
+   \   000000A2   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   000000A6   0x6809             LDR      R1,[R1, #+0]
+   \   000000A8   0x1808             ADDS     R0,R1,R0
+   \   000000AA   0x.... 0x....      LDR.W    R1,??DataTable4_10
+   \   000000AE   0x6008             STR      R0,[R1, #+0]
+    137            if(IslandGap_Distance > IslandGap_MinDis*100)
+   \                     ??Calcu_AllDis_4: (+1)
+   \   000000B0   0x.... 0x....      LDR.W    R0,??DataTable4_10
+   \   000000B4   0x6800             LDR      R0,[R0, #+0]
+   \   000000B6   0xF644 0x6121      MOVW     R1,#+20001
+   \   000000BA   0x4288             CMP      R0,R1
+   \   000000BC   0xDB03             BLT.N    ??Calcu_AllDis_5
+    138               IslandGap_Distance = 0;
+   \   000000BE   0x2000             MOVS     R0,#+0
+   \   000000C0   0x.... 0x....      LDR.W    R1,??DataTable4_10
+   \   000000C4   0x6008             STR      R0,[R1, #+0]
+    139            
+    140            //进出环岛之间的最小距离     
+    141            if(IslandIn_Distance != 0) 
+   \                     ??Calcu_AllDis_5: (+1)
+   \   000000C6   0x.... 0x....      LDR.W    R0,??DataTable4_11
+   \   000000CA   0x6800             LDR      R0,[R0, #+0]
+   \   000000CC   0x2800             CMP      R0,#+0
+   \   000000CE   0xD009             BEQ.N    ??Calcu_AllDis_6
+    142                IslandIn_Distance += Distance;  
+   \   000000D0   0x.... 0x....      LDR.W    R0,??DataTable4_11
+   \   000000D4   0x6800             LDR      R0,[R0, #+0]
+   \   000000D6   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   000000DA   0x6809             LDR      R1,[R1, #+0]
+   \   000000DC   0x1808             ADDS     R0,R1,R0
+   \   000000DE   0x.... 0x....      LDR.W    R1,??DataTable4_11
+   \   000000E2   0x6008             STR      R0,[R1, #+0]
+    143            
+    144            
+    145            //触发环岛、确认环岛之间的缓冲距离
+    146            if(Flag_Island_Confirm != 0)
+   \                     ??Calcu_AllDis_6: (+1)
+   \   000000E4   0x.... 0x....      LDR.W    R0,??DataTable4
+   \   000000E8   0x6800             LDR      R0,[R0, #+0]
+   \   000000EA   0x2800             CMP      R0,#+0
+   \   000000EC   0xD009             BEQ.N    ??Calcu_AllDis_7
+    147               Flag_Island_Confirm += Distance;
+   \   000000EE   0x.... 0x....      LDR.W    R0,??DataTable4
+   \   000000F2   0x6800             LDR      R0,[R0, #+0]
+   \   000000F4   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   000000F8   0x6809             LDR      R1,[R1, #+0]
+   \   000000FA   0x1808             ADDS     R0,R1,R0
+   \   000000FC   0x.... 0x....      LDR.W    R1,??DataTable4
+   \   00000100   0x6008             STR      R0,[R1, #+0]
+    148            
+    149            //十字判断
+    150            if(peak[2]>80) 
+   \                     ??Calcu_AllDis_7: (+1)
+   \   00000102   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000106   0x6880             LDR      R0,[R0, #+8]
+   \   00000108   0x2851             CMP      R0,#+81
+   \   0000010A   0xDB1C             BLT.N    ??Calcu_AllDis_8
+    151              if(   (peak[0]>Peak04_Cross_Limit||peak[4]>Peak04_Cross_Limit) && (peak[0]+peak[4]>Peak04_Cross_SumLimit) 
+    152                  && RampIn_Distance==0)
+   \   0000010C   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000110   0x6800             LDR      R0,[R0, #+0]
+   \   00000112   0x2847             CMP      R0,#+71
+   \   00000114   0xDA04             BGE.N    ??Calcu_AllDis_9
+   \   00000116   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000011A   0x6900             LDR      R0,[R0, #+16]
+   \   0000011C   0x2847             CMP      R0,#+71
+   \   0000011E   0xDB12             BLT.N    ??Calcu_AllDis_8
+   \                     ??Calcu_AllDis_9: (+1)
+   \   00000120   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000124   0x6800             LDR      R0,[R0, #+0]
+   \   00000126   0x.... 0x....      LDR.W    R1,??DataTable4_12
+   \   0000012A   0x6909             LDR      R1,[R1, #+16]
+   \   0000012C   0x1808             ADDS     R0,R1,R0
+   \   0000012E   0x2865             CMP      R0,#+101
+   \   00000130   0xDB09             BLT.N    ??Calcu_AllDis_8
+   \   00000132   0x.... 0x....      LDR.W    R0,??DataTable5_2
+   \   00000136   0x6800             LDR      R0,[R0, #+0]
+   \   00000138   0x2800             CMP      R0,#+0
+   \   0000013A   0xD104             BNE.N    ??Calcu_AllDis_8
+    153                 CrossRoad_Distance = Pulse_Distance*100;
+   \   0000013C   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000140   0x.... 0x....      LDR.W    R1,??DataTable5_3
+   \   00000144   0x6008             STR      R0,[R1, #+0]
+    154            
+    155            if(CrossRoad_Distance != 0)
+   \                     ??Calcu_AllDis_8: (+1)
+   \   00000146   0x.... 0x....      LDR.W    R0,??DataTable5_3
+   \   0000014A   0x6800             LDR      R0,[R0, #+0]
+   \   0000014C   0x2800             CMP      R0,#+0
+   \   0000014E   0xD009             BEQ.N    ??Calcu_AllDis_10
+    156              CrossRoad_Distance += Distance;
+   \   00000150   0x.... 0x....      LDR.W    R0,??DataTable5_3
+   \   00000154   0x6800             LDR      R0,[R0, #+0]
+   \   00000156   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   0000015A   0x6809             LDR      R1,[R1, #+0]
+   \   0000015C   0x1808             ADDS     R0,R1,R0
+   \   0000015E   0x.... 0x....      LDR.W    R1,??DataTable5_3
+   \   00000162   0x6008             STR      R0,[R1, #+0]
+    157            if(CrossRoad_Distance > CrossRoad_MinDis*100)
+   \                     ??Calcu_AllDis_10: (+1)
+   \   00000164   0x.... 0x....      LDR.W    R0,??DataTable5_3
+   \   00000168   0x6800             LDR      R0,[R0, #+0]
+   \   0000016A   0xF241 0x7171      MOVW     R1,#+6001
+   \   0000016E   0x4288             CMP      R0,R1
+   \   00000170   0xDB03             BLT.N    ??Calcu_AllDis_11
+    158              CrossRoad_Distance = 0;
+   \   00000172   0x2000             MOVS     R0,#+0
+   \   00000174   0x.... 0x....      LDR.W    R1,??DataTable5_3
+   \   00000178   0x6008             STR      R0,[R1, #+0]
+    159            
+    160            //100ms内运动距离
+    161            Ms100_Distance += Distance;
+   \                     ??Calcu_AllDis_11: (+1)
+   \   0000017A   0x.... 0x....      LDR.W    R0,??DataTable5_4
+   \   0000017E   0x6800             LDR      R0,[R0, #+0]
+   \   00000180   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   00000184   0x6809             LDR      R1,[R1, #+0]
+   \   00000186   0x1808             ADDS     R0,R1,R0
+   \   00000188   0x.... 0x....      LDR.W    R1,??DataTable5_4
+   \   0000018C   0x6008             STR      R0,[R1, #+0]
+    162            if(Count%10 == 0)
+   \   0000018E   0x200A             MOVS     R0,#+10
+   \   00000190   0x.... 0x....      LDR.W    R1,??DataTable5_5
+   \   00000194   0x6809             LDR      R1,[R1, #+0]
+   \   00000196   0x.... 0x....      LDR.W    R2,??DataTable5_5
+   \   0000019A   0x6812             LDR      R2,[R2, #+0]
+   \   0000019C   0xFB92 0xF2F0      SDIV     R2,R2,R0
+   \   000001A0   0xFB00 0x1012      MLS      R0,R0,R2,R1
+   \   000001A4   0x2800             CMP      R0,#+0
+   \   000001A6   0xD12F             BNE.N    ??Calcu_AllDis_12
+    163              {
+    164                if(Ms100_Distance < 0)
+   \   000001A8   0x.... 0x....      LDR.W    R0,??DataTable5_4
+   \   000001AC   0x6800             LDR      R0,[R0, #+0]
+   \   000001AE   0x2800             CMP      R0,#+0
+   \   000001B0   0xD503             BPL.N    ??Calcu_AllDis_13
+    165                  Ms100_Distance = 0;
+   \   000001B2   0x2000             MOVS     R0,#+0
+   \   000001B4   0x.... 0x....      LDR.W    R1,??DataTable5_4
+   \   000001B8   0x6008             STR      R0,[R1, #+0]
+    166                if(Ms100_Distance > 40*100)
+   \                     ??Calcu_AllDis_13: (+1)
+   \   000001BA   0x.... 0x....      LDR.W    R0,??DataTable5_4
+   \   000001BE   0x6800             LDR      R0,[R0, #+0]
+   \   000001C0   0xF5B0 0x6F7A      CMP      R0,#+4000
+   \   000001C4   0xDD04             BLE.N    ??Calcu_AllDis_14
+    167                  Ms100_Distance = 40*100;
+   \   000001C6   0xF44F 0x607A      MOV      R0,#+4000
+   \   000001CA   0x.... 0x....      LDR.W    R1,??DataTable5_4
+   \   000001CE   0x6008             STR      R0,[R1, #+0]
+    168                    
+    169                if(Turn_Around == 0)
+   \                     ??Calcu_AllDis_14: (+1)
+   \   000001D0   0x.... 0x....      LDR.W    R0,??DataTable6_1
+   \   000001D4   0x7800             LDRB     R0,[R0, #+0]
+   \   000001D6   0x2800             CMP      R0,#+0
+   \   000001D8   0xD109             BNE.N    ??Calcu_AllDis_15
+    170                   EncoderDis_Ahead = Ms100_Distance/100;
+   \   000001DA   0x.... 0x....      LDR.W    R0,??DataTable5_4
+   \   000001DE   0x6800             LDR      R0,[R0, #+0]
+   \   000001E0   0x2164             MOVS     R1,#+100
+   \   000001E2   0xFB90 0xF0F1      SDIV     R0,R0,R1
+   \   000001E6   0x.... 0x....      LDR.W    R1,??DataTable6_2
+   \   000001EA   0x6008             STR      R0,[R1, #+0]
+   \   000001EC   0xE008             B.N      ??Calcu_AllDis_16
+    171                else
+    172                   EncoderDis_Behind = Ms100_Distance/100;
+   \                     ??Calcu_AllDis_15: (+1)
+   \   000001EE   0x.... 0x....      LDR.W    R0,??DataTable5_4
+   \   000001F2   0x6800             LDR      R0,[R0, #+0]
+   \   000001F4   0x2164             MOVS     R1,#+100
+   \   000001F6   0xFB90 0xF0F1      SDIV     R0,R0,R1
+   \   000001FA   0x.... 0x....      LDR.W    R1,??DataTable6_3
+   \   000001FE   0x6008             STR      R0,[R1, #+0]
+    173                
+    174                 Ms100_Distance = 0;
+   \                     ??Calcu_AllDis_16: (+1)
+   \   00000200   0x2000             MOVS     R0,#+0
+   \   00000202   0x.... 0x....      LDR.W    R1,??DataTable5_4
+   \   00000206   0x6008             STR      R0,[R1, #+0]
+    175              }
+    176                 
+    177            //后车允许进入环岛的距离
+    178            IslandAdmit_Distance_Last = IslandAdmit_Distance;
+   \                     ??Calcu_AllDis_12: (+1)
+   \   00000208   0x.... 0x....      LDR.W    R0,??DataTable6_4
+   \   0000020C   0x6800             LDR      R0,[R0, #+0]
+   \   0000020E   0x.... 0x....      LDR.W    R1,??DataTable6_5
+   \   00000212   0x6008             STR      R0,[R1, #+0]
+    179            if(IslandAdmit_Distance != 0)
+   \   00000214   0x.... 0x....      LDR.W    R0,??DataTable6_4
+   \   00000218   0x6800             LDR      R0,[R0, #+0]
+   \   0000021A   0x2800             CMP      R0,#+0
+   \   0000021C   0xD012             BEQ.N    ??Calcu_AllDis_17
+    180              {
+    181                 IslandAdmit_Distance -= Distance;
+   \   0000021E   0x.... 0x....      LDR.W    R0,??DataTable6_4
+   \   00000222   0x6800             LDR      R0,[R0, #+0]
+   \   00000224   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   00000228   0x6809             LDR      R1,[R1, #+0]
+   \   0000022A   0x1A40             SUBS     R0,R0,R1
+   \   0000022C   0x.... 0x....      LDR.W    R1,??DataTable6_4
+   \   00000230   0x6008             STR      R0,[R1, #+0]
+    182                if(IslandAdmit_Distance < 0)
+   \   00000232   0x.... 0x....      LDR.W    R0,??DataTable6_4
+   \   00000236   0x6800             LDR      R0,[R0, #+0]
+   \   00000238   0x2800             CMP      R0,#+0
+   \   0000023A   0xD503             BPL.N    ??Calcu_AllDis_17
+    183                   IslandAdmit_Distance = 0;
+   \   0000023C   0x2000             MOVS     R0,#+0
+   \   0000023E   0x.... 0x....      LDR.W    R1,??DataTable6_4
+   \   00000242   0x6008             STR      R0,[R1, #+0]
+    184              } 
+    185            
+    186            //后车允许进入坡道的距离
+    187            if(Behind_EnterRamp_AdmitDis != 0)
+   \                     ??Calcu_AllDis_17: (+1)
+   \   00000244   0x.... 0x....      LDR.W    R0,??DataTable6_6
+   \   00000248   0x6800             LDR      R0,[R0, #+0]
+   \   0000024A   0x2800             CMP      R0,#+0
+   \   0000024C   0xD009             BEQ.N    ??Calcu_AllDis_18
+    188               Behind_EnterRamp_AdmitDis -= Distance;
+   \   0000024E   0x.... 0x....      LDR.W    R0,??DataTable6_6
+   \   00000252   0x6800             LDR      R0,[R0, #+0]
+   \   00000254   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   00000258   0x6809             LDR      R1,[R1, #+0]
+   \   0000025A   0x1A40             SUBS     R0,R0,R1
+   \   0000025C   0x.... 0x....      LDR.W    R1,??DataTable6_6
+   \   00000260   0x6008             STR      R0,[R1, #+0]
+    189            if(Behind_EnterRamp_AdmitDis < 0)
+   \                     ??Calcu_AllDis_18: (+1)
+   \   00000262   0x.... 0x....      LDR.W    R0,??DataTable6_6
+   \   00000266   0x6800             LDR      R0,[R0, #+0]
+   \   00000268   0x2800             CMP      R0,#+0
+   \   0000026A   0xD503             BPL.N    ??Calcu_AllDis_19
+    190               Behind_EnterRamp_AdmitDis = 0;
+   \   0000026C   0x2000             MOVS     R0,#+0
+   \   0000026E   0x.... 0x....      LDR.W    R1,??DataTable6_6
+   \   00000272   0x6008             STR      R0,[R1, #+0]
+    191            
+    192                
+    193            //前后车切换的确认距离
+    194            if(Case1_TurnSwitch_Dis != 0)
+   \                     ??Calcu_AllDis_19: (+1)
+   \   00000274   0x.... 0x....      LDR.W    R0,??DataTable6_7
+   \   00000278   0x6800             LDR      R0,[R0, #+0]
+   \   0000027A   0x2800             CMP      R0,#+0
+   \   0000027C   0xD009             BEQ.N    ??Calcu_AllDis_20
+    195               Case1_TurnSwitch_Dis += Distance;
+   \   0000027E   0x.... 0x....      LDR.W    R0,??DataTable6_7
+   \   00000282   0x6800             LDR      R0,[R0, #+0]
+   \   00000284   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   00000288   0x6809             LDR      R1,[R1, #+0]
+   \   0000028A   0x1808             ADDS     R0,R1,R0
+   \   0000028C   0x.... 0x....      LDR.W    R1,??DataTable6_7
+   \   00000290   0x6008             STR      R0,[R1, #+0]
+    196            
+    197            //Case1(超车)情况下，前车出环岛的距离
+    198            if(Case1_AheadLeave_Dis != 0)
+   \                     ??Calcu_AllDis_20: (+1)
+   \   00000292   0x.... 0x....      LDR.W    R0,??DataTable6_8
+   \   00000296   0x6800             LDR      R0,[R0, #+0]
+   \   00000298   0x2800             CMP      R0,#+0
+   \   0000029A   0xD009             BEQ.N    ??Calcu_AllDis_21
+    199               Case1_AheadLeave_Dis += Distance;
+   \   0000029C   0x.... 0x....      LDR.W    R0,??DataTable6_8
+   \   000002A0   0x6800             LDR      R0,[R0, #+0]
+   \   000002A2   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   000002A6   0x6809             LDR      R1,[R1, #+0]
+   \   000002A8   0x1808             ADDS     R0,R1,R0
+   \   000002AA   0x.... 0x....      LDR.W    R1,??DataTable6_8
+   \   000002AE   0x6008             STR      R0,[R1, #+0]
+    200            
+    201            //环岛第二步距离
+    202              if(final_Distance != 0)
+   \                     ??Calcu_AllDis_21: (+1)
+   \   000002B0   0x.... 0x....      LDR.W    R0,??DataTable6_9
+   \   000002B4   0x6800             LDR      R0,[R0, #+0]
+   \   000002B6   0x2800             CMP      R0,#+0
+   \   000002B8   0xD009             BEQ.N    ??Calcu_AllDis_22
+    203               final_Distance += Distance;
+   \   000002BA   0x.... 0x....      LDR.W    R0,??DataTable6_9
+   \   000002BE   0x6800             LDR      R0,[R0, #+0]
+   \   000002C0   0x.... 0x....      LDR.W    R1,??DataTable4_5
+   \   000002C4   0x6809             LDR      R1,[R1, #+0]
+   \   000002C6   0x1808             ADDS     R0,R1,R0
+   \   000002C8   0x.... 0x....      LDR.W    R1,??DataTable6_9
+   \   000002CC   0x6008             STR      R0,[R1, #+0]
+    204          }
+   \                     ??Calcu_AllDis_22: (+1)
+   \   000002CE   0xBD01             POP      {R0,PC}          ;; return
+    205          
+    206          
+    207          /*
+    208          function：进环岛的条件判断
+    209          return：null
+    210          */
+
+   \                                 In section .text, align 2, keep-with-next
+    211          void Enter_Island()
+    212          {
+   \                     Enter_Island: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    213            //Flag_Island_Confirm = 0;
+    214            /****************
+    215            环岛第一步*****************/
+    216            if((
+    217            //--------------正入环岛识别----------------//        
+    218                (  peak[2]>45
+    219                && peak[2]<85  
+    220                && peak[7]>82   
+    221                && fabs(peak[1]-peak[3])<35
+    222                && fabs(peak[0]-peak[4])<=35
+    223                && peak[0]>=20
+    224                && peak[0]<=60
+    225                && peak[4]>=20 
+    226                && peak[4]<=60 
+    227                && peak[1]<70
+    228                && peak[3]<70      
+    229                && peak[1]>35
+    230                && peak[3]>35  )  
+    231             //--------------斜入环岛识别---------------//      
+    232                || (peak[4]>40
+    233                && peak[0]<35    
+    234                && peak[3]<60
+    235                && peak[1]<90        
+    236                && peak[3]>25
+    237                && peak[1]>30        
+    238                && peak[6]<peak[5]
+    239                && peak[3]<peak[1]
+    240                && peak[5]>30
+    241                && peak[2]<70
+    242                && peak[7]<95
+    243                && peak[7]>60)  
+    244               
+    245                || (peak[0]>40
+    246                && peak[4]<35    
+    247                && peak[1]<60
+    248                && peak[3]<90        
+    249                && peak[1]>25
+    250                && peak[3]>30        
+    251                && peak[5]<peak[6]
+    252                && peak[1]<peak[3]
+    253                && peak[6]>30
+    254                && peak[2]<70
+    255                && peak[7]<95
+    256                && peak[7]>60)  )
+    257               
+    258                && Flag_Ramp==0
+    259                && Flag_Island_Confirm==0 
+    260                && final==0
+    261                && Flag_Island==0
+    262                && IslandGap_Distance==0 
+    263               )
+   \   00000002   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000006   0x6880             LDR      R0,[R0, #+8]
+   \   00000008   0x382E             SUBS     R0,R0,#+46
+   \   0000000A   0x2827             CMP      R0,#+39
+   \   0000000C   0xD247             BCS.N    ??Enter_Island_0
+   \   0000000E   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000012   0x69C0             LDR      R0,[R0, #+28]
+   \   00000014   0x2853             CMP      R0,#+83
+   \   00000016   0xDB42             BLT.N    ??Enter_Island_0
+   \   00000018   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000001C   0x6840             LDR      R0,[R0, #+4]
+   \   0000001E   0x.... 0x....      LDR.W    R1,??DataTable4_12
+   \   00000022   0x68C9             LDR      R1,[R1, #+12]
+   \   00000024   0x1A40             SUBS     R0,R0,R1
+   \   00000026   0x.... 0x....      BL       __aeabi_i2d
+   \   0000002A   0xF031 0x4100      BICS     R1,R1,#0x80000000
+   \   0000002E   0x2200             MOVS     R2,#+0
+   \   00000030   0x.... 0x....      LDR.W    R3,??DataTable6_10  ;; 0x40418000
+   \   00000034   0x.... 0x....      BL       __aeabi_cdcmple
+   \   00000038   0xD231             BCS.N    ??Enter_Island_0
+   \   0000003A   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000003E   0x6800             LDR      R0,[R0, #+0]
+   \   00000040   0x.... 0x....      LDR.W    R1,??DataTable4_12
+   \   00000044   0x6909             LDR      R1,[R1, #+16]
+   \   00000046   0x1A40             SUBS     R0,R0,R1
+   \   00000048   0x.... 0x....      BL       __aeabi_i2d
+   \   0000004C   0xF031 0x4100      BICS     R1,R1,#0x80000000
+   \   00000050   0x2201             MOVS     R2,#+1
+   \   00000052   0x.... 0x....      LDR.W    R3,??DataTable6_10  ;; 0x40418000
+   \   00000056   0x.... 0x....      BL       __aeabi_cdcmple
+   \   0000005A   0xD220             BCS.N    ??Enter_Island_0
+   \   0000005C   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000060   0x6800             LDR      R0,[R0, #+0]
+   \   00000062   0x3814             SUBS     R0,R0,#+20
+   \   00000064   0x2829             CMP      R0,#+41
+   \   00000066   0xD21A             BCS.N    ??Enter_Island_0
+   \   00000068   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000006C   0x6900             LDR      R0,[R0, #+16]
+   \   0000006E   0x3814             SUBS     R0,R0,#+20
+   \   00000070   0x2829             CMP      R0,#+41
+   \   00000072   0xD214             BCS.N    ??Enter_Island_0
+   \   00000074   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000078   0x6840             LDR      R0,[R0, #+4]
+   \   0000007A   0x2846             CMP      R0,#+70
+   \   0000007C   0xDA0F             BGE.N    ??Enter_Island_0
+   \   0000007E   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000082   0x68C0             LDR      R0,[R0, #+12]
+   \   00000084   0x2846             CMP      R0,#+70
+   \   00000086   0xDA0A             BGE.N    ??Enter_Island_0
+   \   00000088   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000008C   0x6840             LDR      R0,[R0, #+4]
+   \   0000008E   0x2824             CMP      R0,#+36
+   \   00000090   0xDB05             BLT.N    ??Enter_Island_0
+   \   00000092   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000096   0x68C0             LDR      R0,[R0, #+12]
+   \   00000098   0x2824             CMP      R0,#+36
+   \   0000009A   0xF280 0x8085      BGE.W    ??Enter_Island_1
+   \                     ??Enter_Island_0: (+1)
+   \   0000009E   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000A2   0x6900             LDR      R0,[R0, #+16]
+   \   000000A4   0x2829             CMP      R0,#+41
+   \   000000A6   0xDB38             BLT.N    ??Enter_Island_2
+   \   000000A8   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000AC   0x6800             LDR      R0,[R0, #+0]
+   \   000000AE   0x2823             CMP      R0,#+35
+   \   000000B0   0xDA33             BGE.N    ??Enter_Island_2
+   \   000000B2   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000B6   0x68C0             LDR      R0,[R0, #+12]
+   \   000000B8   0x283C             CMP      R0,#+60
+   \   000000BA   0xDA2E             BGE.N    ??Enter_Island_2
+   \   000000BC   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000C0   0x6840             LDR      R0,[R0, #+4]
+   \   000000C2   0x285A             CMP      R0,#+90
+   \   000000C4   0xDA29             BGE.N    ??Enter_Island_2
+   \   000000C6   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000CA   0x68C0             LDR      R0,[R0, #+12]
+   \   000000CC   0x281A             CMP      R0,#+26
+   \   000000CE   0xDB24             BLT.N    ??Enter_Island_2
+   \   000000D0   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000D4   0x6840             LDR      R0,[R0, #+4]
+   \   000000D6   0x281F             CMP      R0,#+31
+   \   000000D8   0xDB1F             BLT.N    ??Enter_Island_2
+   \   000000DA   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000DE   0x6980             LDR      R0,[R0, #+24]
+   \   000000E0   0x.... 0x....      LDR.W    R1,??DataTable4_12
+   \   000000E4   0x6949             LDR      R1,[R1, #+20]
+   \   000000E6   0x4288             CMP      R0,R1
+   \   000000E8   0xDA17             BGE.N    ??Enter_Island_2
+   \   000000EA   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000EE   0x68C0             LDR      R0,[R0, #+12]
+   \   000000F0   0x.... 0x....      LDR.W    R1,??DataTable4_12
+   \   000000F4   0x6849             LDR      R1,[R1, #+4]
+   \   000000F6   0x4288             CMP      R0,R1
+   \   000000F8   0xDA0F             BGE.N    ??Enter_Island_2
+   \   000000FA   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000000FE   0x6940             LDR      R0,[R0, #+20]
+   \   00000100   0x281F             CMP      R0,#+31
+   \   00000102   0xDB0A             BLT.N    ??Enter_Island_2
+   \   00000104   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000108   0x6880             LDR      R0,[R0, #+8]
+   \   0000010A   0x2846             CMP      R0,#+70
+   \   0000010C   0xDA05             BGE.N    ??Enter_Island_2
+   \   0000010E   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000112   0x69C0             LDR      R0,[R0, #+28]
+   \   00000114   0x383D             SUBS     R0,R0,#+61
+   \   00000116   0x2822             CMP      R0,#+34
+   \   00000118   0xD346             BCC.N    ??Enter_Island_1
+   \                     ??Enter_Island_2: (+1)
+   \   0000011A   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000011E   0x6800             LDR      R0,[R0, #+0]
+   \   00000120   0x2829             CMP      R0,#+41
+   \   00000122   0xF2C0 0x80B8      BLT.W    ??Enter_Island_3
+   \   00000126   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000012A   0x6900             LDR      R0,[R0, #+16]
+   \   0000012C   0x2823             CMP      R0,#+35
+   \   0000012E   0xF280 0x80B2      BGE.W    ??Enter_Island_3
+   \   00000132   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000136   0x6840             LDR      R0,[R0, #+4]
+   \   00000138   0x283C             CMP      R0,#+60
+   \   0000013A   0xF280 0x80AC      BGE.W    ??Enter_Island_3
+   \   0000013E   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000142   0x68C0             LDR      R0,[R0, #+12]
+   \   00000144   0x285A             CMP      R0,#+90
+   \   00000146   0xF280 0x80A6      BGE.W    ??Enter_Island_3
+   \   0000014A   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000014E   0x6840             LDR      R0,[R0, #+4]
+   \   00000150   0x281A             CMP      R0,#+26
+   \   00000152   0xF2C0 0x80A0      BLT.W    ??Enter_Island_3
+   \   00000156   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000015A   0x68C0             LDR      R0,[R0, #+12]
+   \   0000015C   0x281F             CMP      R0,#+31
+   \   0000015E   0xF2C0 0x809A      BLT.W    ??Enter_Island_3
+   \   00000162   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000166   0x6940             LDR      R0,[R0, #+20]
+   \   00000168   0x.... 0x....      LDR.W    R1,??DataTable4_12
+   \   0000016C   0x6989             LDR      R1,[R1, #+24]
+   \   0000016E   0x4288             CMP      R0,R1
+   \   00000170   0xF280 0x8091      BGE.W    ??Enter_Island_3
+   \   00000174   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000178   0x6840             LDR      R0,[R0, #+4]
+   \   0000017A   0x.... 0x....      LDR.W    R1,??DataTable4_12
+   \   0000017E   0x68C9             LDR      R1,[R1, #+12]
+   \   00000180   0x4288             CMP      R0,R1
+   \   00000182   0xF280 0x8088      BGE.W    ??Enter_Island_3
+   \   00000186   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000018A   0x6980             LDR      R0,[R0, #+24]
+   \   0000018C   0x281F             CMP      R0,#+31
+   \   0000018E   0xF2C0 0x8082      BLT.W    ??Enter_Island_3
+   \   00000192   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000196   0x6880             LDR      R0,[R0, #+8]
+   \   00000198   0x2846             CMP      R0,#+70
+   \   0000019A   0xDA7C             BGE.N    ??Enter_Island_3
+   \   0000019C   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   000001A0   0x69C0             LDR      R0,[R0, #+28]
+   \   000001A2   0x383D             SUBS     R0,R0,#+61
+   \   000001A4   0x2822             CMP      R0,#+34
+   \   000001A6   0xD276             BCS.N    ??Enter_Island_3
+   \                     ??Enter_Island_1: (+1)
+   \   000001A8   0x.... 0x....      LDR.W    R0,??DataTable6_11
+   \   000001AC   0x7800             LDRB     R0,[R0, #+0]
+   \   000001AE   0x.... 0x....      LDR.W    R1,??DataTable4
+   \   000001B2   0x6809             LDR      R1,[R1, #+0]
+   \   000001B4   0x4308             ORRS     R0,R1,R0
+   \   000001B6   0x2800             CMP      R0,#+0
+   \   000001B8   0xD16D             BNE.N    ??Enter_Island_3
+   \   000001BA   0x.... 0x....      LDR.W    R0,??DataTable5
+   \   000001BE   0x7800             LDRB     R0,[R0, #+0]
+   \   000001C0   0x2800             CMP      R0,#+0
+   \   000001C2   0xD168             BNE.N    ??Enter_Island_3
+   \   000001C4   0x.... 0x....      LDR.W    R0,??DataTable4_3
+   \   000001C8   0x7800             LDRB     R0,[R0, #+0]
+   \   000001CA   0x2800             CMP      R0,#+0
+   \   000001CC   0xD163             BNE.N    ??Enter_Island_3
+   \   000001CE   0x.... 0x....      LDR.W    R0,??DataTable4_10
+   \   000001D2   0x6800             LDR      R0,[R0, #+0]
+   \   000001D4   0x2800             CMP      R0,#+0
+   \   000001D6   0xD15E             BNE.N    ??Enter_Island_3
+    264                {
+    265                 /************环岛进入姿态判断*********/
+    266                  
+    267                   /* 后车进入环岛的条件：--|__Case1(环岛超车方案):前车进入环岛后，后车在一段距离内允许识别*/
+    268                   if(   ( Turn_Around==1 && (IslandAdmit_Distance!=0) ) 
+    269                       ||  Turn_Around==0  )
+   \   000001D8   0x.... 0x....      LDR.W    R0,??DataTable6_1
+   \   000001DC   0x7800             LDRB     R0,[R0, #+0]
+   \   000001DE   0x2801             CMP      R0,#+1
+   \   000001E0   0xD104             BNE.N    ??Enter_Island_4
+   \   000001E2   0x.... 0x....      LDR.W    R0,??DataTable6_4
+   \   000001E6   0x6800             LDR      R0,[R0, #+0]
+   \   000001E8   0x2800             CMP      R0,#+0
+   \   000001EA   0xD104             BNE.N    ??Enter_Island_5
+   \                     ??Enter_Island_4: (+1)
+   \   000001EC   0x.... 0x....      LDR.W    R0,??DataTable6_1
+   \   000001F0   0x7800             LDRB     R0,[R0, #+0]
+   \   000001F2   0x2800             CMP      R0,#+0
+   \   000001F4   0xD104             BNE.N    ??Enter_Island_6
+    270                        Flag_Island_Confirm = Confirm_First*100;
+   \                     ??Enter_Island_5: (+1)
+   \   000001F6   0xF240 0x50DC      MOVW     R0,#+1500
+   \   000001FA   0x.... 0x....      LDR.W    R1,??DataTable4
+   \   000001FE   0x6008             STR      R0,[R1, #+0]
+    271                    
+    272                    IslandGap_Distance = (IslandGap_MinDis - 80)*100;
+   \                     ??Enter_Island_6: (+1)
+   \   00000200   0xF642 0x60E0      MOVW     R0,#+12000
+   \   00000204   0x.... 0x....      LDR.W    R1,??DataTable4_10
+   \   00000208   0x6008             STR      R0,[R1, #+0]
+    273                    IslandAdmit_Distance = 0;
+   \   0000020A   0x2000             MOVS     R0,#+0
+   \   0000020C   0x.... 0x....      LDR.W    R1,??DataTable6_4
+   \   00000210   0x6008             STR      R0,[R1, #+0]
+    274                    Island_Distance = Pulse_Distance*100;
+   \   00000212   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000216   0x.... 0x....      LDR.W    R1,??DataTable6_12
+   \   0000021A   0x6008             STR      R0,[R1, #+0]
+    275                    
+    276                    //前车识别环岛后的一段距离以内，后车可以识别环岛
+    277                    if(Turn_Around == 0)
+   \   0000021C   0x.... 0x....      LDR.W    R0,??DataTable6_1
+   \   00000220   0x7800             LDRB     R0,[R0, #+0]
+   \   00000222   0x2800             CMP      R0,#+0
+   \   00000224   0xD116             BNE.N    ??Enter_Island_7
+    278                      {
+    279                        SendCommand = Admit_EnterIsland;
+   \   00000226   0x2069             MOVS     R0,#+105
+   \   00000228   0x.... 0x....      LDR.W    R1,??DataTable6_13
+   \   0000022C   0x7008             STRB     R0,[R1, #+0]
+    280                        Dir_IslandTurn = 0;
+   \   0000022E   0x2000             MOVS     R0,#+0
+   \   00000230   0x.... 0x....      LDR.W    R1,??DataTable6_14
+   \   00000234   0x7008             STRB     R0,[R1, #+0]
+    281                        if(Error < 0)
+   \   00000236   0x.... 0x....      LDR.W    R0,??DataTable6_15
+   \   0000023A   0x6800             LDR      R0,[R0, #+0]
+   \   0000023C   0x2800             CMP      R0,#+0
+   \   0000023E   0xD505             BPL.N    ??Enter_Island_8
+    282                          Ahead_TurnError = -1;
+   \   00000240   0xF05F 0x30FF      MOVS     R0,#-1
+   \   00000244   0x.... 0x....      LDR.W    R1,??DataTable6_16
+   \   00000248   0x6008             STR      R0,[R1, #+0]
+   \   0000024A   0xE003             B.N      ??Enter_Island_7
+    283                        else 
+    284                          Ahead_TurnError = 1;
+   \                     ??Enter_Island_8: (+1)
+   \   0000024C   0x2001             MOVS     R0,#+1
+   \   0000024E   0x.... 0x....      LDR.W    R1,??DataTable6_16
+   \   00000252   0x6008             STR      R0,[R1, #+0]
+    285                      }
+    286          
+    287                    
+    288                   if(Turn_Around == 0)
+   \                     ??Enter_Island_7: (+1)
+   \   00000254   0x.... 0x....      LDR.W    R0,??DataTable6_1
+   \   00000258   0x7800             LDRB     R0,[R0, #+0]
+   \   0000025A   0x2800             CMP      R0,#+0
+   \   0000025C   0xD10D             BNE.N    ??Enter_Island_9
+    289                     {
+    290                         if(Error > 0)
+   \   0000025E   0x.... 0x....      LDR.W    R0,??DataTable6_15
+   \   00000262   0x6800             LDR      R0,[R0, #+0]
+   \   00000264   0x2801             CMP      R0,#+1
+   \   00000266   0xDB04             BLT.N    ??Enter_Island_10
+    291                           Flag_Island_Confirm_Dir = Turn_Left;
+   \   00000268   0x206B             MOVS     R0,#+107
+   \   0000026A   0x.... 0x....      LDR.W    R1,??DataTable6_17
+   \   0000026E   0x7008             STRB     R0,[R1, #+0]
+   \   00000270   0xE003             B.N      ??Enter_Island_9
+    292                         else
+    293                           Flag_Island_Confirm_Dir = Turn_Right;                 
+   \                     ??Enter_Island_10: (+1)
+   \   00000272   0x206A             MOVS     R0,#+106
+   \   00000274   0x.... 0x....      LDR.W    R1,??DataTable6_17
+   \   00000278   0x7008             STRB     R0,[R1, #+0]
+    294                     }
+    295          
+    296                    
+    297                    if(Flag_Island_Confirm != 0)
+   \                     ??Enter_Island_9: (+1)
+   \   0000027A   0x.... 0x....      LDR.W    R0,??DataTable4
+   \   0000027E   0x6800             LDR      R0,[R0, #+0]
+   \   00000280   0x2800             CMP      R0,#+0
+   \   00000282   0xD008             BEQ.N    ??Enter_Island_3
+    298                      {
+    299                          //后车出环岛加速
+    300                          if(Turn_Around == 1)
+   \   00000284   0x.... 0x....      LDR.W    R0,??DataTable6_1
+   \   00000288   0x7800             LDRB     R0,[R0, #+0]
+   \   0000028A   0x2801             CMP      R0,#+1
+   \   0000028C   0xD103             BNE.N    ??Enter_Island_3
+    301                            Behind_LeaveIsland_ChaseFlag = 1;            
+   \   0000028E   0x2001             MOVS     R0,#+1
+   \   00000290   0x.... 0x....      LDR.W    R1,??DataTable6_18
+   \   00000294   0x7008             STRB     R0,[R1, #+0]
+    302                      }
+    303          
+    304                }  
+    305          
+    306            
+    307                //--------第二步前车的处理---------    
+    308              if((Flag_Island_Confirm!=0||final_Distance!=0) && SendCommand==0)
+   \                     ??Enter_Island_3: (+1)
+   \   00000296   0x.... 0x....      LDR.W    R0,??DataTable4
+   \   0000029A   0x6800             LDR      R0,[R0, #+0]
+   \   0000029C   0x.... 0x....      LDR.W    R1,??DataTable6_9
+   \   000002A0   0x6809             LDR      R1,[R1, #+0]
+   \   000002A2   0x4308             ORRS     R0,R1,R0
+   \   000002A4   0x2800             CMP      R0,#+0
+   \   000002A6   0xD051             BEQ.N    ??Enter_Island_11
+   \   000002A8   0x.... 0x....      LDR.W    R0,??DataTable6_13
+   \   000002AC   0x7800             LDRB     R0,[R0, #+0]
+   \   000002AE   0x2800             CMP      R0,#+0
+   \   000002B0   0xD14C             BNE.N    ??Enter_Island_11
+    309                {
+    310                    if(Turn_Around == 0)
+   \   000002B2   0x.... 0x....      LDR.W    R0,??DataTable6_1
+   \   000002B6   0x7800             LDRB     R0,[R0, #+0]
+   \   000002B8   0x2800             CMP      R0,#+0
+   \   000002BA   0xD147             BNE.N    ??Enter_Island_11
+    311                       {      
+    312                           //--Case1（环岛超车）情况下，强制后车朝相反方向转--//
+    313                           if(OverTake_Island != No)
+   \   000002BC   0x.... 0x....      LDR.W    R0,??DataTable6
+   \   000002C0   0x7800             LDRB     R0,[R0, #+0]
+   \   000002C2   0x2800             CMP      R0,#+0
+   \   000002C4   0xD021             BEQ.N    ??Enter_Island_12
+    314                            {
+    315                               if(Ahead_TurnError > 0) //前车距离累加值大于零，左转
+   \   000002C6   0x.... 0x....      LDR.W    R0,??DataTable6_16
+   \   000002CA   0x6800             LDR      R0,[R0, #+0]
+   \   000002CC   0x2801             CMP      R0,#+1
+   \   000002CE   0xDB04             BLT.N    ??Enter_Island_13
+    316                                  Dir_IslandTurn = Turn_Left;
+   \   000002D0   0x206B             MOVS     R0,#+107
+   \   000002D2   0x.... 0x....      LDR.W    R1,??DataTable6_14
+   \   000002D6   0x7008             STRB     R0,[R1, #+0]
+   \   000002D8   0xE003             B.N      ??Enter_Island_14
+    317                               else                      //前车距离累加值小于零，右转 
+    318                                  Dir_IslandTurn = Turn_Right;    
+   \                     ??Enter_Island_13: (+1)
+   \   000002DA   0x206A             MOVS     R0,#+106
+   \   000002DC   0x.... 0x....      LDR.W    R1,??DataTable6_14
+   \   000002E0   0x7008             STRB     R0,[R1, #+0]
+    319          
+    320                               if(Dir_IslandTurn == Turn_Right)   //前车右转
+   \                     ??Enter_Island_14: (+1)
+   \   000002E2   0x.... 0x....      LDR.W    R0,??DataTable6_14
+   \   000002E6   0x7800             LDRB     R0,[R0, #+0]
+   \   000002E8   0x286A             CMP      R0,#+106
+   \   000002EA   0xD104             BNE.N    ??Enter_Island_15
+    321                                     SendCommand = Turn_Left;    //令后车左转
+   \   000002EC   0x206B             MOVS     R0,#+107
+   \   000002EE   0x.... 0x....      LDR.W    R1,??DataTable6_13
+   \   000002F2   0x7008             STRB     R0,[R1, #+0]
+   \   000002F4   0xE02A             B.N      ??Enter_Island_11
+    322          
+    323                               else if(Dir_IslandTurn == Turn_Left) //前车左转
+   \                     ??Enter_Island_15: (+1)
+   \   000002F6   0x.... 0x....      LDR.W    R0,??DataTable6_14
+   \   000002FA   0x7800             LDRB     R0,[R0, #+0]
+   \   000002FC   0x286B             CMP      R0,#+107
+   \   000002FE   0xD125             BNE.N    ??Enter_Island_11
+    324                                     SendCommand = Turn_Right;   //令后车右转  
+   \   00000300   0x206A             MOVS     R0,#+106
+   \   00000302   0x.... 0x....      LDR.W    R1,??DataTable6_13
+   \   00000306   0x7008             STRB     R0,[R1, #+0]
+   \   00000308   0xE020             B.N      ??Enter_Island_11
+    325                            }
+    326                       
+    327                           //--（环岛不超车）情况下，强制后车朝相同方向转--//
+    328                           else
+    329                            {
+    330                               if(Ahead_TurnError > 0) //前车距离累加值大于零，左转
+   \                     ??Enter_Island_12: (+1)
+   \   0000030A   0x.... 0x....      LDR.W    R0,??DataTable6_16
+   \   0000030E   0x6800             LDR      R0,[R0, #+0]
+   \   00000310   0x2801             CMP      R0,#+1
+   \   00000312   0xDB04             BLT.N    ??Enter_Island_16
+    331                                  Dir_IslandTurn = Turn_Left;
+   \   00000314   0x206B             MOVS     R0,#+107
+   \   00000316   0x.... 0x....      LDR.W    R1,??DataTable6_14
+   \   0000031A   0x7008             STRB     R0,[R1, #+0]
+   \   0000031C   0xE003             B.N      ??Enter_Island_17
+    332                               else                      //前车距离累加值小于零，右转 
+    333                                  Dir_IslandTurn = Turn_Right;    
+   \                     ??Enter_Island_16: (+1)
+   \   0000031E   0x206A             MOVS     R0,#+106
+   \   00000320   0x.... 0x....      LDR.W    R1,??DataTable6_14
+   \   00000324   0x7008             STRB     R0,[R1, #+0]
+    334          
+    335                               if(Dir_IslandTurn == Turn_Right)   //前车右转
+   \                     ??Enter_Island_17: (+1)
+   \   00000326   0x.... 0x....      LDR.W    R0,??DataTable6_14
+   \   0000032A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000032C   0x286A             CMP      R0,#+106
+   \   0000032E   0xD104             BNE.N    ??Enter_Island_18
+    336                                  SendCommand = Turn_Right;  //令后车右转
+   \   00000330   0x206A             MOVS     R0,#+106
+   \   00000332   0x.... 0x....      LDR.W    R1,??DataTable6_13
+   \   00000336   0x7008             STRB     R0,[R1, #+0]
+   \   00000338   0xE008             B.N      ??Enter_Island_11
+    337          
+    338                               else if(Dir_IslandTurn == Turn_Left) //前车左转
+   \                     ??Enter_Island_18: (+1)
+   \   0000033A   0x.... 0x....      LDR.W    R0,??DataTable6_14
+   \   0000033E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000340   0x286B             CMP      R0,#+107
+   \   00000342   0xD103             BNE.N    ??Enter_Island_11
+    339                                  SendCommand = Turn_Left;  //令后车左转                            
+   \   00000344   0x206B             MOVS     R0,#+107
+   \   00000346   0x.... 0x....      LDR.W    R1,??DataTable6_13
+   \   0000034A   0x7008             STRB     R0,[R1, #+0]
+    340                            }
+    341                       }
+    342          
+    343                }
+    344          
+    345            
+    346            /****************环岛第二步*****************/
+    347            if(Flag_Island_Confirm > Confirm_Second*100)
+   \                     ??Enter_Island_11: (+1)
+   \   0000034C   0x.... 0x....      LDR.W    R0,??DataTable4
+   \   00000350   0x6800             LDR      R0,[R0, #+0]
+   \   00000352   0xF640 0x31B9      MOVW     R1,#+3001
+   \   00000356   0x4288             CMP      R0,R1
+   \   00000358   0xDB2D             BLT.N    ??Enter_Island_19
+    348              {
+    349                 //-----------第二步确认后的处理----------
+    350                 if(peak[2]<Peak2_Island_Limit && peak[1]<Peak13_Island_Limit && peak[3]<Peak13_Island_Limit)
+   \   0000035A   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000035E   0x6880             LDR      R0,[R0, #+8]
+   \   00000360   0x2841             CMP      R0,#+65
+   \   00000362   0xDA1C             BGE.N    ??Enter_Island_20
+   \   00000364   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000368   0x6840             LDR      R0,[R0, #+4]
+   \   0000036A   0x2841             CMP      R0,#+65
+   \   0000036C   0xDA17             BGE.N    ??Enter_Island_20
+   \   0000036E   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000372   0x68C0             LDR      R0,[R0, #+12]
+   \   00000374   0x2841             CMP      R0,#+65
+   \   00000376   0xDA12             BGE.N    ??Enter_Island_20
+    351                    {  
+    352                       final = 1;  
+   \   00000378   0x2001             MOVS     R0,#+1
+   \   0000037A   0x.... 0x....      LDR.W    R1,??DataTable5
+   \   0000037E   0x7008             STRB     R0,[R1, #+0]
+    353                       final_Distance = Pulse_Distance*100;
+   \   00000380   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000384   0x.... 0x....      LDR.W    R1,??DataTable6_9
+   \   00000388   0x6008             STR      R0,[R1, #+0]
+    354                       Flag_Island_Confirm = 0;
+   \   0000038A   0x2000             MOVS     R0,#+0
+   \   0000038C   0x.... 0x....      LDR.W    R1,??DataTable4
+   \   00000390   0x6008             STR      R0,[R1, #+0]
+    355                       IslandGap_Distance = (IslandGap_MinDis - 80)*100;
+   \   00000392   0xF642 0x60E0      MOVW     R0,#+12000
+   \   00000396   0x.... 0x....      LDR.W    R1,??DataTable4_10
+   \   0000039A   0x6008             STR      R0,[R1, #+0]
+   \   0000039C   0xE00B             B.N      ??Enter_Island_19
+    356                            
+    357                    }
+    358                 
+    359                 //清除第二步后的处理
+    360                 else
+    361                    {
+    362                       Ahead_TurnError = 0;
+   \                     ??Enter_Island_20: (+1)
+   \   0000039E   0x2000             MOVS     R0,#+0
+   \   000003A0   0x.... 0x....      LDR.W    R1,??DataTable6_16
+   \   000003A4   0x6008             STR      R0,[R1, #+0]
+    363                       Flag_Island_Confirm = 0;
+   \   000003A6   0x2000             MOVS     R0,#+0
+   \   000003A8   0x.... 0x....      LDR.W    R1,??DataTable4
+   \   000003AC   0x6008             STR      R0,[R1, #+0]
+    364                       Island_Distance = 0;
+   \   000003AE   0x2000             MOVS     R0,#+0
+   \   000003B0   0x.... 0x....      LDR.W    R1,??DataTable6_12
+   \   000003B4   0x6008             STR      R0,[R1, #+0]
+    365                    }
+    366              }
+    367          
+    368            
+    369               
+    370            /****************环岛第三步*****************/
+    371            for(uint8 i=0; i<5; i++)
+   \                     ??Enter_Island_19: (+1)
+   \   000003B6   0x2000             MOVS     R0,#+0
+   \   000003B8   0xE02C             B.N      ??Enter_Island_21
+    372              {
+    373                Pre_Peak1[i] = Pre_Peak1[i+1];
+   \                     ??Enter_Island_22: (+1)
+   \   000003BA   0x.... 0x....      LDR.W    R1,??DataTable6_19
+   \   000003BE   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000003C0   0xEB11 0x0180      ADDS     R1,R1,R0, LSL #+2
+   \   000003C4   0x6849             LDR      R1,[R1, #+4]
+   \   000003C6   0x.... 0x....      LDR.W    R2,??DataTable6_19
+   \   000003CA   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000003CC   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+    374                Pre_Peak2[i] = Pre_Peak2[i+1];
+   \   000003D0   0x.... 0x....      LDR.W    R1,??DataTable6_20
+   \   000003D4   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000003D6   0xEB11 0x0180      ADDS     R1,R1,R0, LSL #+2
+   \   000003DA   0x6849             LDR      R1,[R1, #+4]
+   \   000003DC   0x.... 0x....      LDR.W    R2,??DataTable6_20
+   \   000003E0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000003E2   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+    375                Pre_Peak3[i] = Pre_Peak3[i+1];
+   \   000003E6   0x.... 0x....      LDR.W    R1,??DataTable6_21
+   \   000003EA   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000003EC   0xEB11 0x0180      ADDS     R1,R1,R0, LSL #+2
+   \   000003F0   0x6849             LDR      R1,[R1, #+4]
+   \   000003F2   0x.... 0x....      LDR.W    R2,??DataTable6_21
+   \   000003F6   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000003F8   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+    376                Pre_Peak7[i] = Pre_Peak7[i+1];      
+   \   000003FC   0x.... 0x....      LDR.W    R1,??DataTable6_22
+   \   00000400   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000402   0xEB11 0x0180      ADDS     R1,R1,R0, LSL #+2
+   \   00000406   0x6849             LDR      R1,[R1, #+4]
+   \   00000408   0x.... 0x....      LDR.W    R2,??DataTable6_22
+   \   0000040C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000040E   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+    377              }
+   \   00000412   0x1C40             ADDS     R0,R0,#+1
+   \                     ??Enter_Island_21: (+1)
+   \   00000414   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000416   0x2805             CMP      R0,#+5
+   \   00000418   0xDBCF             BLT.N    ??Enter_Island_22
+    378            
+    379            Pre_Peak1[5] = peak[1]; 
+   \   0000041A   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000041E   0x6840             LDR      R0,[R0, #+4]
+   \   00000420   0x.... 0x....      LDR.W    R1,??DataTable6_19
+   \   00000424   0x6148             STR      R0,[R1, #+20]
+    380            Pre_Peak2[5] = peak[2];
+   \   00000426   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   0000042A   0x6880             LDR      R0,[R0, #+8]
+   \   0000042C   0x.... 0x....      LDR.W    R1,??DataTable6_20
+   \   00000430   0x6148             STR      R0,[R1, #+20]
+    381            Pre_Peak3[5] = peak[3]; 
+   \   00000432   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000436   0x68C0             LDR      R0,[R0, #+12]
+   \   00000438   0x.... 0x....      LDR.W    R1,??DataTable6_21
+   \   0000043C   0x6148             STR      R0,[R1, #+20]
+    382            Pre_Peak7[5] = peak[7]; 
+   \   0000043E   0x.... 0x....      LDR.W    R0,??DataTable4_12
+   \   00000442   0x69C0             LDR      R0,[R0, #+28]
+   \   00000444   0x.... 0x....      LDR.W    R1,??DataTable6_22
+   \   00000448   0x6148             STR      R0,[R1, #+20]
+    383             
+    384            trendSum_Peak2[1] = Pre_Peak2[4] + Pre_Peak2[5]; 
+   \   0000044A   0x.... 0x....      LDR.W    R0,??DataTable6_20
+   \   0000044E   0x6900             LDR      R0,[R0, #+16]
+   \   00000450   0x.... 0x....      LDR.W    R1,??DataTable6_20
+   \   00000454   0x6949             LDR      R1,[R1, #+20]
+   \   00000456   0x1808             ADDS     R0,R1,R0
+   \   00000458   0x.... 0x....      LDR.W    R1,??DataTable6_23
+   \   0000045C   0x6048             STR      R0,[R1, #+4]
+    385            trendSum_Peak2[0] = Pre_Peak2[2] + Pre_Peak2[3];
+   \   0000045E   0x.... 0x....      LDR.W    R0,??DataTable6_20
+   \   00000462   0x6880             LDR      R0,[R0, #+8]
+   \   00000464   0x.... 0x....      LDR.W    R1,??DataTable6_20
+   \   00000468   0x68C9             LDR      R1,[R1, #+12]
+   \   0000046A   0x1808             ADDS     R0,R1,R0
+   \   0000046C   0x.... 0x....      LDR.W    R1,??DataTable6_23
+   \   00000470   0x6008             STR      R0,[R1, #+0]
+    386            trendSum_Peak1[1] = Pre_Peak1[4] + Pre_Peak1[5]; 
+   \   00000472   0x.... 0x....      LDR.W    R0,??DataTable6_19
+   \   00000476   0x6900             LDR      R0,[R0, #+16]
+   \   00000478   0x.... 0x....      LDR.W    R1,??DataTable6_19
+   \   0000047C   0x6949             LDR      R1,[R1, #+20]
+   \   0000047E   0x1808             ADDS     R0,R1,R0
+   \   00000480   0x.... 0x....      LDR.W    R1,??DataTable6_24
+   \   00000484   0x6048             STR      R0,[R1, #+4]
+    387            trendSum_Peak1[0] = Pre_Peak1[2] + Pre_Peak1[3];
+   \   00000486   0x.... 0x....      LDR.W    R0,??DataTable6_19
+   \   0000048A   0x6880             LDR      R0,[R0, #+8]
+   \   0000048C   0x.... 0x....      LDR.W    R1,??DataTable6_19
+   \   00000490   0x68C9             LDR      R1,[R1, #+12]
+   \   00000492   0x1808             ADDS     R0,R1,R0
+   \   00000494   0x.... 0x....      LDR.W    R1,??DataTable6_24
+   \   00000498   0x6008             STR      R0,[R1, #+0]
+    388            trendSum_Peak3[1] = Pre_Peak3[4] + Pre_Peak3[5]; 
+   \   0000049A   0x.... 0x....      LDR.W    R0,??DataTable6_21
+   \   0000049E   0x6900             LDR      R0,[R0, #+16]
+   \   000004A0   0x.... 0x....      LDR.W    R1,??DataTable6_21
+   \   000004A4   0x6949             LDR      R1,[R1, #+20]
+   \   000004A6   0x1808             ADDS     R0,R1,R0
+   \   000004A8   0x.... 0x....      LDR.W    R1,??DataTable6_25
+   \   000004AC   0x6048             STR      R0,[R1, #+4]
+    389            trendSum_Peak3[0] = Pre_Peak3[2] + Pre_Peak3[3];
+   \   000004AE   0x.... 0x....      LDR.W    R0,??DataTable6_21
+   \   000004B2   0x6880             LDR      R0,[R0, #+8]
+   \   000004B4   0x.... 0x....      LDR.W    R1,??DataTable6_21
+   \   000004B8   0x68C9             LDR      R1,[R1, #+12]
+   \   000004BA   0x1808             ADDS     R0,R1,R0
+   \   000004BC   0x.... 0x....      LDR.W    R1,??DataTable6_25
+   \   000004C0   0x6008             STR      R0,[R1, #+0]
+    390            trendSum_Peak7[1] = Pre_Peak7[4] + Pre_Peak7[5]; 
+   \   000004C2   0x.... 0x....      LDR.W    R0,??DataTable6_22
+   \   000004C6   0x6900             LDR      R0,[R0, #+16]
+   \   000004C8   0x.... 0x....      LDR.W    R1,??DataTable6_22
+   \   000004CC   0x6949             LDR      R1,[R1, #+20]
+   \   000004CE   0x1808             ADDS     R0,R1,R0
+   \   000004D0   0x.... 0x....      LDR.W    R1,??DataTable6_26
+   \   000004D4   0x6048             STR      R0,[R1, #+4]
+    391            trendSum_Peak7[0] = Pre_Peak7[2] + Pre_Peak7[3];
+   \   000004D6   0x.... 0x....      LDR.W    R0,??DataTable6_22
+   \   000004DA   0x6880             LDR      R0,[R0, #+8]
+   \   000004DC   0x.... 0x....      LDR.W    R1,??DataTable6_22
+   \   000004E0   0x68C9             LDR      R1,[R1, #+12]
+   \   000004E2   0x1808             ADDS     R0,R1,R0
+   \   000004E4   0x.... 0x....      LDR.W    R1,??DataTable6_26
+   \   000004E8   0x6008             STR      R0,[R1, #+0]
+    392            
+    393            if(final_Distance>Island_Third_Dis*100  && Flag_Island_Last==0)
+   \   000004EA   0x.... 0x....      LDR.W    R0,??DataTable6_27
+   \   000004EE   0x7800             LDRB     R0,[R0, #+0]
+   \   000004F0   0x.... 0x....      LDR.W    R1,??DataTable6_1
+   \   000004F4   0x7809             LDRB     R1,[R1, #+0]
+   \   000004F6   0x4348             MULS     R0,R1,R0
+   \   000004F8   0x0080             LSLS     R0,R0,#+2
+   \   000004FA   0xF1D0 0x0023      RSBS     R0,R0,#+35
+   \   000004FE   0x2164             MOVS     R1,#+100
+   \   00000500   0x4348             MULS     R0,R1,R0
+   \   00000502   0x.... 0x....      LDR.W    R1,??DataTable6_9
+   \   00000506   0x6809             LDR      R1,[R1, #+0]
+   \   00000508   0x4288             CMP      R0,R1
+   \   0000050A   0xDA5E             BGE.N    ??Enter_Island_23
+   \   0000050C   0x.... 0x....      LDR.W    R0,??DataTable5_1
+   \   00000510   0x7800             LDRB     R0,[R0, #+0]
+   \   00000512   0x2800             CMP      R0,#+0
+   \   00000514   0xD159             BNE.N    ??Enter_Island_23
+    394            {
+    395              //确认进入环岛后的处理
+    396              if(    peak[0]<Peak04_Island_Limit && peak[4]<Peak04_Island_Limit
+    397                    && peak[1]<Peak13_Island_Limit && peak[3]<Peak13_Island_Limit  
+    398                    && peak[2]<Peak2_Island_Limit
+    399                  )
+   \   00000516   0x....             LDR.N    R0,??DataTable4_12
+   \   00000518   0x6800             LDR      R0,[R0, #+0]
+   \   0000051A   0x283C             CMP      R0,#+60
+   \   0000051C   0xDA36             BGE.N    ??Enter_Island_24
+   \   0000051E   0x....             LDR.N    R0,??DataTable4_12
+   \   00000520   0x6900             LDR      R0,[R0, #+16]
+   \   00000522   0x283C             CMP      R0,#+60
+   \   00000524   0xDA32             BGE.N    ??Enter_Island_24
+   \   00000526   0x....             LDR.N    R0,??DataTable4_12
+   \   00000528   0x6840             LDR      R0,[R0, #+4]
+   \   0000052A   0x2841             CMP      R0,#+65
+   \   0000052C   0xDA2E             BGE.N    ??Enter_Island_24
+   \   0000052E   0x....             LDR.N    R0,??DataTable4_12
+   \   00000530   0x68C0             LDR      R0,[R0, #+12]
+   \   00000532   0x2841             CMP      R0,#+65
+   \   00000534   0xDA2A             BGE.N    ??Enter_Island_24
+   \   00000536   0x....             LDR.N    R0,??DataTable4_12
+   \   00000538   0x6880             LDR      R0,[R0, #+8]
+   \   0000053A   0x2841             CMP      R0,#+65
+   \   0000053C   0xDA26             BGE.N    ??Enter_Island_24
+    400                   {                    
+    401                           Flag_Island_Confirm = 0;
+   \   0000053E   0x2000             MOVS     R0,#+0
+   \   00000540   0x....             LDR.N    R1,??DataTable4
+   \   00000542   0x6008             STR      R0,[R1, #+0]
+    402                           final = 0;                  
+   \   00000544   0x2000             MOVS     R0,#+0
+   \   00000546   0x.... 0x....      LDR.W    R1,??DataTable5
+   \   0000054A   0x7008             STRB     R0,[R1, #+0]
+    403                           final_Distance = 0;
+   \   0000054C   0x2000             MOVS     R0,#+0
+   \   0000054E   0x.... 0x....      LDR.W    R1,??DataTable6_9
+   \   00000552   0x6008             STR      R0,[R1, #+0]
+    404                           Flag_Island = 1;
+   \   00000554   0x2001             MOVS     R0,#+1
+   \   00000556   0x....             LDR.N    R1,??DataTable4_3
+   \   00000558   0x7008             STRB     R0,[R1, #+0]
+    405                           
+    406                           IslandIn_Distance = Pulse_Distance*100;  
+   \   0000055A   0xF44F 0x707A      MOV      R0,#+1000
+   \   0000055E   0x....             LDR.N    R1,??DataTable4_11
+   \   00000560   0x6008             STR      R0,[R1, #+0]
+    407                           IslandGap_Distance = Pulse_Distance*100;
+   \   00000562   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000566   0x....             LDR.N    R1,??DataTable4_10
+   \   00000568   0x6008             STR      R0,[R1, #+0]
+    408                           IslandAdmit_Distance = 0;
+   \   0000056A   0x2000             MOVS     R0,#+0
+   \   0000056C   0x.... 0x....      LDR.W    R1,??DataTable6_4
+   \   00000570   0x6008             STR      R0,[R1, #+0]
+    409                           Flag_Island_Confirm_Dir = 0;
+   \   00000572   0x2000             MOVS     R0,#+0
+   \   00000574   0x.... 0x....      LDR.W    R1,??DataTable6_17
+   \   00000578   0x7008             STRB     R0,[R1, #+0]
+    410                           
+    411                           Dir_IslandTurn = 0;
+   \   0000057A   0x2000             MOVS     R0,#+0
+   \   0000057C   0x.... 0x....      LDR.W    R1,??DataTable6_14
+   \   00000580   0x7008             STRB     R0,[R1, #+0]
+    412                           Ahead_TurnError = 0;
+   \   00000582   0x2000             MOVS     R0,#+0
+   \   00000584   0x.... 0x....      LDR.W    R1,??DataTable6_16
+   \   00000588   0x6008             STR      R0,[R1, #+0]
+   \   0000058A   0xE01E             B.N      ??Enter_Island_23
+    413                           
+    414                   }
+    415              //没有进入环岛的处理
+    416              else
+    417                {
+    418                           Flag_Island_Confirm = 0;
+   \                     ??Enter_Island_24: (+1)
+   \   0000058C   0x2000             MOVS     R0,#+0
+   \   0000058E   0x....             LDR.N    R1,??DataTable4
+   \   00000590   0x6008             STR      R0,[R1, #+0]
+    419                           final = 0;                  
+   \   00000592   0x2000             MOVS     R0,#+0
+   \   00000594   0x.... 0x....      LDR.W    R1,??DataTable5
+   \   00000598   0x7008             STRB     R0,[R1, #+0]
+    420                           final_Distance = 0;
+   \   0000059A   0x2000             MOVS     R0,#+0
+   \   0000059C   0x.... 0x....      LDR.W    R1,??DataTable6_9
+   \   000005A0   0x6008             STR      R0,[R1, #+0]
+    421                           IslandAdmit_Distance = 0;
+   \   000005A2   0x2000             MOVS     R0,#+0
+   \   000005A4   0x.... 0x....      LDR.W    R1,??DataTable6_4
+   \   000005A8   0x6008             STR      R0,[R1, #+0]
+    422                           
+    423                           Dir_IslandTurn = 0;
+   \   000005AA   0x2000             MOVS     R0,#+0
+   \   000005AC   0x.... 0x....      LDR.W    R1,??DataTable6_14
+   \   000005B0   0x7008             STRB     R0,[R1, #+0]
+    424                           Ahead_TurnError = 0;
+   \   000005B2   0x2000             MOVS     R0,#+0
+   \   000005B4   0x.... 0x....      LDR.W    R1,??DataTable6_16
+   \   000005B8   0x6008             STR      R0,[R1, #+0]
+    425                           Island_Distance = 0;
+   \   000005BA   0x2000             MOVS     R0,#+0
+   \   000005BC   0x.... 0x....      LDR.W    R1,??DataTable6_12
+   \   000005C0   0x6008             STR      R0,[R1, #+0]
+    426                           Flag_Island_Confirm_Dir = 0;
+   \   000005C2   0x2000             MOVS     R0,#+0
+   \   000005C4   0x.... 0x....      LDR.W    R1,??DataTable6_17
+   \   000005C8   0x7008             STRB     R0,[R1, #+0]
+    427                }
+    428            }
+    429            
+    430            /************环岛换提线************/ 
+    431             if(Flag_Island_Confirm != 0)
+   \                     ??Enter_Island_23: (+1)
+   \   000005CA   0x....             LDR.N    R0,??DataTable4
+   \   000005CC   0x6800             LDR      R0,[R0, #+0]
+   \   000005CE   0x2800             CMP      R0,#+0
+   \   000005D0   0xD003             BEQ.N    ??Enter_Island_25
+    432                 Island_Error_Turn = 1;
+   \   000005D2   0x2001             MOVS     R0,#+1
+   \   000005D4   0x.... 0x....      LDR.W    R1,??DataTable6_28
+   \   000005D8   0x7008             STRB     R0,[R1, #+0]
+    433           
+    434             if(Island_Error_Turn == 1 )
+   \                     ??Enter_Island_25: (+1)
+   \   000005DA   0x.... 0x....      LDR.W    R0,??DataTable6_28
+   \   000005DE   0x7800             LDRB     R0,[R0, #+0]
+   \   000005E0   0x2801             CMP      R0,#+1
+   \   000005E2   0xD128             BNE.N    ??Enter_Island_26
+    435                 if((( (peak[1]<=peak[3] && peak[5]<=peak[6]) || 
+    436                       (peak[1]>=peak[3] && peak[5]>=peak[6]))&&
+    437                       (peak[2]>40 && peak[2]<65))||
+    438                       (Flag_Island_Confirm == 0 && final == 0))
+   \   000005E4   0x....             LDR.N    R0,??DataTable4_12
+   \   000005E6   0x68C0             LDR      R0,[R0, #+12]
+   \   000005E8   0x....             LDR.N    R1,??DataTable4_12
+   \   000005EA   0x6849             LDR      R1,[R1, #+4]
+   \   000005EC   0x4288             CMP      R0,R1
+   \   000005EE   0xDB05             BLT.N    ??Enter_Island_27
+   \   000005F0   0x....             LDR.N    R0,??DataTable4_12
+   \   000005F2   0x6980             LDR      R0,[R0, #+24]
+   \   000005F4   0x....             LDR.N    R1,??DataTable4_12
+   \   000005F6   0x6949             LDR      R1,[R1, #+20]
+   \   000005F8   0x4288             CMP      R0,R1
+   \   000005FA   0xDA0B             BGE.N    ??Enter_Island_28
+   \                     ??Enter_Island_27: (+1)
+   \   000005FC   0x....             LDR.N    R0,??DataTable4_12
+   \   000005FE   0x6840             LDR      R0,[R0, #+4]
+   \   00000600   0x....             LDR.N    R1,??DataTable4_12
+   \   00000602   0x68C9             LDR      R1,[R1, #+12]
+   \   00000604   0x4288             CMP      R0,R1
+   \   00000606   0xDB0A             BLT.N    ??Enter_Island_29
+   \   00000608   0x....             LDR.N    R0,??DataTable4_12
+   \   0000060A   0x6940             LDR      R0,[R0, #+20]
+   \   0000060C   0x....             LDR.N    R1,??DataTable4_12
+   \   0000060E   0x6989             LDR      R1,[R1, #+24]
+   \   00000610   0x4288             CMP      R0,R1
+   \   00000612   0xDB04             BLT.N    ??Enter_Island_29
+   \                     ??Enter_Island_28: (+1)
+   \   00000614   0x....             LDR.N    R0,??DataTable4_12
+   \   00000616   0x6880             LDR      R0,[R0, #+8]
+   \   00000618   0x3829             SUBS     R0,R0,#+41
+   \   0000061A   0x2818             CMP      R0,#+24
+   \   0000061C   0xD307             BCC.N    ??Enter_Island_30
+   \                     ??Enter_Island_29: (+1)
+   \   0000061E   0x....             LDR.N    R0,??DataTable4
+   \   00000620   0x6800             LDR      R0,[R0, #+0]
+   \   00000622   0x2800             CMP      R0,#+0
+   \   00000624   0xD107             BNE.N    ??Enter_Island_26
+   \   00000626   0x....             LDR.N    R0,??DataTable5
+   \   00000628   0x7800             LDRB     R0,[R0, #+0]
+   \   0000062A   0x2800             CMP      R0,#+0
+   \   0000062C   0xD103             BNE.N    ??Enter_Island_26
+    439                 Island_Error_Turn = 0;
+   \                     ??Enter_Island_30: (+1)
+   \   0000062E   0x2000             MOVS     R0,#+0
+   \   00000630   0x.... 0x....      LDR.W    R1,??DataTable6_28
+   \   00000634   0x7008             STRB     R0,[R1, #+0]
+    440          }
+   \                     ??Enter_Island_26: (+1)
+   \   00000636   0xBD01             POP      {R0,PC}          ;; return
+    441          
+    442          
+    443          
+    444          
+    445          
+    446          /*
+    447          function：进入环岛后，前后车切换                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    448          return：null
+    449          */
+
+   \                                 In section .text, align 2, keep-with-next
+    450          void TurnSwitch_InIsland()
+    451          {
+    452             //--前后车切换准备--//
+    453             if(Flag_Island==1 && Flag_Island_Last==0)
+   \                     TurnSwitch_InIsland: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable4_3
+   \   00000002   0x7800             LDRB     R0,[R0, #+0]
+   \   00000004   0x2801             CMP      R0,#+1
+   \   00000006   0xD10C             BNE.N    ??TurnSwitch_InIsland_0
+   \   00000008   0x....             LDR.N    R0,??DataTable5_1
+   \   0000000A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD108             BNE.N    ??TurnSwitch_InIsland_0
+    454               { 
+    455                  IslandAdmit_Distance = 0;
+   \   00000010   0x2000             MOVS     R0,#+0
+   \   00000012   0x.... 0x....      LDR.W    R1,??DataTable6_4
+   \   00000016   0x6008             STR      R0,[R1, #+0]
+    456                  Case1_TurnSwitch_Dis = Pulse_Distance*100;           
+   \   00000018   0xF44F 0x707A      MOV      R0,#+1000
+   \   0000001C   0x.... 0x....      LDR.W    R1,??DataTable6_7
+   \   00000020   0x6008             STR      R0,[R1, #+0]
+    457               }
+    458                  
+    459             //--前后车切换确认--//
+    460             if(Case1_TurnSwitch_Dis > IslandWait_Distance*100)
+   \                     ??TurnSwitch_InIsland_0: (+1)
+   \   00000022   0x.... 0x....      LDR.W    R0,??DataTable6_29
+   \   00000026   0x7800             LDRB     R0,[R0, #+0]
+   \   00000028   0x2114             MOVS     R1,#+20
+   \   0000002A   0x4348             MULS     R0,R1,R0
+   \   0000002C   0xF1D0 0x001E      RSBS     R0,R0,#+30
+   \   00000030   0x2164             MOVS     R1,#+100
+   \   00000032   0x4348             MULS     R0,R1,R0
+   \   00000034   0x.... 0x....      LDR.W    R1,??DataTable6_7
+   \   00000038   0x6809             LDR      R1,[R1, #+0]
+   \   0000003A   0x4288             CMP      R0,R1
+   \   0000003C   0xDA1D             BGE.N    ??TurnSwitch_InIsland_1
+    461               {
+    462                   //清掉停车距离
+    463                   Case1_TurnSwitch_Dis = 0;  
+   \   0000003E   0x2000             MOVS     R0,#+0
+   \   00000040   0x.... 0x....      LDR.W    R1,??DataTable6_7
+   \   00000044   0x6008             STR      R0,[R1, #+0]
+    464                 
+    465                   //前车变后车
+    466                   if(Turn_Around == 0) 
+   \   00000046   0x....             LDR.N    R0,??DataTable6_1
+   \   00000048   0x7800             LDRB     R0,[R0, #+0]
+   \   0000004A   0x2800             CMP      R0,#+0
+   \   0000004C   0xD10B             BNE.N    ??TurnSwitch_InIsland_2
+    467                     {
+    468                        Turn_Around = 1;
+   \   0000004E   0x2001             MOVS     R0,#+1
+   \   00000050   0x....             LDR.N    R1,??DataTable6_1
+   \   00000052   0x7008             STRB     R0,[R1, #+0]
+    469                        Case1_Behind_IslandStop = 1;  
+   \   00000054   0x2001             MOVS     R0,#+1
+   \   00000056   0x.... 0x....      LDR.W    R1,??DataTable6_30
+   \   0000005A   0x7008             STRB     R0,[R1, #+0]
+    470                        Behind_LeaveIsland_ChaseFlag = 0;             
+   \   0000005C   0x2000             MOVS     R0,#+0
+   \   0000005E   0x.... 0x....      LDR.W    R1,??DataTable6_18
+   \   00000062   0x7008             STRB     R0,[R1, #+0]
+   \   00000064   0xE009             B.N      ??TurnSwitch_InIsland_1
+    471                     }
+    472                   
+    473                  //后车变前车
+    474                   else if(Turn_Around == 1)
+   \                     ??TurnSwitch_InIsland_2: (+1)
+   \   00000066   0x....             LDR.N    R0,??DataTable6_1
+   \   00000068   0x7800             LDRB     R0,[R0, #+0]
+   \   0000006A   0x2801             CMP      R0,#+1
+   \   0000006C   0xD105             BNE.N    ??TurnSwitch_InIsland_1
+    475                    {  
+    476                        Turn_Around = 0;
+   \   0000006E   0x2000             MOVS     R0,#+0
+   \   00000070   0x....             LDR.N    R1,??DataTable6_1
+   \   00000072   0x7008             STRB     R0,[R1, #+0]
+    477                        Behind_LeaveIsland_ChaseFlag = 0;
+   \   00000074   0x2000             MOVS     R0,#+0
+   \   00000076   0x....             LDR.N    R1,??DataTable6_18
+   \   00000078   0x7008             STRB     R0,[R1, #+0]
+    478                    }
+    479               }
+    480          }
+   \                     ??TurnSwitch_InIsland_1: (+1)
+   \   0000007A   0x4770             BX       LR               ;; return
+    481          
+    482          
+    483          
+    484          /*
+    485          function：出环岛的处理
+    486          return：null
+    487          */
+
+   \                                 In section .text, align 2, keep-with-next
+    488          void Leave_Island()
+    489          {
+    490            //出环岛条件
+    491            if(Flag_Island==1 && IslandIn_Distance>IslandIn_MinDis*100)
+   \                     Leave_Island: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable4_3
+   \   00000002   0x7800             LDRB     R0,[R0, #+0]
+   \   00000004   0x2801             CMP      R0,#+1
+   \   00000006   0xD14B             BNE.N    ??Leave_Island_0
+   \   00000008   0x....             LDR.N    R0,??DataTable4_11
+   \   0000000A   0x6800             LDR      R0,[R0, #+0]
+   \   0000000C   0xF643 0x2199      MOVW     R1,#+15001
+   \   00000010   0x4288             CMP      R0,R1
+   \   00000012   0xDB45             BLT.N    ??Leave_Island_0
+    492               if(    peak[2] > (Peak2_Island_Limit) 
+    493                   || peak[1] > (Peak13_Island_Limit)
+    494                   || peak[3] > (Peak13_Island_Limit)
+    495                   || peak[5] > Peak56_Island_Limit  
+    496                   || peak[6] > Peak56_Island_Limit  
+    497                   || peak[7] > Peak7_Island_Limit  
+    498                 )      
+   \   00000014   0x....             LDR.N    R0,??DataTable4_12
+   \   00000016   0x6880             LDR      R0,[R0, #+8]
+   \   00000018   0x2842             CMP      R0,#+66
+   \   0000001A   0xDA13             BGE.N    ??Leave_Island_1
+   \   0000001C   0x....             LDR.N    R0,??DataTable4_12
+   \   0000001E   0x6840             LDR      R0,[R0, #+4]
+   \   00000020   0x2842             CMP      R0,#+66
+   \   00000022   0xDA0F             BGE.N    ??Leave_Island_1
+   \   00000024   0x....             LDR.N    R0,??DataTable4_12
+   \   00000026   0x68C0             LDR      R0,[R0, #+12]
+   \   00000028   0x2842             CMP      R0,#+66
+   \   0000002A   0xDA0B             BGE.N    ??Leave_Island_1
+   \   0000002C   0x....             LDR.N    R0,??DataTable4_12
+   \   0000002E   0x6940             LDR      R0,[R0, #+20]
+   \   00000030   0x2842             CMP      R0,#+66
+   \   00000032   0xDA07             BGE.N    ??Leave_Island_1
+   \   00000034   0x....             LDR.N    R0,??DataTable4_12
+   \   00000036   0x6980             LDR      R0,[R0, #+24]
+   \   00000038   0x2842             CMP      R0,#+66
+   \   0000003A   0xDA03             BGE.N    ??Leave_Island_1
+   \   0000003C   0x....             LDR.N    R0,??DataTable4_12
+   \   0000003E   0x69C0             LDR      R0,[R0, #+28]
+   \   00000040   0x2842             CMP      R0,#+66
+   \   00000042   0xDB2D             BLT.N    ??Leave_Island_0
+    499                  {     
+    500                      EnterStrai_SumDis = Pulse_Distance*100;   
+   \                     ??Leave_Island_1: (+1)
+   \   00000044   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000048   0x....             LDR.N    R1,??DataTable6_31
+   \   0000004A   0x6008             STR      R0,[R1, #+0]
+    501                      Flag_Island_Confirm = 0;        
+   \   0000004C   0x2000             MOVS     R0,#+0
+   \   0000004E   0x....             LDR.N    R1,??DataTable4
+   \   00000050   0x6008             STR      R0,[R1, #+0]
+    502                      final = 0;
+   \   00000052   0x2000             MOVS     R0,#+0
+   \   00000054   0x....             LDR.N    R1,??DataTable5
+   \   00000056   0x7008             STRB     R0,[R1, #+0]
+    503                      Flag_Island = 0;
+   \   00000058   0x2000             MOVS     R0,#+0
+   \   0000005A   0x....             LDR.N    R1,??DataTable4_3
+   \   0000005C   0x7008             STRB     R0,[R1, #+0]
+    504                      IslandIn_Distance = 0;
+   \   0000005E   0x2000             MOVS     R0,#+0
+   \   00000060   0x....             LDR.N    R1,??DataTable4_11
+   \   00000062   0x6008             STR      R0,[R1, #+0]
+    505                      Dir_IslandTurn = 0;
+   \   00000064   0x2000             MOVS     R0,#+0
+   \   00000066   0x....             LDR.N    R1,??DataTable6_14
+   \   00000068   0x7008             STRB     R0,[R1, #+0]
+    506                      EnterCurve_SumDis = 10*100;
+   \   0000006A   0xF44F 0x707A      MOV      R0,#+1000
+   \   0000006E   0x....             LDR.N    R1,??DataTable6_32
+   \   00000070   0x6008             STR      R0,[R1, #+0]
+    507                      IslandGap_Distance = Pulse_Distance*100;
+   \   00000072   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000076   0x....             LDR.N    R1,??DataTable4_10
+   \   00000078   0x6008             STR      R0,[R1, #+0]
+    508                      Island_Distance = 0;
+   \   0000007A   0x2000             MOVS     R0,#+0
+   \   0000007C   0x....             LDR.N    R1,??DataTable6_12
+   \   0000007E   0x6008             STR      R0,[R1, #+0]
+    509                      
+    510                      //--Case1（环岛超车）方案下的处理--//
+    511                      if(OverTake_Island != No)
+   \   00000080   0x....             LDR.N    R0,??DataTable6
+   \   00000082   0x7800             LDRB     R0,[R0, #+0]
+   \   00000084   0x2800             CMP      R0,#+0
+   \   00000086   0xD00B             BEQ.N    ??Leave_Island_0
+    512                        {
+    513                           if(Turn_Around == 0) //前车出环岛，后车出发
+   \   00000088   0x....             LDR.N    R0,??DataTable6_1
+   \   0000008A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000008C   0x2800             CMP      R0,#+0
+   \   0000008E   0xD104             BNE.N    ??Leave_Island_2
+    514                              Case1_AheadLeave_Dis = Pulse_Distance*100; 
+   \   00000090   0xF44F 0x707A      MOV      R0,#+1000
+   \   00000094   0x....             LDR.N    R1,??DataTable6_8
+   \   00000096   0x6008             STR      R0,[R1, #+0]
+   \   00000098   0xE002             B.N      ??Leave_Island_0
+    515                           
+    516                           else   //后车出环岛，前车启动
+    517                             {  
+    518                                SendCommand = Case1_Behind_LeaveIsland;
+   \                     ??Leave_Island_2: (+1)
+   \   0000009A   0x2066             MOVS     R0,#+102
+   \   0000009C   0x....             LDR.N    R1,??DataTable6_13
+   \   0000009E   0x7008             STRB     R0,[R1, #+0]
+    519                             }
+    520                        }
+    521                   }    
+    522            
+    523            //--Case1(超车）情况下，出环岛的处理--//
+    524            if(OverTake_Island != No)
+   \                     ??Leave_Island_0: (+1)
+   \   000000A0   0x....             LDR.N    R0,??DataTable6
+   \   000000A2   0x7800             LDRB     R0,[R0, #+0]
+   \   000000A4   0x2800             CMP      R0,#+0
+   \   000000A6   0xD011             BEQ.N    ??Leave_Island_3
+    525              {
+    526                if(Case1_AheadLeave_Dis > 70*100)
+   \   000000A8   0x....             LDR.N    R0,??DataTable6_8
+   \   000000AA   0x6800             LDR      R0,[R0, #+0]
+   \   000000AC   0xF641 0x3159      MOVW     R1,#+7001
+   \   000000B0   0x4288             CMP      R0,R1
+   \   000000B2   0xDB02             BLT.N    ??Leave_Island_4
+    527                     SendCommand = Case1_Ahead_LeaveIsland;    
+   \   000000B4   0x206C             MOVS     R0,#+108
+   \   000000B6   0x....             LDR.N    R1,??DataTable6_13
+   \   000000B8   0x7008             STRB     R0,[R1, #+0]
+    528                if(Case1_AheadLeave_Dis > 140*100)
+   \                     ??Leave_Island_4: (+1)
+   \   000000BA   0x....             LDR.N    R0,??DataTable6_8
+   \   000000BC   0x6800             LDR      R0,[R0, #+0]
+   \   000000BE   0xF243 0x61B1      MOVW     R1,#+14001
+   \   000000C2   0x4288             CMP      R0,R1
+   \   000000C4   0xDB02             BLT.N    ??Leave_Island_3
+    529                     Case1_AheadLeave_Wait = 1;
+   \   000000C6   0x2001             MOVS     R0,#+1
+   \   000000C8   0x....             LDR.N    R1,??DataTable6_33
+   \   000000CA   0x7008             STRB     R0,[R1, #+0]
+    530              }
+    531            
+    532            
+    533            if(Flag_Island_Confirm==0 && final==0 && Flag_Island==0)
+   \                     ??Leave_Island_3: (+1)
+   \   000000CC   0x....             LDR.N    R0,??DataTable4
+   \   000000CE   0x6800             LDR      R0,[R0, #+0]
+   \   000000D0   0x2800             CMP      R0,#+0
+   \   000000D2   0xD10D             BNE.N    ??Leave_Island_5
+   \   000000D4   0x....             LDR.N    R0,??DataTable5
+   \   000000D6   0x7800             LDRB     R0,[R0, #+0]
+   \   000000D8   0x2800             CMP      R0,#+0
+   \   000000DA   0xD109             BNE.N    ??Leave_Island_5
+   \   000000DC   0x....             LDR.N    R0,??DataTable4_3
+   \   000000DE   0x7800             LDRB     R0,[R0, #+0]
+   \   000000E0   0x2800             CMP      R0,#+0
+   \   000000E2   0xD105             BNE.N    ??Leave_Island_5
+    534            {  
+    535                Flag_Island_Position = 0;
+   \   000000E4   0x2000             MOVS     R0,#+0
+   \   000000E6   0x....             LDR.N    R1,??DataTable6_34
+   \   000000E8   0x7008             STRB     R0,[R1, #+0]
+    536                Island_Error_Turn = 0;
+   \   000000EA   0x2000             MOVS     R0,#+0
+   \   000000EC   0x....             LDR.N    R1,??DataTable6_28
+   \   000000EE   0x7008             STRB     R0,[R1, #+0]
+    537            }
+    538          }
+   \                     ??Leave_Island_5: (+1)
+   \   000000F0   0x4770             BX       LR               ;; return
+    539          
+    540          /*
+    541          function：LED标志不同的状态
+    542          return：null
+    543          */
+
+   \                                 In section .text, align 2, keep-with-next
+    544          void Led_Show()
+    545          {
+   \                     Led_Show: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    546            if(Count < 100)
+   \   00000002   0x....             LDR.N    R0,??DataTable5_5
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x2864             CMP      R0,#+100
+   \   00000008   0xDA0A             BGE.N    ??Led_Show_0
+    547              {
+    548                LPLD_GPIO_Output_b(PTA, 17, 0);   
+   \   0000000A   0x2200             MOVS     R2,#+0
+   \   0000000C   0x2111             MOVS     R1,#+17
+   \   0000000E   0x....             LDR.N    R0,??DataTable6_35  ;; 0x400ff000
+   \   00000010   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    549                LPLD_GPIO_Output_b(PTC, 0, 0);   
+   \   00000014   0x2200             MOVS     R2,#+0
+   \   00000016   0x2100             MOVS     R1,#+0
+   \   00000018   0x....             LDR.N    R0,??DataTable6_36  ;; 0x400ff080
+   \   0000001A   0x.... 0x....      BL       LPLD_GPIO_Output_b
+   \   0000001E   0xE033             B.N      ??Led_Show_1
+    550              }    
+    551            else if(Flag_Island_Confirm!=0 || final==1 || Flag_Island == 1)
+   \                     ??Led_Show_0: (+1)
+   \   00000020   0x....             LDR.N    R0,??DataTable6_37
+   \   00000022   0x6800             LDR      R0,[R0, #+0]
+   \   00000024   0x2800             CMP      R0,#+0
+   \   00000026   0xD107             BNE.N    ??Led_Show_2
+   \   00000028   0x....             LDR.N    R0,??DataTable5
+   \   0000002A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000002C   0x2801             CMP      R0,#+1
+   \   0000002E   0xD003             BEQ.N    ??Led_Show_2
+   \   00000030   0x....             LDR.N    R0,??DataTable6_38
+   \   00000032   0x7800             LDRB     R0,[R0, #+0]
+   \   00000034   0x2801             CMP      R0,#+1
+   \   00000036   0xD10A             BNE.N    ??Led_Show_3
+    552              {
+    553                LPLD_GPIO_Output_b(PTA, 17, 0);   
+   \                     ??Led_Show_2: (+1)
+   \   00000038   0x2200             MOVS     R2,#+0
+   \   0000003A   0x2111             MOVS     R1,#+17
+   \   0000003C   0x....             LDR.N    R0,??DataTable6_35  ;; 0x400ff000
+   \   0000003E   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    554                LPLD_GPIO_Output_b(PTC, 0, 1);                           
+   \   00000042   0x2201             MOVS     R2,#+1
+   \   00000044   0x2100             MOVS     R1,#+0
+   \   00000046   0x....             LDR.N    R0,??DataTable6_36  ;; 0x400ff080
+   \   00000048   0x.... 0x....      BL       LPLD_GPIO_Output_b
+   \   0000004C   0xE01C             B.N      ??Led_Show_1
+    555              }
+    556            else if(Turn_Around == 0)
+   \                     ??Led_Show_3: (+1)
+   \   0000004E   0x....             LDR.N    R0,??DataTable6_1
+   \   00000050   0x7800             LDRB     R0,[R0, #+0]
+   \   00000052   0x2800             CMP      R0,#+0
+   \   00000054   0xD10A             BNE.N    ??Led_Show_4
+    557              {
+    558                LPLD_GPIO_Output_b(PTA, 17, 1);   
+   \   00000056   0x2201             MOVS     R2,#+1
+   \   00000058   0x2111             MOVS     R1,#+17
+   \   0000005A   0x....             LDR.N    R0,??DataTable6_35  ;; 0x400ff000
+   \   0000005C   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    559                LPLD_GPIO_Output_b(PTC, 0, 1);   
+   \   00000060   0x2201             MOVS     R2,#+1
+   \   00000062   0x2100             MOVS     R1,#+0
+   \   00000064   0x....             LDR.N    R0,??DataTable6_36  ;; 0x400ff080
+   \   00000066   0x.... 0x....      BL       LPLD_GPIO_Output_b
+   \   0000006A   0xE00D             B.N      ??Led_Show_1
+    560              }
+    561            else if(Turn_Around == 1)
+   \                     ??Led_Show_4: (+1)
+   \   0000006C   0x....             LDR.N    R0,??DataTable6_1
+   \   0000006E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000070   0x2801             CMP      R0,#+1
+   \   00000072   0xD109             BNE.N    ??Led_Show_1
+    562              {
+    563                LPLD_GPIO_Output_b(PTA, 17, 1);   
+   \   00000074   0x2201             MOVS     R2,#+1
+   \   00000076   0x2111             MOVS     R1,#+17
+   \   00000078   0x....             LDR.N    R0,??DataTable6_35  ;; 0x400ff000
+   \   0000007A   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    564                LPLD_GPIO_Output_b(PTC, 0, 1);   
+   \   0000007E   0x2201             MOVS     R2,#+1
+   \   00000080   0x2100             MOVS     R1,#+0
+   \   00000082   0x....             LDR.N    R0,??DataTable6_36  ;; 0x400ff080
+   \   00000084   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    565              }    
+    566            
+    567            if(Flag_Island_Position == 1)    
+   \                     ??Led_Show_1: (+1)
+   \   00000088   0x....             LDR.N    R0,??DataTable6_34
+   \   0000008A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000008C   0x2801             CMP      R0,#+1
+   \   0000008E   0xD10F             BNE.N    ??Led_Show_5
+    568              {
+    569                if(Count%10 <= 5)
+   \   00000090   0x200A             MOVS     R0,#+10
+   \   00000092   0x....             LDR.N    R1,??DataTable5_5
+   \   00000094   0x6809             LDR      R1,[R1, #+0]
+   \   00000096   0x....             LDR.N    R2,??DataTable5_5
+   \   00000098   0x6812             LDR      R2,[R2, #+0]
+   \   0000009A   0xFB92 0xF2F0      SDIV     R2,R2,R0
+   \   0000009E   0xFB00 0x1012      MLS      R0,R0,R2,R1
+   \   000000A2   0x2806             CMP      R0,#+6
+   \   000000A4   0xDA04             BGE.N    ??Led_Show_5
+    570                   LPLD_GPIO_Output_b(PTD, 5, 1);
+   \   000000A6   0x2201             MOVS     R2,#+1
+   \   000000A8   0x2105             MOVS     R1,#+5
+   \   000000AA   0x....             LDR.N    R0,??DataTable6_39  ;; 0x400ff0c0
+   \   000000AC   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    571              }
+    572          
+    573            
+    574          
+    575             if(Turn_Around == 0)
+   \                     ??Led_Show_5: (+1)
+   \   000000B0   0x....             LDR.N    R0,??DataTable6_1
+   \   000000B2   0x7800             LDRB     R0,[R0, #+0]
+   \   000000B4   0x2800             CMP      R0,#+0
+   \   000000B6   0xD110             BNE.N    ??Led_Show_6
+    576               {
+    577                  if(percent_ahead > 1)     
+   \   000000B8   0x....             LDR.N    R0,??DataTable6_40
+   \   000000BA   0x6800             LDR      R0,[R0, #+0]
+   \   000000BC   0x....             LDR.N    R1,??DataTable6_41  ;; 0x3f800001
+   \   000000BE   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   000000C2   0xD805             BHI.N    ??Led_Show_7
+    578                     LPLD_GPIO_Output_b(PTD, 4, 1);
+   \   000000C4   0x2201             MOVS     R2,#+1
+   \   000000C6   0x2104             MOVS     R1,#+4
+   \   000000C8   0x....             LDR.N    R0,??DataTable6_39  ;; 0x400ff0c0
+   \   000000CA   0x.... 0x....      BL       LPLD_GPIO_Output_b
+   \   000000CE   0xE004             B.N      ??Led_Show_6
+    579                  else
+    580                     LPLD_GPIO_Output_b(PTD, 4, 0);
+   \                     ??Led_Show_7: (+1)
+   \   000000D0   0x2200             MOVS     R2,#+0
+   \   000000D2   0x2104             MOVS     R1,#+4
+   \   000000D4   0x....             LDR.N    R0,??DataTable6_39  ;; 0x400ff0c0
+   \   000000D6   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    581               }
+    582          
+    583             if(Turn_Around == 1)
+   \                     ??Led_Show_6: (+1)
+   \   000000DA   0x....             LDR.N    R0,??DataTable6_1
+   \   000000DC   0x7800             LDRB     R0,[R0, #+0]
+   \   000000DE   0x2801             CMP      R0,#+1
+   \   000000E0   0xD110             BNE.N    ??Led_Show_8
+    584               {
+    585                  if(percent_behind > 1)     
+   \   000000E2   0x....             LDR.N    R0,??DataTable6_42
+   \   000000E4   0x6800             LDR      R0,[R0, #+0]
+   \   000000E6   0x....             LDR.N    R1,??DataTable6_41  ;; 0x3f800001
+   \   000000E8   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   000000EC   0xD805             BHI.N    ??Led_Show_9
+    586                     LPLD_GPIO_Output_b(PTD, 4, 1);
+   \   000000EE   0x2201             MOVS     R2,#+1
+   \   000000F0   0x2104             MOVS     R1,#+4
+   \   000000F2   0x....             LDR.N    R0,??DataTable6_39  ;; 0x400ff0c0
+   \   000000F4   0x.... 0x....      BL       LPLD_GPIO_Output_b
+   \   000000F8   0xE004             B.N      ??Led_Show_8
+    587                  else
+    588                     LPLD_GPIO_Output_b(PTD, 4, 0);
+   \                     ??Led_Show_9: (+1)
+   \   000000FA   0x2200             MOVS     R2,#+0
+   \   000000FC   0x2104             MOVS     R1,#+4
+   \   000000FE   0x....             LDR.N    R0,??DataTable6_39  ;; 0x400ff0c0
+   \   00000100   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    589               }
+    590           
+    591          }
+   \                     ??Led_Show_8: (+1)
+   \   00000104   0xBD01             POP      {R0,PC}          ;; return
+    592          
+    593          
+    594          
+    595          /*
+    596          function：计算出一段距离内error的绝对平均值
+    597          return：error的绝对平均值
+    598          */
+
+   \                                 In section .text, align 2, keep-with-next
+    599          float Ave_absError_Calcu(int sum_distance)
+    600          {  
+   \                     Ave_absError_Calcu: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+    601            int node;
+    602            int sum_error;
+    603            float ave_abserror; 
+    604            sum_distance *= 100;
+   \   00000002   0x2164             MOVS     R1,#+100
+   \   00000004   0x4348             MULS     R0,R1,R0
+    605            sum_error = 0;
+   \   00000006   0x2500             MOVS     R5,#+0
+    606            
+    607            for(int i=ErrorNum-1; i>=0; i--)
+   \   00000008   0x2663             MOVS     R6,#+99
+   \   0000000A   0xE000             B.N      ??Ave_absError_Calcu_0
+   \                     ??Ave_absError_Calcu_1: (+1)
+   \   0000000C   0x1E76             SUBS     R6,R6,#+1
+   \                     ??Ave_absError_Calcu_0: (+1)
+   \   0000000E   0x2E00             CMP      R6,#+0
+   \   00000010   0xD42B             BMI.N    ??Ave_absError_Calcu_2
+    608              {   
+    609                sum_distance -= Pre_Distance[i];  
+   \   00000012   0x....             LDR.N    R1,??DataTable6_43
+   \   00000014   0xF851 0x1026      LDR      R1,[R1, R6, LSL #+2]
+   \   00000018   0x1A40             SUBS     R0,R0,R1
+    610                  
+    611                if(sum_distance < 0)
+   \   0000001A   0x2800             CMP      R0,#+0
+   \   0000001C   0xD511             BPL.N    ??Ave_absError_Calcu_3
+    612                  {
+    613                    node = ErrorNum - i;
+   \   0000001E   0xF1D6 0x0464      RSBS     R4,R6,#+100
+    614                    for(int j=ErrorNum-1; j>=i; j--)
+   \   00000022   0x2763             MOVS     R7,#+99
+   \   00000024   0xE00A             B.N      ??Ave_absError_Calcu_4
+    615                       sum_error += (int) fabs(Pre_Error[j]);
+   \                     ??Ave_absError_Calcu_5: (+1)
+   \   00000026   0x....             LDR.N    R0,??DataTable6_44
+   \   00000028   0xF850 0x0027      LDR      R0,[R0, R7, LSL #+2]
+   \   0000002C   0x.... 0x....      BL       __aeabi_i2d
+   \   00000030   0xF031 0x4100      BICS     R1,R1,#0x80000000
+   \   00000034   0x.... 0x....      BL       __aeabi_d2iz
+   \   00000038   0x1945             ADDS     R5,R0,R5
+   \   0000003A   0x1E7F             SUBS     R7,R7,#+1
+   \                     ??Ave_absError_Calcu_4: (+1)
+   \   0000003C   0x42B7             CMP      R7,R6
+   \   0000003E   0xDAF2             BGE.N    ??Ave_absError_Calcu_5
+    616                    break;
+   \   00000040   0xE013             B.N      ??Ave_absError_Calcu_2
+    617                  }  
+    618                   
+    619                if(i == 0)
+   \                     ??Ave_absError_Calcu_3: (+1)
+   \   00000042   0x2E00             CMP      R6,#+0
+   \   00000044   0xD1E2             BNE.N    ??Ave_absError_Calcu_1
+    620                  {  
+    621                    node = ErrorNum;
+   \   00000046   0x2464             MOVS     R4,#+100
+    622                    for(uint8 j=0; j<ErrorNum; j++) 
+   \   00000048   0x2600             MOVS     R6,#+0
+   \   0000004A   0xE00B             B.N      ??Ave_absError_Calcu_6
+    623                       sum_error += (int) fabs(Pre_Error[j]);
+   \                     ??Ave_absError_Calcu_7: (+1)
+   \   0000004C   0x....             LDR.N    R0,??DataTable6_44
+   \   0000004E   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000050   0xF850 0x0026      LDR      R0,[R0, R6, LSL #+2]
+   \   00000054   0x.... 0x....      BL       __aeabi_i2d
+   \   00000058   0xF031 0x4100      BICS     R1,R1,#0x80000000
+   \   0000005C   0x.... 0x....      BL       __aeabi_d2iz
+   \   00000060   0x1945             ADDS     R5,R0,R5
+   \   00000062   0x1C76             ADDS     R6,R6,#+1
+   \                     ??Ave_absError_Calcu_6: (+1)
+   \   00000064   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000066   0x2E64             CMP      R6,#+100
+   \   00000068   0xDBF0             BLT.N    ??Ave_absError_Calcu_7
+    624                    break;
+    625                  }
+    626              }
+    627            ave_abserror = sum_error/(node+1);
+   \                     ??Ave_absError_Calcu_2: (+1)
+   \   0000006A   0x1C60             ADDS     R0,R4,#+1
+   \   0000006C   0xFB95 0xF0F0      SDIV     R0,R5,R0
+   \   00000070   0x.... 0x....      BL       __aeabi_i2f
+    628            return ave_abserror;
+   \   00000074   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    629          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4:
+   \   00000000   0x........         DC32     Flag_Island_Confirm
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \   00000000   0x........         DC32     Flag_Island_Confirm_Last
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \   00000000   0x........         DC32     final_Last
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_3:
+   \   00000000   0x........         DC32     Flag_Island
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_4:
+   \   00000000   0x........         DC32     Spd
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_5:
+   \   00000000   0x........         DC32     Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_6:
+   \   00000000   0x........         DC32     Sum_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_7:
+   \   00000000   0x........         DC32     Stop_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_8:
+   \   00000000   0x........         DC32     Pre_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_9:
+   \   00000000   0x........         DC32     Ave_absError
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_10:
+   \   00000000   0x........         DC32     IslandGap_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_11:
+   \   00000000   0x........         DC32     IslandIn_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_12:
+   \   00000000   0x........         DC32     peak
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5:
+   \   00000000   0x........         DC32     final
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \   00000000   0x........         DC32     Flag_Island_Last
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \   00000000   0x........         DC32     RampIn_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_3:
+   \   00000000   0x........         DC32     CrossRoad_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_4:
+   \   00000000   0x........         DC32     Ms100_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_5:
+   \   00000000   0x........         DC32     Count
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6:
+   \   00000000   0x........         DC32     OverTake_Island
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \   00000000   0x........         DC32     Turn_Around
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_2:
+   \   00000000   0x........         DC32     EncoderDis_Ahead
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_3:
+   \   00000000   0x........         DC32     EncoderDis_Behind
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_4:
+   \   00000000   0x........         DC32     IslandAdmit_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_5:
+   \   00000000   0x........         DC32     IslandAdmit_Distance_Last
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_6:
+   \   00000000   0x........         DC32     Behind_EnterRamp_AdmitDis
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_7:
+   \   00000000   0x........         DC32     Case1_TurnSwitch_Dis
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_8:
+   \   00000000   0x........         DC32     Case1_AheadLeave_Dis
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_9:
+   \   00000000   0x........         DC32     final_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_10:
+   \   00000000   0x40418000         DC32     0x40418000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_11:
+   \   00000000   0x........         DC32     Flag_Ramp
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_12:
+   \   00000000   0x........         DC32     Island_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_13:
+   \   00000000   0x........         DC32     SendCommand
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_14:
+   \   00000000   0x........         DC32     Dir_IslandTurn
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_15:
+   \   00000000   0x........         DC32     Error
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_16:
+   \   00000000   0x........         DC32     Ahead_TurnError
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_17:
+   \   00000000   0x........         DC32     Flag_Island_Confirm_Dir
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_18:
+   \   00000000   0x........         DC32     Behind_LeaveIsland_ChaseFlag
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_19:
+   \   00000000   0x........         DC32     Pre_Peak1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_20:
+   \   00000000   0x........         DC32     Pre_Peak2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_21:
+   \   00000000   0x........         DC32     Pre_Peak3
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_22:
+   \   00000000   0x........         DC32     Pre_Peak7
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_23:
+   \   00000000   0x........         DC32     trendSum_Peak2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_24:
+   \   00000000   0x........         DC32     trendSum_Peak1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_25:
+   \   00000000   0x........         DC32     trendSum_Peak3
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_26:
+   \   00000000   0x........         DC32     trendSum_Peak7
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_27:
+   \   00000000   0x........         DC32     Spd_Switch
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_28:
+   \   00000000   0x........         DC32     Island_Error_Turn
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_29:
+   \   00000000   0x........         DC32     Family_Status
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_30:
+   \   00000000   0x........         DC32     Case1_Behind_IslandStop
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_31:
+   \   00000000   0x........         DC32     EnterStrai_SumDis
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_32:
+   \   00000000   0x........         DC32     EnterCurve_SumDis
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_33:
+   \   00000000   0x........         DC32     Case1_AheadLeave_Wait
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_34:
+   \   00000000   0x........         DC32     Flag_Island_Position
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_35:
+   \   00000000   0x400FF000         DC32     0x400ff000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_36:
+   \   00000000   0x400FF080         DC32     0x400ff080
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_37:
+   \   00000000   0x........         DC32     Flag_Island_Confirm
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_38:
+   \   00000000   0x........         DC32     Flag_Island
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_39:
+   \   00000000   0x400FF0C0         DC32     0x400ff0c0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_40:
+   \   00000000   0x........         DC32     percent_ahead
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_41:
+   \   00000000   0x3F800001         DC32     0x3f800001
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_42:
+   \   00000000   0x........         DC32     percent_behind
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_43:
+   \   00000000   0x........         DC32     Pre_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_44:
+   \   00000000   0x........         DC32     Pre_Error
+    630          
+    631          
+    632          
+    633          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   Ave_absError_Calcu
+        24   -> __aeabi_d2iz
+        24   -> __aeabi_i2d
+        24   -> __aeabi_i2f
+       8   Calcu_AllDis
+         8   -> Ave_absError_Calcu
+       8   Enter_Island
+         8   -> __aeabi_i2d
+         8 __aeabi_cdcmple
+       8   Island_Handle
+         8   -> Calcu_AllDis
+         8   -> Enter_Island
+         8   -> Leave_Island
+         8   -> Led_Show
+         8   -> TurnSwitch_InIsland
+       0   Leave_Island
+       8   Led_Show
+         8   -> LPLD_GPIO_Output_b
+         8 __aeabi_cfrcmple
+       0   TurnSwitch_InIsland
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_10
+       4  ??DataTable4_11
+       4  ??DataTable4_12
+       4  ??DataTable4_2
+       4  ??DataTable4_3
+       4  ??DataTable4_4
+       4  ??DataTable4_5
+       4  ??DataTable4_6
+       4  ??DataTable4_7
+       4  ??DataTable4_8
+       4  ??DataTable4_9
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_10
+       4  ??DataTable6_11
+       4  ??DataTable6_12
+       4  ??DataTable6_13
+       4  ??DataTable6_14
+       4  ??DataTable6_15
+       4  ??DataTable6_16
+       4  ??DataTable6_17
+       4  ??DataTable6_18
+       4  ??DataTable6_19
+       4  ??DataTable6_2
+       4  ??DataTable6_20
+       4  ??DataTable6_21
+       4  ??DataTable6_22
+       4  ??DataTable6_23
+       4  ??DataTable6_24
+       4  ??DataTable6_25
+       4  ??DataTable6_26
+       4  ??DataTable6_27
+       4  ??DataTable6_28
+       4  ??DataTable6_29
+       4  ??DataTable6_3
+       4  ??DataTable6_30
+       4  ??DataTable6_31
+       4  ??DataTable6_32
+       4  ??DataTable6_33
+       4  ??DataTable6_34
+       4  ??DataTable6_35
+       4  ??DataTable6_36
+       4  ??DataTable6_37
+       4  ??DataTable6_38
+       4  ??DataTable6_39
+       4  ??DataTable6_4
+       4  ??DataTable6_40
+       4  ??DataTable6_41
+       4  ??DataTable6_42
+       4  ??DataTable6_43
+       4  ??DataTable6_44
+       4  ??DataTable6_5
+       4  ??DataTable6_6
+       4  ??DataTable6_7
+       4  ??DataTable6_8
+       4  ??DataTable6_9
+       4  Ahead_TurnError
+       4  Ave_absError
+     118  Ave_absError_Calcu
+       4  Behind_EnterRamp_AdmitDis
+     720  Calcu_AllDis
+       4  Case1_AheadLeave_Dis
+       1  Case1_AheadLeave_Wait
+       1  Case1_Behind_IslandFollow
+       1  Case1_Behind_IslandStop
+       1  Case1_OverTake_Num
+       4  CrossRoadGap_Dis
+       4  CrossRoad_Distance
+       1  CrossRoad_Num
+       1  Dir_IslandTurn
+       4  Distance
+       4  EncoderDis_Ahead
+       4  EncoderDis_Behind
+    1592  Enter_Island
+       4  Flag_Island_Confirm
+       1  Flag_Island_Confirm_Dir
+       4  Flag_Island_Confirm_Last
+       1  Flag_Island_Position
+       4  IslandAdmit_Distance
+       4  IslandAdmit_Distance_Last
+       4  IslandGap_Distance
+       4  IslandIn_Distance
+       1  Island_Error_Turn
+      70  Island_Handle
+     242  Leave_Island
+     262  Led_Show
+       4  Ms100_Distance
+     400  Pre_Distance
+      24  Pre_Peak1
+      24  Pre_Peak2
+      24  Pre_Peak3
+      24  Pre_Peak7
+       4  Sum_Distance
+     124  TurnSwitch_InIsland
+       1  final
+       4  final_Distance
+       1  step3_biaozhi
+       8  trendSum_Peak1
+       8  trendSum_Peak2
+       8  trendSum_Peak3
+       8  trendSum_Peak7
+
+ 
+   610 bytes in section .bss
+     1 byte  in section .data
+ 3 384 bytes in section .text
+ 
+ 3 384 bytes of CODE memory
+   611 bytes of DATA memory
+
+Errors: none
+Warnings: none

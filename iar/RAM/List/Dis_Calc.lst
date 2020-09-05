@@ -1,0 +1,610 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.2.7424/W32 for ARM        10/Dec/2016  09:44:07
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\app\Dis_Calc.c
+#    Command line =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\app\Dis_Calc.c
+#        -D LPLD_K60 -D USE_K60F12 -lCN
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\List\
+#        -lB
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\List\
+#        -o
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M4F -e --fpu=VFPv4_sp --dlib_config
+#        D:\IAR\arm\INC\c\DLib_Config_Normal.h -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\app\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\CPU\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\LPLD\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\LPLD\HW\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\LPLD\DEV\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\LPLD\FUNC\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\uCOS-II\Ports\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\uCOS-II\Source\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\FatFs\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\FatFs\option\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\USB\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\USB\driver\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\USB\descriptor\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\USB\class\
+#        -Ol -I D:\IAR\arm\CMSIS\Include\ -D ARM_MATH_CM4
+#    List file    =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\List\Dis_Calc.lst
+#    Object file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\Obj\Dis_Calc.o
+#
+###############################################################################
+
+C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\app\Dis_Calc.c
+      1          #include "Includes.h"
+      2          
+      3          
+      4          //变量定义与声明
+
+   \                                 In section .bss, align 4
+      5          uint8  sensor[5][SampleNum] = {0}; //电感的多个采样值
+   \                     sensor:
+   \   00000000                      DS8 500
+
+   \                                 In section .bss, align 4
+      6          uint8  peak[5] = {0}; //每个电感的峰峰值
+   \                     peak:
+   \   00000000                      DS8 8
+
+   \                                 In section .bss, align 1
+      7          uint8  E_Max;  //最大电压值
+   \                     E_Max:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 4
+      8          uint16 dis_sensor[5] = {0};  //每个电感到跑道中心的距离
+   \                     dis_sensor:
+   \   00000000                      DS8 12
+
+   \                                 In section .bss, align 2
+      9          uint16 Sensor_Parame = 0;
+   \                     Sensor_Parame:
+   \   00000000                      DS8 2
+     10          extern int Distance;
+
+   \                                 In section .bss, align 4
+     11          int Distance_Last;
+   \                     Distance_Last:
+   \   00000000                      DS8 4
+     12          
+     13          //中断中采值
+
+   \                                 In section .text, align 2, keep-with-next
+     14          void Dis_Calc()
+     15          {
+   \                     Dis_Calc: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     16            ad_convert();
+   \   00000002   0x.... 0x....      BL       ad_convert
+     17            peak_calc();
+   \   00000006   0x.... 0x....      BL       peak_calc
+     18            Distance = dis_calcu();
+   \   0000000A   0x.... 0x....      BL       dis_calcu
+   \   0000000E   0x....             LDR.N    R1,??DataTable4
+   \   00000010   0x6008             STR      R0,[R1, #+0]
+     19            
+     20            if(fabs(Distance - Distance_Last) > 50)
+   \   00000012   0x....             LDR.N    R0,??DataTable4
+   \   00000014   0x6800             LDR      R0,[R0, #+0]
+   \   00000016   0x....             LDR.N    R1,??DataTable4_1
+   \   00000018   0x6809             LDR      R1,[R1, #+0]
+   \   0000001A   0x1A40             SUBS     R0,R0,R1
+   \   0000001C   0x.... 0x....      BL       __aeabi_i2d
+   \   00000020   0xF031 0x4100      BICS     R1,R1,#0x80000000
+   \   00000024   0x2201             MOVS     R2,#+1
+   \   00000026   0x....             LDR.N    R3,??DataTable4_2  ;; 0x40490000
+   \   00000028   0x.... 0x....      BL       __aeabi_cdrcmple
+   \   0000002C   0xD803             BHI.N    ??Dis_Calc_0
+     21               Distance = Distance_Last;
+   \   0000002E   0x....             LDR.N    R0,??DataTable4_1
+   \   00000030   0x6800             LDR      R0,[R0, #+0]
+   \   00000032   0x....             LDR.N    R1,??DataTable4
+   \   00000034   0x6008             STR      R0,[R1, #+0]
+     22            Distance_Last = Distance;
+   \                     ??Dis_Calc_0: (+1)
+   \   00000036   0x....             LDR.N    R0,??DataTable4
+   \   00000038   0x6800             LDR      R0,[R0, #+0]
+   \   0000003A   0x....             LDR.N    R1,??DataTable4_1
+   \   0000003C   0x6008             STR      R0,[R1, #+0]
+     23          
+     24          }
+   \   0000003E   0xBD01             POP      {R0,PC}          ;; return
+     25          
+     26          //开机采值
+
+   \                                 In section .text, align 2, keep-with-next
+     27          void Set_SensorPara()
+     28          {
+   \                     Set_SensorPara: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     29            //采值
+     30            for(uint16 i=0; i<SampleNum; i++)
+   \   00000002   0x2400             MOVS     R4,#+0
+   \   00000004   0xE00B             B.N      ??Set_SensorPara_0
+     31             {
+     32                sensor[2][i] = LPLD_ADC_Get(ADC1, AD6);
+   \                     ??Set_SensorPara_1: (+1)
+   \   00000006   0x2106             MOVS     R1,#+6
+   \   00000008   0x....             LDR.N    R0,??DataTable4_3  ;; 0x400bb000
+   \   0000000A   0x.... 0x....      BL       LPLD_ADC_Get
+   \   0000000E   0x....             LDR.N    R1,??DataTable4_4
+   \   00000010   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   00000012   0x1861             ADDS     R1,R4,R1
+   \   00000014   0xF881 0x00C8      STRB     R0,[R1, #+200]
+     33                sensor_delay();
+   \   00000018   0x.... 0x....      BL       sensor_delay
+     34             } 
+   \   0000001C   0x1C64             ADDS     R4,R4,#+1
+   \                     ??Set_SensorPara_0: (+1)
+   \   0000001E   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   00000020   0x2C64             CMP      R4,#+100
+   \   00000022   0xDBF0             BLT.N    ??Set_SensorPara_1
+     35            //解算峰峰值
+     36            peak[2] = CalcMaxToMin(sensor[2]);
+   \   00000024   0x....             LDR.N    R0,??DataTable4_5
+   \   00000026   0x.... 0x....      BL       CalcMaxToMin
+   \   0000002A   0x....             LDR.N    R1,??DataTable4_6
+   \   0000002C   0x7088             STRB     R0,[R1, #+2]
+     37            E_Max = peak[2];
+   \   0000002E   0x....             LDR.N    R0,??DataTable4_6
+   \   00000030   0x7880             LDRB     R0,[R0, #+2]
+   \   00000032   0x....             LDR.N    R1,??DataTable4_7
+   \   00000034   0x7008             STRB     R0,[R1, #+0]
+     38            
+     39            Sensor_Parame = E_Max*Sensor_Height;
+   \   00000036   0x....             LDR.N    R0,??DataTable4_7
+   \   00000038   0x7800             LDRB     R0,[R0, #+0]
+   \   0000003A   0x210C             MOVS     R1,#+12
+   \   0000003C   0xFB10 0xF001      SMULBB   R0,R0,R1
+   \   00000040   0x....             LDR.N    R1,??DataTable4_8
+   \   00000042   0x8008             STRH     R0,[R1, #+0]
+     40          }
+   \   00000044   0xBD10             POP      {R4,PC}          ;; return
+     41          
+     42          
+
+   \                                 In section .text, align 2, keep-with-next
+     43          void ad_convert()
+     44          {
+   \                     ad_convert: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     45            uint16 i;
+     46            //0 pte0 1 pte1 2 empty 3 pte2 4 ptc8  
+     47            //ADC1的A通道：PTE0~PTE3(AD4~AD7) 
+     48           for(i=0; i<SampleNum; i++)
+   \   00000002   0x2400             MOVS     R4,#+0
+   \   00000004   0xE021             B.N      ??ad_convert_0
+     49            {
+     50              sensor[1][i] = LPLD_ADC_Get(ADC1, AD5);
+   \                     ??ad_convert_1: (+1)
+   \   00000006   0x2105             MOVS     R1,#+5
+   \   00000008   0x....             LDR.N    R0,??DataTable4_3  ;; 0x400bb000
+   \   0000000A   0x.... 0x....      BL       LPLD_ADC_Get
+   \   0000000E   0x....             LDR.N    R1,??DataTable4_4
+   \   00000010   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   00000012   0x1861             ADDS     R1,R4,R1
+   \   00000014   0xF881 0x0064      STRB     R0,[R1, #+100]
+     51              sensor_delay();
+   \   00000018   0x.... 0x....      BL       sensor_delay
+     52              sensor[2][i] = LPLD_ADC_Get(ADC1, AD6);
+   \   0000001C   0x2106             MOVS     R1,#+6
+   \   0000001E   0x....             LDR.N    R0,??DataTable4_3  ;; 0x400bb000
+   \   00000020   0x.... 0x....      BL       LPLD_ADC_Get
+   \   00000024   0x....             LDR.N    R1,??DataTable4_4
+   \   00000026   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   00000028   0x1861             ADDS     R1,R4,R1
+   \   0000002A   0xF881 0x00C8      STRB     R0,[R1, #+200]
+     53              sensor_delay();
+   \   0000002E   0x.... 0x....      BL       sensor_delay
+     54              sensor[3][i] = LPLD_ADC_Get(ADC1, AD7); 
+   \   00000032   0x2107             MOVS     R1,#+7
+   \   00000034   0x....             LDR.N    R0,??DataTable4_3  ;; 0x400bb000
+   \   00000036   0x.... 0x....      BL       LPLD_ADC_Get
+   \   0000003A   0x....             LDR.N    R1,??DataTable4_4
+   \   0000003C   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   0000003E   0x1861             ADDS     R1,R4,R1
+   \   00000040   0xF881 0x012C      STRB     R0,[R1, #+300]
+     55              sensor_delay();
+   \   00000044   0x.... 0x....      BL       sensor_delay
+     56            }
+   \   00000048   0x1C64             ADDS     R4,R4,#+1
+   \                     ??ad_convert_0: (+1)
+   \   0000004A   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   0000004C   0x2C64             CMP      R4,#+100
+   \   0000004E   0xDBDA             BLT.N    ??ad_convert_1
+     57          
+     58            //ADC1的B通道：PTC8(AD4)
+     59            /*ADC_InitTypeDef sensor2_adc_init;
+     60            sensor2_adc_init.ADC_Adcx = ADC1;
+     61            sensor2_adc_init.ADC_MuxSel = MUX_ADXXB;
+     62            sensor2_adc_init.ADC_BitMode = SE_8BIT;
+     63            sensor2_adc_init.ADC_CalEnable = TRUE;
+     64            LPLD_ADC_Init(sensor2_adc_init);
+     65            
+     66            LPLD_ADC_Chn_Enable(ADC1, AD4);
+     67            for(i=0; i<SampleNum; i++)
+     68              sensor[4][i] = LPLD_ADC_Get(ADC1, AD4);*/
+     69          }
+   \   00000050   0xBD10             POP      {R4,PC}          ;; return
+     70          
+
+   \                                 In section .text, align 2, keep-with-next
+     71          void peak_calc()
+     72          {
+   \                     peak_calc: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+     73            uint8 i;
+     74            
+     75            for(i=1; i<4; i++)
+   \   00000002   0x2401             MOVS     R4,#+1
+   \   00000004   0xE00A             B.N      ??peak_calc_0
+     76              peak[i] = CalcMaxToMin(sensor[i]);
+   \                     ??peak_calc_1: (+1)
+   \   00000006   0x....             LDR.N    R0,??DataTable4_4
+   \   00000008   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   0000000A   0x2164             MOVS     R1,#+100
+   \   0000000C   0xFB01 0x0004      MLA      R0,R1,R4,R0
+   \   00000010   0x.... 0x....      BL       CalcMaxToMin
+   \   00000014   0x....             LDR.N    R1,??DataTable4_6
+   \   00000016   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   00000018   0x5460             STRB     R0,[R4, R1]
+   \   0000001A   0x1C64             ADDS     R4,R4,#+1
+   \                     ??peak_calc_0: (+1)
+   \   0000001C   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   0000001E   0x2C04             CMP      R4,#+4
+   \   00000020   0xDBF1             BLT.N    ??peak_calc_1
+     77            
+     78            if(peak[1] > E_Max)
+   \   00000022   0x....             LDR.N    R0,??DataTable4_7
+   \   00000024   0x7800             LDRB     R0,[R0, #+0]
+   \   00000026   0x....             LDR.N    R1,??DataTable4_6
+   \   00000028   0x7849             LDRB     R1,[R1, #+1]
+   \   0000002A   0x4288             CMP      R0,R1
+   \   0000002C   0xD203             BCS.N    ??peak_calc_2
+     79              peak[1] = E_Max;
+   \   0000002E   0x....             LDR.N    R0,??DataTable4_7
+   \   00000030   0x7800             LDRB     R0,[R0, #+0]
+   \   00000032   0x....             LDR.N    R1,??DataTable4_6
+   \   00000034   0x7048             STRB     R0,[R1, #+1]
+     80            
+     81            //归一化
+     82              peak[1] = (uint8)(peak[1]/(E_Max*1.0) * 50);
+   \                     ??peak_calc_2: (+1)
+   \   00000036   0x....             LDR.N    R0,??DataTable4_6
+   \   00000038   0x7840             LDRB     R0,[R0, #+1]
+   \   0000003A   0x.... 0x....      BL       __aeabi_ui2d
+   \   0000003E   0x0004             MOVS     R4,R0
+   \   00000040   0x000D             MOVS     R5,R1
+   \   00000042   0x....             LDR.N    R0,??DataTable4_7
+   \   00000044   0x7800             LDRB     R0,[R0, #+0]
+   \   00000046   0x.... 0x....      BL       __aeabi_ui2d
+   \   0000004A   0x2200             MOVS     R2,#+0
+   \   0000004C   0x....             LDR.N    R3,??DataTable4_9  ;; 0x3ff00000
+   \   0000004E   0x.... 0x....      BL       __aeabi_dmul
+   \   00000052   0x0002             MOVS     R2,R0
+   \   00000054   0x000B             MOVS     R3,R1
+   \   00000056   0x0020             MOVS     R0,R4
+   \   00000058   0x0029             MOVS     R1,R5
+   \   0000005A   0x.... 0x....      BL       __aeabi_ddiv
+   \   0000005E   0x2200             MOVS     R2,#+0
+   \   00000060   0x....             LDR.N    R3,??DataTable4_2  ;; 0x40490000
+   \   00000062   0x.... 0x....      BL       __aeabi_dmul
+   \   00000066   0x.... 0x....      BL       __aeabi_d2iz
+   \   0000006A   0x....             LDR.N    R1,??DataTable4_6
+   \   0000006C   0x7048             STRB     R0,[R1, #+1]
+     83          }
+   \   0000006E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     84          
+     85          
+
+   \                                 In section .text, align 2, keep-with-next
+     86          uint8 CalcMaxToMin(uint8 data[SampleNum]) 
+     87          {
+   \                     CalcMaxToMin: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+     88              uint8 Max = 0;
+   \   00000002   0x2100             MOVS     R1,#+0
+     89              uint8 Min = 0;
+   \   00000004   0x2200             MOVS     R2,#+0
+     90              uint16 i = 0;
+   \   00000006   0x2300             MOVS     R3,#+0
+     91              Max = data[0];
+   \   00000008   0x7804             LDRB     R4,[R0, #+0]
+   \   0000000A   0x0021             MOVS     R1,R4
+     92              Min = data[0];
+   \   0000000C   0x7804             LDRB     R4,[R0, #+0]
+   \   0000000E   0x0022             MOVS     R2,R4
+     93              
+     94              for(i=0; i<SampleNum; i++) 
+   \   00000010   0x2400             MOVS     R4,#+0
+   \   00000012   0x0023             MOVS     R3,R4
+   \   00000014   0xE00E             B.N      ??CalcMaxToMin_0
+     95              {
+     96                if(data[i] > Max)   Max = data[i];
+   \                     ??CalcMaxToMin_1: (+1)
+   \   00000016   0xB29B             UXTH     R3,R3            ;; ZeroExt  R3,R3,#+16,#+16
+   \   00000018   0x5C1C             LDRB     R4,[R3, R0]
+   \   0000001A   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   0000001C   0x42A1             CMP      R1,R4
+   \   0000001E   0xD201             BCS.N    ??CalcMaxToMin_2
+   \   00000020   0xB29B             UXTH     R3,R3            ;; ZeroExt  R3,R3,#+16,#+16
+   \   00000022   0x5C19             LDRB     R1,[R3, R0]
+     97                if(data[i] < Min)   Min = data[i];
+   \                     ??CalcMaxToMin_2: (+1)
+   \   00000024   0xB29B             UXTH     R3,R3            ;; ZeroExt  R3,R3,#+16,#+16
+   \   00000026   0x5C1C             LDRB     R4,[R3, R0]
+   \   00000028   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   0000002A   0x4294             CMP      R4,R2
+   \   0000002C   0xD201             BCS.N    ??CalcMaxToMin_3
+   \   0000002E   0xB29B             UXTH     R3,R3            ;; ZeroExt  R3,R3,#+16,#+16
+   \   00000030   0x5C1A             LDRB     R2,[R3, R0]
+     98              }
+   \                     ??CalcMaxToMin_3: (+1)
+   \   00000032   0x1C5B             ADDS     R3,R3,#+1
+   \                     ??CalcMaxToMin_0: (+1)
+   \   00000034   0xB29B             UXTH     R3,R3            ;; ZeroExt  R3,R3,#+16,#+16
+   \   00000036   0x2B64             CMP      R3,#+100
+   \   00000038   0xDBED             BLT.N    ??CalcMaxToMin_1
+     99              return Max-Min;
+   \   0000003A   0x1A88             SUBS     R0,R1,R2
+   \   0000003C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000003E   0xBC10             POP      {R4}
+   \   00000040   0x4770             BX       LR               ;; return
+    100          } 
+    101          
+
+   \                                 In section .text, align 2, keep-with-next
+    102          int dis_calcu()
+    103          {
+   \                     dis_calcu: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+    104             uint8 i;
+    105             int  dis_all;
+    106          
+    107             for(i=1; i<4; i++)
+   \   00000002   0x2601             MOVS     R6,#+1
+   \   00000004   0xE01B             B.N      ??dis_calcu_0
+    108               dis_sensor[i] = (uint16)( Sensor_Parame/(peak[i]*1.0) );
+   \                     ??dis_calcu_1: (+1)
+   \   00000006   0x....             LDR.N    R0,??DataTable4_8
+   \   00000008   0x8800             LDRH     R0,[R0, #+0]
+   \   0000000A   0x.... 0x....      BL       __aeabi_ui2d
+   \   0000000E   0x0004             MOVS     R4,R0
+   \   00000010   0x000D             MOVS     R5,R1
+   \   00000012   0x....             LDR.N    R0,??DataTable4_6
+   \   00000014   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000016   0x5C30             LDRB     R0,[R6, R0]
+   \   00000018   0x.... 0x....      BL       __aeabi_ui2d
+   \   0000001C   0x2200             MOVS     R2,#+0
+   \   0000001E   0x....             LDR.N    R3,??DataTable4_9  ;; 0x3ff00000
+   \   00000020   0x.... 0x....      BL       __aeabi_dmul
+   \   00000024   0x0002             MOVS     R2,R0
+   \   00000026   0x000B             MOVS     R3,R1
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0x0029             MOVS     R1,R5
+   \   0000002C   0x.... 0x....      BL       __aeabi_ddiv
+   \   00000030   0x.... 0x....      BL       __aeabi_d2iz
+   \   00000034   0x....             LDR.N    R1,??DataTable4_10
+   \   00000036   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000038   0xF821 0x0016      STRH     R0,[R1, R6, LSL #+1]
+   \   0000003C   0x1C76             ADDS     R6,R6,#+1
+   \                     ??dis_calcu_0: (+1)
+   \   0000003E   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000040   0x2E04             CMP      R6,#+4
+   \   00000042   0xDBE0             BLT.N    ??dis_calcu_1
+    109             
+    110             dis_all = dis_sensor[2]*dis_sensor[2] - Sensor_Height*Sensor_Height;
+   \   00000044   0x....             LDR.N    R0,??DataTable4_10
+   \   00000046   0x8880             LDRH     R0,[R0, #+4]
+   \   00000048   0x....             LDR.N    R1,??DataTable4_10
+   \   0000004A   0x8889             LDRH     R1,[R1, #+4]
+   \   0000004C   0x4348             MULS     R0,R1,R0
+   \   0000004E   0x3890             SUBS     R0,R0,#+144
+    111             
+    112             if(dis_all > 0)
+   \   00000050   0x2801             CMP      R0,#+1
+   \   00000052   0xDB0A             BLT.N    ??dis_calcu_2
+    113               dis_all = (int) sqrt( dis_all );
+   \   00000054   0x.... 0x....      BL       __aeabi_i2d
+   \   00000058   0xEC41 0x0B10      VMOV     D0,R0,R1
+   \   0000005C   0x.... 0x....      BL       sqrt
+   \   00000060   0xEC51 0x0B10      VMOV     R0,R1,D0
+   \   00000064   0x.... 0x....      BL       __aeabi_d2iz
+   \   00000068   0xE000             B.N      ??dis_calcu_3
+    114             else 
+    115               dis_all = 0;
+   \                     ??dis_calcu_2: (+1)
+   \   0000006A   0x2000             MOVS     R0,#+0
+    116               
+    117             if(peak[1] > peak[3])
+   \                     ??dis_calcu_3: (+1)
+   \   0000006C   0x....             LDR.N    R1,??DataTable4_6
+   \   0000006E   0x78C9             LDRB     R1,[R1, #+3]
+   \   00000070   0x....             LDR.N    R2,??DataTable4_6
+   \   00000072   0x7852             LDRB     R2,[R2, #+1]
+   \   00000074   0x4291             CMP      R1,R2
+   \   00000076   0xD300             BCC.N    ??dis_calcu_4
+    118               dis_all = dis_all;
+    119             else 
+    120               dis_all = -dis_all;
+   \                     ??dis_calcu_5: (+1)
+   \   00000078   0x4240             RSBS     R0,R0,#+0
+    121            
+    122             if(dis_all > 35)
+   \                     ??dis_calcu_4: (+1)
+   \   0000007A   0x2824             CMP      R0,#+36
+   \   0000007C   0xDB01             BLT.N    ??dis_calcu_6
+    123                dis_all = 35;
+   \   0000007E   0x2023             MOVS     R0,#+35
+   \   00000080   0xE004             B.N      ??dis_calcu_7
+    124             else if(dis_all < -35)
+   \                     ??dis_calcu_6: (+1)
+   \   00000082   0xF110 0x0F23      CMN      R0,#+35
+   \   00000086   0xDA01             BGE.N    ??dis_calcu_7
+    125                dis_all = -35;
+   \   00000088   0xF07F 0x0022      MVNS     R0,#+34
+    126             
+    127             return dis_all;
+   \                     ??dis_calcu_7: (+1)
+   \   0000008C   0xBD70             POP      {R4-R6,PC}       ;; return
+    128          }
+    129          
+
+   \                                 In section .text, align 2, keep-with-next
+    130          void sensor_delay()
+    131          {
+    132            int i;
+    133            for(i=0; i<200; i++);
+   \                     sensor_delay: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0xE000             B.N      ??sensor_delay_0
+   \                     ??sensor_delay_1: (+1)
+   \   00000004   0x1C40             ADDS     R0,R0,#+1
+   \                     ??sensor_delay_0: (+1)
+   \   00000006   0x28C8             CMP      R0,#+200
+   \   00000008   0xDBFC             BLT.N    ??sensor_delay_1
+    134          }
+   \   0000000A   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4:
+   \   00000000   0x........         DC32     Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \   00000000   0x........         DC32     Distance_Last
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \   00000000   0x40490000         DC32     0x40490000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_3:
+   \   00000000   0x400BB000         DC32     0x400bb000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_4:
+   \   00000000   0x........         DC32     sensor
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_5:
+   \   00000000   0x........         DC32     sensor+0xC8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_6:
+   \   00000000   0x........         DC32     peak
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_7:
+   \   00000000   0x........         DC32     E_Max
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_8:
+   \   00000000   0x........         DC32     Sensor_Parame
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_9:
+   \   00000000   0x3FF00000         DC32     0x3ff00000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_10:
+   \   00000000   0x........         DC32     dis_sensor
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   CalcMaxToMin
+       8   Dis_Calc
+         8   -> __aeabi_i2d
+         8   -> ad_convert
+         8   -> dis_calcu
+         8   -> peak_calc
+         8 __aeabi_cdrcmple
+       8   Set_SensorPara
+         8   -> CalcMaxToMin
+         8   -> LPLD_ADC_Get
+         8   -> sensor_delay
+       8   ad_convert
+         8   -> LPLD_ADC_Get
+         8   -> sensor_delay
+      16   dis_calcu
+        16   -> __aeabi_d2iz
+        16   -> __aeabi_ddiv
+        16   -> __aeabi_dmul
+        16   -> __aeabi_i2d
+        16   -> __aeabi_ui2d
+        16   -> sqrt
+      16   peak_calc
+        16   -> CalcMaxToMin
+        16   -> __aeabi_d2iz
+        16   -> __aeabi_ddiv
+        16   -> __aeabi_dmul
+        16   -> __aeabi_ui2d
+       0   sensor_delay
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_10
+       4  ??DataTable4_2
+       4  ??DataTable4_3
+       4  ??DataTable4_4
+       4  ??DataTable4_5
+       4  ??DataTable4_6
+       4  ??DataTable4_7
+       4  ??DataTable4_8
+       4  ??DataTable4_9
+      66  CalcMaxToMin
+      64  Dis_Calc
+       4  Distance_Last
+       1  E_Max
+       2  Sensor_Parame
+      70  Set_SensorPara
+      82  ad_convert
+     142  dis_calcu
+      12  dis_sensor
+       8  peak
+     112  peak_calc
+     500  sensor
+      12  sensor_delay
+
+ 
+ 527 bytes in section .bss
+ 592 bytes in section .text
+ 
+ 592 bytes of CODE memory
+ 527 bytes of DATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,266 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.2.7424/W32 for ARM        10/Dec/2016  09:44:07
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\app\HC_SR04.c
+#    Command line =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\app\HC_SR04.c
+#        -D LPLD_K60 -D USE_K60F12 -lCN
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\List\
+#        -lB
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\List\
+#        -o
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M4F -e --fpu=VFPv4_sp --dlib_config
+#        D:\IAR\arm\INC\c\DLib_Config_Normal.h -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\app\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\CPU\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\LPLD\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\LPLD\HW\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\LPLD\DEV\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\LPLD\FUNC\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\uCOS-II\Ports\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\uCOS-II\Source\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\FatFs\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\FatFs\option\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\USB\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\USB\driver\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\USB\descriptor\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\..\..\..\lib\USB\class\
+#        -Ol -I D:\IAR\arm\CMSIS\Include\ -D ARM_MATH_CM4
+#    List file    =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\List\HC_SR04.lst
+#    Object file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\iar\RAM\Obj\HC_SR04.o
+#
+###############################################################################
+
+C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after\app\HC_SR04.c
+      1          #include "Includes.h"
+      2          
+      3          
+
+   \                                 In section .bss, align 4
+      4          int Chase_Distance;
+   \                     Chase_Distance:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+      5          int Chase_Distance_Last;
+   \                     Chase_Distance_Last:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+      6          int Trig_Dly_Cnt;
+   \                     Trig_Dly_Cnt:
+   \   00000000                      DS8 4
+      7          
+
+   \                                 In section .text, align 2, keep-with-next
+      8          void Dis_measure()
+      9          {
+   \                     Dis_measure: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     10            Trig_Dly_Cnt = 1;
+   \   00000002   0x2001             MOVS     R0,#+1
+   \   00000004   0x....             LDR.N    R1,??DataTable2
+   \   00000006   0x6008             STR      R0,[R1, #+0]
+     11            Chase_Distance = 0;
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0x....             LDR.N    R1,??DataTable2_1
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+     12            
+     13            while( HC_Echo )
+   \                     ??Dis_measure_0: (+1)
+   \   0000000E   0x2103             MOVS     R1,#+3
+   \   00000010   0x....             LDR.N    R0,??DataTable2_2  ;; 0x400ff080
+   \   00000012   0x.... 0x....      BL       LPLD_GPIO_Input_b
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD00B             BEQ.N    ??Dis_measure_1
+     14             {     
+     15               Chase_Distance++;
+   \   0000001A   0x....             LDR.N    R0,??DataTable2_1
+   \   0000001C   0x6800             LDR      R0,[R0, #+0]
+   \   0000001E   0x1C40             ADDS     R0,R0,#+1
+   \   00000020   0x....             LDR.N    R1,??DataTable2_1
+   \   00000022   0x6008             STR      R0,[R1, #+0]
+     16               Echo_Delay();
+   \   00000024   0x.... 0x....      BL       Echo_Delay
+     17               if(Chase_Distance > 999)
+   \   00000028   0x....             LDR.N    R0,??DataTable2_1
+   \   0000002A   0x6800             LDR      R0,[R0, #+0]
+   \   0000002C   0xF5B0 0x7F7A      CMP      R0,#+1000
+   \   00000030   0xDBED             BLT.N    ??Dis_measure_0
+     18                 break;
+     19             }
+     20            
+     21           // if(Chase_Distance==20000 && Chase_Distance_Last<1000)
+     22           //   Chase_Distance = Chase_Distance_Last;
+     23            
+     24            //Chase_Distance_Last = Chase_Distance;
+     25            
+     26            LPLD_GPIO_ClearIntFlag(PORTC);
+   \                     ??Dis_measure_1: (+1)
+   \   00000032   0xF05F 0x30FF      MOVS     R0,#-1
+   \   00000036   0x....             LDR.N    R1,??DataTable2_3  ;; 0x4004b0a0
+   \   00000038   0x6008             STR      R0,[R1, #+0]
+     27          }
+   \   0000003A   0xBD01             POP      {R0,PC}          ;; return
+     28          
+     29          
+
+   \                                 In section .text, align 2, keep-with-next
+     30          void Echo_Delay()
+     31          {
+     32            int i;
+     33            for(i=0; i<500; i++)
+   \                     Echo_Delay: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0xE000             B.N      ??Echo_Delay_0
+   \                     ??Echo_Delay_1: (+1)
+   \   00000004   0x1C40             ADDS     R0,R0,#+1
+   \                     ??Echo_Delay_0: (+1)
+   \   00000006   0xF5B0 0x7FFA      CMP      R0,#+500
+   \   0000000A   0xDBFB             BLT.N    ??Echo_Delay_1
+     34             {};
+     35          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     36          
+
+   \                                 In section .text, align 2, keep-with-next
+     37          void Send_Trig()
+     38          { 
+   \                     Send_Trig: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     39            HC_Trig(1);
+   \   00000002   0x2201             MOVS     R2,#+1
+   \   00000004   0x2112             MOVS     R1,#+18
+   \   00000006   0x....             LDR.N    R0,??DataTable2_4  ;; 0x400ff040
+   \   00000008   0x.... 0x....      BL       LPLD_GPIO_Output_b
+     40            Trig_Delay(30);
+   \   0000000C   0x201E             MOVS     R0,#+30
+   \   0000000E   0x.... 0x....      BL       Trig_Delay
+     41            HC_Trig(0);
+   \   00000012   0x2200             MOVS     R2,#+0
+   \   00000014   0x2112             MOVS     R1,#+18
+   \   00000016   0x....             LDR.N    R0,??DataTable2_4  ;; 0x400ff040
+   \   00000018   0x.... 0x....      BL       LPLD_GPIO_Output_b
+     42          }
+   \   0000001C   0xBD01             POP      {R0,PC}          ;; return
+     43          
+
+   \                                 In section .text, align 4, keep-with-next
+     44          void Trig_Delay(uint8 dly)
+     45          {
+     46            int i, j;
+     47            Trig_Dly_Cnt = dly;
+   \                     Trig_Delay: (+1)
+   \   00000000   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000002   0x....             LDR.N    R1,??DataTable2
+   \   00000004   0x6008             STR      R0,[R1, #+0]
+     48            
+     49            for(i=0; i<Trig_Dly_Cnt; i++)
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0xE006             B.N      ??Trig_Delay_0
+     50              for(j=0; j<26000; j++)
+     51                asm("nop");
+   \                     ??Trig_Delay_1: (+1)
+   \   0000000A   0xBF00             nop
+   \   0000000C   0x1C49             ADDS     R1,R1,#+1
+   \                     ??Trig_Delay_2: (+1)
+   \   0000000E   0xF246 0x5290      MOVW     R2,#+26000
+   \   00000012   0x4291             CMP      R1,R2
+   \   00000014   0xDBF9             BLT.N    ??Trig_Delay_1
+   \   00000016   0x1C40             ADDS     R0,R0,#+1
+   \                     ??Trig_Delay_0: (+1)
+   \   00000018   0x....             LDR.N    R1,??DataTable2
+   \   0000001A   0x6809             LDR      R1,[R1, #+0]
+   \   0000001C   0x4288             CMP      R0,R1
+   \   0000001E   0xDA01             BGE.N    ??Trig_Delay_3
+   \   00000020   0x2100             MOVS     R1,#+0
+   \   00000022   0xE7F4             B.N      ??Trig_Delay_2
+     52          }
+   \                     ??Trig_Delay_3: (+1)
+   \   00000024   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x........         DC32     Trig_Dly_Cnt
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x........         DC32     Chase_Distance
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x400FF080         DC32     0x400ff080
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \   00000000   0x4004B0A0         DC32     0x4004b0a0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \   00000000   0x400FF040         DC32     0x400ff040
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Dis_measure
+         8   -> Echo_Delay
+         8   -> LPLD_GPIO_Input_b
+       0   Echo_Delay
+       8   Send_Trig
+         8   -> LPLD_GPIO_Output_b
+         8   -> Trig_Delay
+       0   Trig_Delay
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  Chase_Distance
+       4  Chase_Distance_Last
+      60  Dis_measure
+      14  Echo_Delay
+      30  Send_Trig
+      38  Trig_Delay
+       4  Trig_Dly_Cnt
+
+ 
+  12 bytes in section .bss
+ 162 bytes in section .text
+ 
+ 162 bytes of CODE memory
+  12 bytes of DATA memory
+
+Errors: none
+Warnings: none

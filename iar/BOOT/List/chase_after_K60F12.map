@@ -1,0 +1,694 @@
+###############################################################################
+#
+# IAR ELF Linker V7.20.2.7424/W32 for ARM                 01/Mar/2017  22:00:41
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Exe\chase_after_K60F12.out
+#    Map file     =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\List\chase_after_K60F12.map
+#    Command line =  
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\alloc.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\assert.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\Bluetooth.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\chase_after.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\Chase_Distance.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\Dis_Calc.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\hardware.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_ADC.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_DMA.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_FTM.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_GPIO.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_LPTMR.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_MCG.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_NVIC.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_PIT.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_UART.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\HW_WDOG.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\io.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\Island_Judge.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\Motor_Ctrl.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\Pit_5ms.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\printf.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\queue.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\relocate.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\Rudder_Ctrl.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\startup_K60F12.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\stdlib.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\system_MK60.o"
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj\uif.o"
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Exe\chase_after_K60F12.out"
+#        --map
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\List\chase_after_K60F12.map"
+#        --config
+#        "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\..\..\..\lib\iar_config_files\LPLD_K60FN1M0_BOOT.icf"
+#        --semihosting --entry __iar_program_start
+#        D:\IAR\arm\CMSIS\Lib\IAR\iar_cortexM4lf_math.a
+#        --merge_duplicate_sections --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00005000 { ro section .intvec };
+"A2":  place at 0x00005410 { ro section .noinit };
+"P1":  place in [from 0x00005000 to 0x000053ff] |
+                [from 0x00005410 to 0x00080000] { ro, block CodeRelocate };
+"P2":  place in [from 0x1fff0410 to 0x20010000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A1":                                        0x400
+  .intvec              ro code  0x00005000   0x400  startup_K60F12.o [1]
+                              - 0x00005400   0x400
+
+"P1", part 1 of 2:                             0x0
+  .rodata              const    0x00005400     0x0  zero_init3.o [5]
+  CodeRelocate                  0x00005400     0x0  <Block>
+
+"A2":                                         0x14
+  .noinit              ro code  0x00005410    0x10  startup_K60F12.o [1]
+  .noinit              ro code  0x00005420     0x4  startup_K60F12.o [1]
+                              - 0x00005424    0x14
+
+"P1", part 2 of 2:                          0x6f3c
+  .text                ro code  0x00005424   0xcb4  Motor_Ctrl.o [1]
+  .text                ro code  0x000060d8    0x2c  I32ToDbl.o [4]
+  .text                ro code  0x00006104    0x4c  DblToI32.o [4]
+  .text                ro code  0x00006150   0x180  DblSub.o [4]
+  .text                ro code  0x000062d0    0x2e  DblCmpGe.o [4]
+  .text                ro code  0x000062fe    0x22  zero_init3.o [5]
+  .text                ro code  0x00006320    0x2e  DblCmpLe.o [4]
+  .text                ro code  0x00006350   0x246  DblDiv.o [4]
+  .text                ro code  0x00006598    0xe8  DblAdd.o [4]
+  .text                ro code  0x00006680   0x1a2  DblMul.o [4]
+  .text                ro code  0x00006824    0x90  DblToFlt.o [4]
+  .text                ro code  0x000068b4    0x80  exp.o [4]
+  .text                ro code  0x00006934   0xbf4  HW_FTM.o [1]
+  .text                ro code  0x00007528   0x2be  xexp.o [4]
+  .text                ro code  0x000077e8    0x14  assert.o [1]
+  .text                ro code  0x000077fc    0x56  ABImemcpy_unaligned.o [5]
+  .text                ro code  0x00007852    0x40  xdtest.o [4]
+  .text                ro code  0x00007894    0x20  DblCmpEq.o [4]
+  .text                ro code  0x000078b4     0xc  errno.o [3]
+  .text                ro code  0x000078c0   0x114  xdscale.o [4]
+  .text                ro code  0x000079d4   0x4e4  printf.o [1]
+  .text                ro code  0x00007eb8     0x2  xtls.o [3]
+  .text                ro code  0x00007eba    0x42  xdnorm.o [4]
+  .text                ro code  0x00007efc    0x1c  stdlib.o [1]
+  .text                ro code  0x00007f18   0x92c  Dis_Calc.o [1]
+  .text                ro code  0x00008844   0x5ac  Island_Judge.o [1]
+  .text                ro code  0x00008df0   0x654  HW_ADC.o [1]
+  .text                ro code  0x00009444   0x210  HW_GPIO.o [1]
+  .text                ro code  0x00009654    0x4e  FltToDbl.o [4]
+  .text                ro code  0x000096a4   0x100  sqrt.o [4]
+  .text                ro code  0x000097a4   0x7d8  HW_UART.o [1]
+  .text                ro code  0x00009f7c     0xc  iarEdom.o [5]
+  .text                ro code  0x00009f88   0x698  system_MK60.o [1]
+  .text                ro code  0x0000a620    0xa0  relocate.o [1]
+  .text                ro code  0x0000a6c0   0x188  HW_MCG.o [1]
+  .text                ro code  0x0000a848   0x458  hardware.o [1]
+  .text                ro code  0x0000aca0    0x6c  HW_LPTMR.o [1]
+  .text                ro code  0x0000ad0c   0x180  HW_PIT.o [1]
+  .text                ro code  0x0000ae8c   0x1c4  HW_NVIC.o [1]
+  .text                ro code  0x0000b050   0x414  Rudder_Ctrl.o [1]
+  .text                ro code  0x0000b464   0x3e8  HW_DMA.o [1]
+  .text                ro code  0x0000b84c   0x1f4  Bluetooth.o [1]
+  .text                ro code  0x0000ba40    0xb0  Chase_Distance.o [1]
+  .rodata              const    0x0000baf0    0x50  HW_GPIO.o [1]
+  .rodata              const    0x0000bb40    0x50  HW_NVIC.o [1]
+  .data_init                    0x0000bb90    0x50  <Block>
+    Initializer bytes  ro data  0x0000bb90    0x50  <for .data-1>
+  .rodata              const    0x0000bbe0    0x4c  HW_ADC.o [1]
+  .rodata              const    0x0000bc2c    0x4c  HW_FTM.o [1]
+  .rodata              const    0x0000bc78    0x4c  HW_PIT.o [1]
+  .text                ro code  0x0000bcc4    0x4c  chase_after.o [1]
+  .rodata              const    0x0000bd10    0x48  system_MK60.o [1]
+  .rodata              const    0x0000bd58    0x44  system_MK60.o [1]
+  .rodata              const    0x0000bd9c    0x44  system_MK60.o [1]
+  .rodata              const    0x0000bde0    0x34  system_MK60.o [1]
+  .text                ro code  0x0000be14    0x34  Pit_5ms.o [1]
+  .rodata              const    0x0000be48    0x30  assert.o [1]
+  .rodata              const    0x0000be78    0x30  system_MK60.o [1]
+  .rodata              const    0x0000bea8    0x30  system_MK60.o [1]
+  .rodata              const    0x0000bed8    0x28  system_MK60.o [1]
+  .text                ro code  0x0000bf00    0x28  data_init.o [5]
+  .rodata              const    0x0000bf28    0x24  system_MK60.o [1]
+  .rodata              const    0x0000bf4c    0x24  system_MK60.o [1]
+  .rodata              const    0x0000bf70    0x24  system_MK60.o [1]
+  .iar.init_table      const    0x0000bf94    0x10  - Linker created -
+  .rodata              const    0x0000bfa4    0x20  system_MK60.o [1]
+  .rodata              const    0x0000bfc4    0x20  system_MK60.o [1]
+  .rodata              const    0x0000bfe4    0x20  system_MK60.o [1]
+  .rodata              const    0x0000c004    0x20  system_MK60.o [1]
+  .rodata              const    0x0000c024    0x20  system_MK60.o [1]
+  .rodata              const    0x0000c044    0x1c  system_MK60.o [1]
+  .rodata              const    0x0000c060    0x1c  system_MK60.o [1]
+  .rodata              const    0x0000c07c    0x1c  system_MK60.o [1]
+  .rodata              const    0x0000c098    0x1c  system_MK60.o [1]
+  .rodata              const    0x0000c0b4    0x1c  system_MK60.o [1]
+  .text                ro code  0x0000c0d0    0x1a  fpinit_M.o [4]
+  .text                ro code  0x0000c0ec    0x1a  cmain.o [5]
+  .text                ro code  0x0000c106     0x4  low_level_init.o [3]
+  .text                ro code  0x0000c10a     0x4  exit.o [3]
+  .text                ro code  0x0000c110     0xa  cexit.o [5]
+  .text                ro code  0x0000c11c    0x14  exit.o [6]
+  .rodata              const    0x0000c130    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c148    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c160    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c178    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c190    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c1a8    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c1c0    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c1d8    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c1f0    0x18  system_MK60.o [1]
+  .rodata              const    0x0000c208    0x14  system_MK60.o [1]
+  .rodata              const    0x0000c21c    0x14  system_MK60.o [1]
+  .rodata              const    0x0000c230    0x14  system_MK60.o [1]
+  .rodata              const    0x0000c244    0x14  system_MK60.o [1]
+  .text                ro code  0x0000c258    0x14  io.o [1]
+  .rodata              const    0x0000c26c    0x10  system_MK60.o [1]
+  .rodata              const    0x0000c27c    0x10  system_MK60.o [1]
+  .rodata              const    0x0000c28c    0x10  system_MK60.o [1]
+  .rodata              const    0x0000c29c    0x10  system_MK60.o [1]
+  .rodata              const    0x0000c2ac     0xc  system_MK60.o [1]
+  .text                ro code  0x0000c2b8     0xc  cstartup_M.o [5]
+  .rodata              const    0x0000c2c4     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c2cc     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c2d4     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c2dc     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c2e4     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c2ec     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c2f4     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c2fc     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c304     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c30c     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c314     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c31c     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c324     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c32c     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c334     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c33c     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c344     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c34c     0x8  system_MK60.o [1]
+  .rodata              const    0x0000c354     0x8  system_MK60.o [1]
+  Initializer bytes    ro data  0x0000c35c     0x4  <for P2 s0>
+                              - 0x0000c360  0x6f3c
+
+"P2":                                       0x2564
+  .data                         0x1fff0410    0x50  <Block>
+    .data-1                     0x1fff0410    0x50  <Init block>
+      .data            inited   0x1fff0410     0x2  Chase_Distance.o [1]
+      .data            inited   0x1fff0414    0x28  Dis_Calc.o [1]
+      .data            inited   0x1fff043c     0x4  Dis_Calc.o [1]
+      .data            inited   0x1fff0440     0x4  HW_MCG.o [1]
+      .data            inited   0x1fff0444     0x4  HW_MCG.o [1]
+      .data            inited   0x1fff0448     0x4  HW_MCG.o [1]
+      .data            inited   0x1fff044c     0x4  HW_MCG.o [1]
+      .data            inited   0x1fff0450     0x4  Motor_Ctrl.o [1]
+      .data            inited   0x1fff0454     0x4  Motor_Ctrl.o [1]
+      .data            inited   0x1fff0458     0x4  Motor_Ctrl.o [1]
+      .data            inited   0x1fff045c     0x4  system_MK60.o [1]
+  .bss                          0x1fff0460   0x50c  <Block>
+    .bss               zero     0x1fff0460    0x24  Bluetooth.o [1]
+    .bss               zero     0x1fff0484     0x4  Bluetooth.o [1]
+    .bss               zero     0x1fff0488    0x14  Chase_Distance.o [1]
+    .bss               zero     0x1fff049c   0x160  Dis_Calc.o [1]
+    .bss               zero     0x1fff05fc    0x1c  Dis_Calc.o [1]
+    .bss               zero     0x1fff0618    0x1c  Dis_Calc.o [1]
+    .bss               zero     0x1fff0634    0x50  Dis_Calc.o [1]
+    .bss               zero     0x1fff0684    0x50  Dis_Calc.o [1]
+    .bss               zero     0x1fff06d4     0x4  Dis_Calc.o [1]
+    .bss               zero     0x1fff06d8     0x4  Dis_Calc.o [1]
+    .bss               zero     0x1fff06dc    0x28  Dis_Calc.o [1]
+    .bss               zero     0x1fff0704     0x4  Dis_Calc.o [1]
+    .bss               zero     0x1fff0708    0x14  Dis_Calc.o [1]
+    .bss               zero     0x1fff071c    0x10  HW_ADC.o [1]
+    .bss               zero     0x1fff072c    0x80  HW_DMA.o [1]
+    .bss               zero     0x1fff07ac    0x10  HW_FTM.o [1]
+    .bss               zero     0x1fff07bc    0x14  HW_GPIO.o [1]
+    .bss               zero     0x1fff07d0     0x4  HW_LPTMR.o [1]
+    .bss               zero     0x1fff07d4    0x10  HW_PIT.o [1]
+    .bss               zero     0x1fff07e4    0x18  HW_UART.o [1]
+    .bss               zero     0x1fff07fc    0x18  HW_UART.o [1]
+    .bss               zero     0x1fff0814     0x4  Island_Judge.o [1]
+    .bss               zero     0x1fff0818     0x4  Island_Judge.o [1]
+    .bss               zero     0x1fff081c     0x4  Island_Judge.o [1]
+    .bss               zero     0x1fff0820     0x8  Island_Judge.o [1]
+    .bss               zero     0x1fff0828     0x8  Island_Judge.o [1]
+    .bss               zero     0x1fff0830    0x18  Island_Judge.o [1]
+    .bss               zero     0x1fff0848    0x18  Island_Judge.o [1]
+    .bss               zero     0x1fff0860     0x4  Island_Judge.o [1]
+    .bss               zero     0x1fff0864     0x4  Island_Judge.o [1]
+    .bss               zero     0x1fff0868     0x4  Island_Judge.o [1]
+    .bss               zero     0x1fff086c     0x4  Island_Judge.o [1]
+    .bss               zero     0x1fff0870     0x4  Motor_Ctrl.o [1]
+    .bss               zero     0x1fff0874     0x4  Motor_Ctrl.o [1]
+    .bss               zero     0x1fff0878     0x4  Motor_Ctrl.o [1]
+    .bss               zero     0x1fff087c    0x8c  Motor_Ctrl.o [1]
+    .bss               zero     0x1fff0908     0x4  Motor_Ctrl.o [1]
+    .bss               zero     0x1fff090c     0x4  Motor_Ctrl.o [1]
+    .bss               zero     0x1fff0910     0x4  Pit_5ms.o [1]
+    .bss               zero     0x1fff0914     0x4  Pit_5ms.o [1]
+    .bss               zero     0x1fff0918     0x4  Rudder_Ctrl.o [1]
+    .bss               zero     0x1fff091c     0x4  Rudder_Ctrl.o [1]
+    .bss               zero     0x1fff0920     0x4  Rudder_Ctrl.o [1]
+    .bss               zero     0x1fff0924     0x4  Rudder_Ctrl.o [1]
+    .bss               zero     0x1fff0928    0x3c  Rudder_Ctrl.o [1]
+    .bss               zero     0x1fff0964     0x1  Bluetooth.o [1]
+    .bss               zero     0x1fff0965     0x1  chase_after.o [1]
+    .bss               zero     0x1fff0966     0x1  chase_after.o [1]
+    .bss               zero     0x1fff0967     0x1  Dis_Calc.o [1]
+    .bss               zero     0x1fff0968     0x1  Dis_Calc.o [1]
+    .bss               zero     0x1fff0969     0x1  Dis_Calc.o [1]
+    .bss               zero     0x1fff096a     0x1  Island_Judge.o [1]
+    .bss               zero     0x1fff096b     0x1  Island_Judge.o [1]
+  CodeRelocateRam               0x1fff096c     0x0  <Block>
+  CSTACK                        0x1fff0970  0x2000  <Block>
+    CSTACK             uninit   0x1fff0970  0x2000  <Block tail>
+  P2 s0                         0x1fff2970     0x4  <Init block>
+    __DLIB_PERTHREAD   inited   0x1fff2970     0x4  errno.o [3]
+                              - 0x1fff2974  0x2564
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x50c:
+          0x1fff0460  0x50c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj: [1]
+    Bluetooth.o                500                41
+    Chase_Distance.o           176        2       22
+    Dis_Calc.o               2 348       46      687
+    HW_ADC.o                 1 620       76       16
+    HW_DMA.o                 1 000               128
+    HW_FTM.o                 3 060       76       16
+    HW_GPIO.o                  528       80       20
+    HW_LPTMR.o                 108                 4
+    HW_MCG.o                   392       16       16
+    HW_NVIC.o                  452       80
+    HW_PIT.o                   384       76       16
+    HW_UART.o                2 008                48
+    Island_Judge.o           1 452                94
+    Motor_Ctrl.o             3 252       12      172
+    Pit_5ms.o                   52                 8
+    Rudder_Ctrl.o            1 044                76
+    assert.o                    20       48
+    chase_after.o               76                 2
+    hardware.o               1 112
+    io.o                        20
+    printf.o                 1 252
+    relocate.o                 160
+    startup_K60F12.o         1 044
+    stdlib.o                    28
+    system_MK60.o            1 688    1 332        4
+    ------------------------------------------------
+    Total:                  23 776    1 844    1 370
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    errno.o                     12        4        4
+    exit.o                       4
+    low_level_init.o             4
+    xtls.o                       2
+    ------------------------------------------------
+    Total:                      22        4        4
+
+m7M_tlv.a: [4]
+    DblAdd.o                   232
+    DblCmpEq.o                  32
+    DblCmpGe.o                  46
+    DblCmpLe.o                  46
+    DblDiv.o                   582
+    DblMul.o                   418
+    DblSub.o                   384
+    DblToFlt.o                 144
+    DblToI32.o                  76
+    FltToDbl.o                  78
+    I32ToDbl.o                  44
+    exp.o                      128
+    fpinit_M.o                  26
+    sqrt.o                     256
+    xdnorm.o                    66
+    xdscale.o                  276
+    xdtest.o                    64
+    xexp.o                     702
+    ------------------------------------------------
+    Total:                   3 600
+
+rt7M_tl.a: [5]
+    ABImemcpy_unaligned.o       86
+    cexit.o                     10
+    cmain.o                     26
+    cstartup_M.o                12
+    data_init.o                 40
+    iarEdom.o                   12
+    zero_init3.o                34
+    ------------------------------------------------
+    Total:                     220
+
+shb_l.a: [6]
+    exit.o                      20
+    ------------------------------------------------
+    Total:                      20
+
+    Gaps                        18                 2
+    Linker created                       16    8 192
+----------------------------------------------------
+    Grand Total:            27 656    1 864    9 568
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x1fff0460          --   Gb  - Linker created -
+.bss$$Limit             0x1fff096c          --   Gb  - Linker created -
+.data$$Base             0x1fff0410          --   Gb  - Linker created -
+.data$$Limit            0x1fff0460          --   Gb  - Linker created -
+.data_init$$Base        0x0000bb90          --   Gb  - Linker created -
+.data_init$$Limit       0x0000bbe0          --   Gb  - Linker created -
+?main                   0x0000c0ed         Code  Gb  cmain.o [5]
+ADC0_IRQHandler         0x000093e3    0xa  Code  Gb  HW_ADC.o [1]
+ADC1_IRQHandler         0x000093ed    0xa  Code  Gb  HW_ADC.o [1]
+ADC2_IRQHandler         0x000093f7    0xa  Code  Gb  HW_ADC.o [1]
+ADC3_IRQHandler         0x00009401    0xa  Code  Gb  HW_ADC.o [1]
+ADC_ISR                 0x1fff071c   0x10  Data  Gb  HW_ADC.o [1]
+ASSERT_FAILED_STR       0x0000be48   0x30  Data  Gb  assert.o [1]
+Admit_Dis_EnterIsland   0x1fff0860    0x4  Data  Gb  Island_Judge.o [1]
+Ahead_Or_Behind         0x0000bcdd   0x28  Code  Gb  chase_after.o [1]
+Ahead_Spd_Set           0x00005455  0x200  Code  Gb  Motor_Ctrl.o [1]
+Angle                   0x1fff0928   0x3c  Data  Gb  Rudder_Ctrl.o [1]
+Behind_Spd_Set          0x00005655  0x336  Code  Gb  Motor_Ctrl.o [1]
+CSTACK$$Base            0x1fff0970          --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff2970          --   Gb  - Linker created -
+CalcMaxToMin            0x000085bd   0x42  Code  Gb  Dis_Calc.o [1]
+ChaseDis_Filter         0x0000baa9   0x28  Code  Gb  Chase_Distance.o [1]
+Chase_Distance          0x1fff0410    0x2  Data  Gb  Chase_Distance.o [1]
+CodeRelocate$$Base      0x00005400          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00005400          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fff096c          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fff096c          --   Gb  - Linker created -
+Count                   0x1fff0910    0x4  Data  Gb  Pit_5ms.o [1]
+DMA0_IRQHandler         0x0000b465   0x4a  Code  Gb  HW_DMA.o [1]
+DMA10_IRQHandler        0x0000b6e7   0x3a  Code  Gb  HW_DMA.o [1]
+DMA11_IRQHandler        0x0000b721   0x3a  Code  Gb  HW_DMA.o [1]
+DMA12_IRQHandler        0x0000b75b   0x3a  Code  Gb  HW_DMA.o [1]
+DMA13_IRQHandler        0x0000b795   0x3a  Code  Gb  HW_DMA.o [1]
+DMA14_IRQHandler        0x0000b7cf   0x3a  Code  Gb  HW_DMA.o [1]
+DMA15_IRQHandler        0x0000b809   0x3a  Code  Gb  HW_DMA.o [1]
+DMA1_IRQHandler         0x0000b4af   0x4a  Code  Gb  HW_DMA.o [1]
+DMA2_IRQHandler         0x0000b4f9   0x4a  Code  Gb  HW_DMA.o [1]
+DMA3_IRQHandler         0x0000b543   0x48  Code  Gb  HW_DMA.o [1]
+DMA4_IRQHandler         0x0000b58b   0x3a  Code  Gb  HW_DMA.o [1]
+DMA5_IRQHandler         0x0000b5c5   0x3a  Code  Gb  HW_DMA.o [1]
+DMA6_IRQHandler         0x0000b5ff   0x3a  Code  Gb  HW_DMA.o [1]
+DMA7_IRQHandler         0x0000b639   0x3a  Code  Gb  HW_DMA.o [1]
+DMA8_IRQHandler         0x0000b673   0x3a  Code  Gb  HW_DMA.o [1]
+DMA9_IRQHandler         0x0000b6ad   0x3a  Code  Gb  HW_DMA.o [1]
+DMA_ISR                 0x1fff072c   0x80  Data  Gb  HW_DMA.o [1]
+Data_Receive            0x1fff0964    0x1  Data  Gb  Bluetooth.o [1]
+DefaultISR              0x0000a10d   0x18  Code  Gb  system_MK60.o [1]
+Diagnostic_Reset_Source
+                        0x0000a351  0x156  Code  Lc  system_MK60.o [1]
+DialSwitch_init         0x0000ab37   0x32  Code  Gb  hardware.o [1]
+DisError                0x1fff0870    0x4  Data  Gb  Motor_Ctrl.o [1]
+Dis_Calc                0x00007f19   0x24  Code  Gb  Dis_Calc.o [1]
+Dis_measure             0x0000ba41   0x68  Code  Gb  Chase_Distance.o [1]
+Distance                0x1fff0914    0x4  Data  Gb  Pit_5ms.o [1]
+Distance_Island         0x1fff0814    0x4  Data  Gb  Island_Judge.o [1]
+Distance_Ramp           0x1fff06d8    0x4  Data  Gb  Dis_Calc.o [1]
+E_Max                   0x1fff0618   0x1c  Data  Gb  Dis_Calc.o [1]
+Elder_Rudder_Ctrl       0x0000b069  0x1f2  Code  Gb  Rudder_Ctrl.o [1]
+Elder_Spd_Ctrl          0x00005995  0x2ae  Code  Gb  Motor_Ctrl.o [1]
+FTM0_IRQHandler         0x00007481    0xa  Code  Gb  HW_FTM.o [1]
+FTM1_IRQHandler         0x0000748b    0xa  Code  Gb  HW_FTM.o [1]
+FTM2_IRQHandler         0x00007499    0xa  Code  Gb  HW_FTM.o [1]
+FTM3_IRQHandler         0x000074a3    0xa  Code  Gb  HW_FTM.o [1]
+FTM_ISR                 0x1fff07ac   0x10  Data  Gb  HW_FTM.o [1]
+Family_Status           0x1fff0966    0x1  Data  Gb  chase_after.o [1]
+Flag_Island             0x1fff0967    0x1  Data  Gb  Dis_Calc.o [1]
+Flag_Island_Confirm     0x1fff081c    0x4  Data  Gb  Island_Judge.o [1]
+Flag_Island_Last        0x1fff0969    0x1  Data  Gb  Dis_Calc.o [1]
+Flag_Island_Turn        0x1fff096b    0x1  Data  Gb  Island_Judge.o [1]
+Flag_Out                0x1fff0874    0x4  Data  Gb  Motor_Ctrl.o [1]
+Flag_Ramp               0x1fff0968    0x1  Data  Gb  Dis_Calc.o [1]
+GPIO_ISR                0x1fff07bc   0x14  Data  Gb  HW_GPIO.o [1]
+HardFault_Handler       0x0000a101    0xc  Code  Gb  system_MK60.o [1]
+HardwareInit            0x0000a849   0x34  Code  Gb  hardware.o [1]
+IslandGap_Distance      0x1fff0868    0x4  Data  Gb  Island_Judge.o [1]
+IslandTurn_Distance     0x1fff0864    0x4  Data  Gb  Island_Judge.o [1]
+Island_Judge            0x00008845  0x5ac  Code  Gb  Island_Judge.o [1]
+LPLD_ADC_Cal            0x00009343   0xa0  Code  Lc  HW_ADC.o [1]
+LPLD_ADC_Chn_Enable     0x00008ff5  0x34e  Code  Gb  HW_ADC.o [1]
+LPLD_ADC_Get            0x00008fcd   0x28  Code  Gb  HW_ADC.o [1]
+LPLD_ADC_Init           0x00008df1  0x1dc  Code  Gb  HW_ADC.o [1]
+LPLD_FTM_ClearCounter   0x00006b33    0x6  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_DEC_Init       0x00007479    0x8  Code  Lc  HW_FTM.o [1]
+LPLD_FTM_GetCounter     0x00006b2d    0x6  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_IC_Init        0x00006c8d   0x9a  Code  Lc  HW_FTM.o [1]
+LPLD_FTM_Init           0x00006935  0x13e  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_PWM_ChangeDuty
+                        0x00006add   0x50  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_PWM_Enable     0x00006a73   0x6a  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_PWM_Init       0x00006b6b  0x122  Code  Lc  HW_FTM.o [1]
+LPLD_FTM_PinInit        0x00006d41  0x6b8  Code  Lc  HW_FTM.o [1]
+LPLD_FTM_QD_Enable      0x00006b39   0x32  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_QD_Init        0x0000743d   0x3c  Code  Lc  HW_FTM.o [1]
+LPLD_GPIO_EnableIrq     0x0000953d   0x4e  Code  Gb  HW_GPIO.o [1]
+LPLD_GPIO_Init          0x00009459   0xe4  Code  Gb  HW_GPIO.o [1]
+LPLD_GPIO_Input_b       0x000095a3    0xa  Code  Gb  HW_GPIO.o [1]
+LPLD_GPIO_Output_b      0x0000958b   0x18  Code  Gb  HW_GPIO.o [1]
+LPLD_LPTMR_DelayMs      0x0000aca1   0x40  Code  Gb  HW_LPTMR.o [1]
+LPLD_NVIC_Init          0x0000af31  0x104  Code  Gb  HW_NVIC.o [1]
+LPLD_PIT_EnableIrq      0x0000addd   0x26  Code  Gb  HW_PIT.o [1]
+LPLD_PIT_Init           0x0000ad21   0xbc  Code  Gb  HW_PIT.o [1]
+LPLD_PLL_Setup          0x0000a6c1  0x188  Code  Gb  HW_MCG.o [1]
+LPLD_UART_EnableIrq     0x00009be3   0x98  Code  Gb  HW_UART.o [1]
+LPLD_UART_GetChar       0x00009bcb    0xe  Code  Gb  HW_UART.o [1]
+LPLD_UART_Init          0x000097bb  0x410  Code  Gb  HW_UART.o [1]
+LPLD_UART_PutChar       0x00009bd9    0xa  Code  Gb  HW_UART.o [1]
+LPTMR_ISR               0x1fff07d0    0x4  Data  Gb  HW_LPTMR.o [1]
+LPT_IRQHandler          0x0000ace1   0x16  Code  Gb  HW_LPTMR.o [1]
+Led_init                0x0000ab69   0xf4  Code  Gb  hardware.o [1]
+Motor_Ctrl              0x00005425   0x30  Code  Gb  Motor_Ctrl.o [1]
+Motor_Output            0x00005e5b   0xa4  Code  Gb  Motor_Ctrl.o [1]
+Motor_ftm0_init         0x0000aa81   0x4e  Code  Gb  hardware.o [1]
+NVIC_DisableIRQ         0x0000aebd   0x14  Code  Lc  HW_NVIC.o [1]
+NVIC_EnableIRQ          0x00009445   0x14  Code  Lc  HW_GPIO.o [1]
+NVIC_EnableIRQ          0x0000aea9   0x14  Code  Lc  HW_NVIC.o [1]
+NVIC_EnableIRQ          0x0000ad0d   0x14  Code  Lc  HW_PIT.o [1]
+NVIC_EnableIRQ          0x000097a5   0x16  Code  Lc  HW_UART.o [1]
+NVIC_EncodePriority     0x0000aef3   0x3e  Code  Lc  HW_NVIC.o [1]
+NVIC_SetPriority        0x0000aed1   0x22  Code  Lc  HW_NVIC.o [1]
+NVIC_SetPriorityGrouping
+                        0x0000ae8d   0x1c  Code  Lc  HW_NVIC.o [1]
+PIT0_IRQHandler         0x0000ae03   0x16  Code  Gb  HW_PIT.o [1]
+PIT1_IRQHandler         0x0000ae19   0x16  Code  Gb  HW_PIT.o [1]
+PIT2_IRQHandler         0x0000ae2f   0x16  Code  Gb  HW_PIT.o [1]
+PIT3_IRQHandler         0x0000ae45   0x16  Code  Gb  HW_PIT.o [1]
+PIT_ISR                 0x1fff07d4   0x10  Data  Gb  HW_PIT.o [1]
+PORTA_IRQHandler        0x000095ad   0x12  Code  Gb  HW_GPIO.o [1]
+PORTB_IRQHandler        0x000095bf   0x12  Code  Gb  HW_GPIO.o [1]
+PORTC_IRQHandler        0x000095d1   0x12  Code  Gb  HW_GPIO.o [1]
+PORTD_IRQHandler        0x000095e3   0x12  Code  Gb  HW_GPIO.o [1]
+PORTE_IRQHandler        0x000095f5   0x12  Code  Gb  HW_GPIO.o [1]
+Pre_Chase_Distance      0x1fff0488   0x14  Data  Gb  Chase_Distance.o [1]
+Pre_Distance            0x1fff06dc   0x28  Data  Gb  Dis_Calc.o [1]
+Pre_Peak1               0x1fff0830   0x18  Data  Gb  Island_Judge.o [1]
+Pre_Peak3               0x1fff0848   0x18  Data  Gb  Island_Judge.o [1]
+Pre_Peak5               0x1fff0634   0x50  Data  Gb  Dis_Calc.o [1]
+Pre_Peak6               0x1fff0684   0x50  Data  Gb  Dis_Calc.o [1]
+Pre_Peak_Ramp           0x1fff0414   0x28  Data  Gb  Dis_Calc.o [1]
+Prevent_LostLine        0x00007f3d   0x92  Code  Gb  Dis_Calc.o [1]
+Q                       0x1fff0454    0x4  Data  Gb  Motor_Ctrl.o [1]
+R                       0x1fff0458    0x4  Data  Gb  Motor_Ctrl.o [1]
+RecData                 0x0000b855   0x16  Code  Gb  Bluetooth.o [1]
+Receive_From_Ahead      0x0000b86b   0x4a  Code  Gb  Bluetooth.o [1]
+Receive_From_Behind     0x0000b8b5   0x18  Code  Gb  Bluetooth.o [1]
+Region$$Table$$Base     0x0000bf94          --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000bfa4          --   Gb  - Linker created -
+Rudder_Ctrl             0x0000b051   0x18  Code  Gb  Rudder_Ctrl.o [1]
+Rudder_Err              0x1fff0918    0x4  Data  Gb  Rudder_Ctrl.o [1]
+Rudder_Max              0x1fff0924    0x4  Data  Gb  Rudder_Ctrl.o [1]
+Rudder_Mid              0x1fff091c    0x4  Data  Gb  Rudder_Ctrl.o [1]
+Rudder_Min              0x1fff0920    0x4  Data  Gb  Rudder_Ctrl.o [1]
+Rudder_ftm2_init        0x0000aa43   0x3e  Code  Gb  hardware.o [1]
+SendData                0x0000b84d    0x8  Code  Gb  Bluetooth.o [1]
+SendData_To_PC          0x0000b8cd    0xc  Code  Gb  Bluetooth.o [1]
+Set_SensorPara          0x00007fcf  0x188  Code  Gb  Dis_Calc.o [1]
+Spd                     0x1fff087c   0x8c  Data  Gb  Motor_Ctrl.o [1]
+Spd_Filter              0x00005f99   0x8e  Code  Gb  Motor_Ctrl.o [1]
+Spd_Get                 0x00005f0d   0x78  Code  Gb  Motor_Ctrl.o [1]
+Sum_Distance_EnterCurve
+                        0x1fff0878    0x4  Data  Gb  Motor_Ctrl.o [1]
+Sum_Distance_Island_Stright
+                        0x1fff0818    0x4  Data  Gb  Island_Judge.o [1]
+Sum_Peak_Ramp           0x1fff06d4    0x4  Data  Gb  Dis_Calc.o [1]
+SystemCoreClock         0x1fff045c    0x4  Data  Gb  system_MK60.o [1]
+SystemCoreClockUpdate   0x0000a0d1   0x30  Code  Gb  system_MK60.o [1]
+SystemInit              0x00009f89  0x148  Code  Gb  system_MK60.o [1]
+Turn_Around             0x1fff0965    0x1  Data  Gb  chase_after.o [1]
+UART0_ERR_IRQHandler    0x00009f71    0x2  Code  Gb  HW_UART.o [1]
+UART0_IRQHandler        0x00009c7b   0x58  Code  Gb  HW_UART.o [1]
+UART1_ERR_IRQHandler    0x00009f73    0x2  Code  Gb  HW_UART.o [1]
+UART1_IRQHandler        0x00009cd3   0x58  Code  Gb  HW_UART.o [1]
+UART2_ERR_IRQHandler    0x00009f75    0x2  Code  Gb  HW_UART.o [1]
+UART2_IRQHandler        0x00009d2b   0x58  Code  Gb  HW_UART.o [1]
+UART3_ERR_IRQHandler    0x00009f77    0x2  Code  Gb  HW_UART.o [1]
+UART3_IRQHandler        0x00009d83   0x58  Code  Gb  HW_UART.o [1]
+UART4_ERR_IRQHandler    0x00009f79    0x2  Code  Gb  HW_UART.o [1]
+UART4_IRQHandler        0x00009ddb   0x58  Code  Gb  HW_UART.o [1]
+UART5_ERR_IRQHandler    0x00009f7b    0x2  Code  Gb  HW_UART.o [1]
+UART5_IRQHandler        0x00009e33   0x58  Code  Gb  HW_UART.o [1]
+UART_R_ISR              0x1fff07e4   0x18  Data  Gb  HW_UART.o [1]
+UART_T_ISR              0x1fff07fc   0x18  Data  Gb  HW_UART.o [1]
+Younger_Rudder_Ctrl     0x0000b261  0x18c  Code  Gb  Rudder_Ctrl.o [1]
+Younger_Spd_Ctrl        0x00005c4d  0x20e  Code  Gb  Motor_Ctrl.o [1]
+__VECTOR_RAM {Abs}      0x1fff0000          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00005000          --   Gb  command line/config [2]
+__Vectors               0x00005000          --   Gb  startup_K60F12.o [1]
+__Vectors_End           0x00005400         Data  Gb  startup_K60F12.o [1]
+__Vectors_Size {Abs}    0x00000400          --   Gb  startup_K60F12.o [1]
+__aeabi_cdcmpeq         0x00007895         Code  Gb  DblCmpEq.o [4]
+__aeabi_cdcmple         0x00006321         Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x000062d1         Code  Gb  DblCmpGe.o [4]
+__aeabi_d2f             0x00006825         Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz            0x00006105         Code  Gb  DblToI32.o [4]
+__aeabi_dadd            0x00006599         Code  Gb  DblAdd.o [4]
+__aeabi_ddiv            0x00006351         Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x00006681         Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x00006151         Code  Gb  DblSub.o [4]
+__aeabi_errno_addr      0x000078b5    0x6  Code  Gb  errno.o [3]
+__aeabi_f2d             0x00009655         Code  Gb  FltToDbl.o [4]
+__aeabi_i2d             0x000060d9         Code  Gb  I32ToDbl.o [4]
+__as_entries_start      0xffffffff          --   Gb  command line/config [2]
+__as_table_start        0xffffffff          --   Gb  command line/config [2]
+__cmain                 0x0000c0ed         Code  Gb  cmain.o [5]
+__exit                  0x0000c11d   0x14  Code  Gb  exit.o [6]
+__iar_Dnorm             0x00007ebb   0x42  Code  Gb  xdnorm.o [4]
+__iar_Dscale            0x000078c1  0x114  Code  Gb  xdscale.o [4]
+__iar_Dtest             0x00007853   0x30  Code  Gb  xdtest.o [4]
+__iar_Errno             0x1fff2970    0x4  Data  Gb  errno.o [3]
+__iar_Exp               0x00007529  0x2b6  Code  Gb  xexp.o [4]
+__iar_d2uiz             0x00006131         Code  Gb  DblToI32.o [4]
+__iar_dadd              0x000065ad         Code  Gb  DblAdd.o [4]
+__iar_data_init3        0x0000bf01   0x28  Code  Gb  data_init.o [5]
+__iar_dlib_perthread_access
+                        0x00007eb9    0x2  Code  Gb  xtls.o [3]
+__iar_dsub              0x00006165         Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x00006177         Code  Gb  DblSub.o [4]
+__iar_edom              0x00009f7d         Code  Gb  iarEdom.o [5]
+__iar_init_vfp          0x0000c0d1         Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x0000c2b9         Code  Gb  cstartup_M.o [5]
+__iar_sqrt              0x000096b5         Code  Gb  sqrt.o [4]
+__iar_ui2d              0x000060ed         Code  Gb  I32ToDbl.o [4]
+__iar_unaligned___aeabi_memcpy4
+                        0x000077fd         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy8
+                        0x000077fd         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_vfp_exp           0x00006925   0x10  Code  Gb  exp.o [4]
+__iar_vfp_sqrt          0x000096a5         Code  Gb  sqrt.o [4]
+__iar_vfp_sqrtl         0x000096a5         Code  Gb  sqrt.o [4]
+__iar_zero_init3        0x000062ff   0x22  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0000c107    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00005000         Data  Gb  startup_K60F12.o [1]
+__vector_table_0x1c     0x0000501c         Data  Gb  startup_K60F12.o [1]
+_call_main              0x0000c0f9         Code  Gb  cmain.o [5]
+_exit                   0x0000c111         Code  Gb  cexit.o [5]
+_main                   0x0000c103         Code  Gb  cmain.o [5]
+ad_convert              0x00008157   0xa6  Code  Gb  Dis_Calc.o [1]
+assert_failed           0x000077e9   0x14  Code  Gb  assert.o [1]
+bluetooth_uart4_init    0x0000a87d   0x50  Code  Gb  hardware.o [1]
+common_relocate         0x0000a621   0xa0  Code  Gb  relocate.o [1]
+cpu_identify            0x0000a129  0x182  Code  Lc  system_MK60.o [1]
+dis_calcu               0x00008601  0x17e  Code  Gb  Dis_Calc.o [1]
+dis_sensor              0x1fff0708   0x14  Data  Gb  Dis_Calc.o [1]
+exit                    0x0000c10b    0x4  Code  Gb  exit.o [3]
+exp                     0x000068b5   0x62  Code  Gb  exp.o [4]
+final                   0x1fff096a    0x1  Data  Gb  Island_Judge.o [1]
+flash_identify          0x0000a2ab   0xa6  Code  Lc  system_MK60.o [1]
+g1                      0x1fff043c    0x4  Data  Gb  Dis_Calc.o [1]
+g_bus_clock             0x1fff0444    0x4  Data  Gb  HW_MCG.o [1]
+g_core_clock            0x1fff0440    0x4  Data  Gb  HW_MCG.o [1]
+g_flash_clock           0x1fff0448    0x4  Data  Gb  HW_MCG.o [1]
+g_flexbus_clock         0x1fff044c    0x4  Data  Gb  HW_MCG.o [1]
+hcsr04_init             0x0000a8cd   0x46  Code  Gb  hardware.o [1]
+k                       0x1fff0908    0x4  Data  Gb  Motor_Ctrl.o [1]
+m                       0x1fff086c    0x4  Data  Gb  Island_Judge.o [1]
+main                    0x0000bcc5   0x18  Code  Gb  chase_after.o [1]
+n                       0x1fff0484    0x4  Data  Gb  Bluetooth.o [1]
+nvic_init               0x0000a955   0x74  Code  Gb  hardware.o [1]
+out_char                0x0000c259    0xe  Code  Gb  io.o [1]
+p                       0x1fff090c    0x4  Data  Gb  Motor_Ctrl.o [1]
+peak                    0x1fff05fc   0x1c  Data  Gb  Dis_Calc.o [1]
+peak2                   0x1fff0704    0x4  Data  Gb  Dis_Calc.o [1]
+peak_calc               0x000081fd  0x3c0  Code  Gb  Dis_Calc.o [1]
+pit_10ms                0x0000be15   0x34  Code  Gb  Pit_5ms.o [1]
+pit_10ms_init           0x0000a913   0x42  Code  Gb  hardware.o [1]
+pit_hcsr04_init         0x0000ab09   0x2e  Code  Gb  hardware.o [1]
+printf                  0x00007e95   0x1e  Code  Gb  printf.o [1]
+printk                  0x00007aad  0x3e8  Code  Gb  printf.o [1]
+printk_mknumstr         0x00007a01   0x70  Code  Lc  printf.o [1]
+printk_pad_space        0x00007a8f   0x1e  Code  Lc  printf.o [1]
+printk_pad_zero         0x00007a71   0x1e  Code  Lc  printf.o [1]
+printk_putc             0x000079d5   0x2c  Code  Lc  printf.o [1]
+produceScopeData        0x0000b905   0xb2  Code  Gb  Bluetooth.o [1]
+push                    0x0000b8d9   0x2c  Code  Gb  Bluetooth.o [1]
+qd_ftm1_init            0x0000aacf   0x3a  Code  Gb  hardware.o [1]
+sendDataToScope         0x0000b9b7   0x4e  Code  Gb  Bluetooth.o [1]
+sensor                  0x1fff049c  0x160  Data  Gb  Dis_Calc.o [1]
+sensor_adc_init         0x0000a9c9   0x7a  Code  Gb  hardware.o [1]
+sensor_delay            0x00008839    0xc  Code  Gb  Dis_Calc.o [1]
+sqrt                    0x000096b5         Code  Gb  sqrt.o [4]
+sqrtl                   0x000096b5         Code  Gb  sqrt.o [4]
+strlen                  0x00007efd   0x1c  Code  Gb  stdlib.o [1]
+trend                   0x1fff0450    0x4  Data  Gb  Motor_Ctrl.o [1]
+trendSum_Peak1          0x1fff0820    0x8  Data  Gb  Island_Judge.o [1]
+trendSum_Peak3          0x1fff0828    0x8  Data  Gb  Island_Judge.o [1]
+uSendBuf                0x1fff0460   0x24  Data  Gb  Bluetooth.o [1]
+
+
+[1] = C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0228)\iar\BOOT\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tlv.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  27 656 bytes of readonly  code memory
+   1 864 bytes of readonly  data memory
+   9 568 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

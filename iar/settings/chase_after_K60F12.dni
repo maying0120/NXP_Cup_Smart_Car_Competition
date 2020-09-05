@@ -1,0 +1,192 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=1046541518
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[JLinkDriver]
+CStepIntDis=_ 0
+TraceBufferSize=0x00010000
+TraceStallIfFIFOFull=0x00000000
+TracePortSize=0x00000004
+[SWOTraceHWSettings]
+OverrideDefaultClocks=0
+CpuClock=100000000
+ClockAutoDetect=0
+ClockWanted=2000000
+JtagSpeed=2000000
+Prescaler=50
+TimeStampPrescIndex=0
+TimeStampPrescData=0
+PcSampCYCTAP=1
+PcSampPOSTCNT=15
+PcSampIndex=0
+DataLogMode=0
+ITMportsEnable=0
+ITMportsTermIO=0
+ITMportsLogFile=0
+ITMlogFile=$PROJ_DIR$\ITM.log
+[PlDriver]
+MemConfigValue=D:\IAR\arm\CONFIG\debugger\Freescale\MK60FX512xxx15.ddf
+[Jet]
+DisableInterrupts=0
+MultiCoreRunAll=0
+[ArmDriver]
+EnableCache=1
+[FlashMemory]
+FlashEraseSelection=0 1            
+[struct_types]
+Fmt0=struct Speed-MotorPWM	3	0
+[array_types]
+Fmt0=uint8[100]	3	0
+Fmt1=uint8[50]	3	0
+Fmt2=uint8[5]	3	0
+Fmt3=uint8[7]	3	0
+[watch_formats]
+Fmt0={W}2:i	3	0
+Fmt1={W}42:Case1_AheadLeave_Wait	3	0
+Fmt2={W}42:Case1_Dir_IslandTurn	3	0
+Fmt3={W}42:Case2_Ahead_KeepSide	3	0
+Fmt4={W}42:Case2_Behind_KeepSide	3	0
+Fmt5={W}42:Case3_Behind_Pass	3	0
+Fmt6={W}42:Coeff	0	9
+Fmt7={W}42:CommuCheck	3	0
+Fmt8={W}42:CommuCheck_Last	3	0
+Fmt9={W}42:CommuCheck_Last_Last	3	0
+Fmt10={W}42:Data_Receive	3	0
+Fmt11={W}42:Debug_Page_Slt	3	0
+Fmt12={W}42:Debug_Para_Slt	3	0
+Fmt13={W}42:Dir_IslandTurn	3	0
+Fmt14={W}42:Distance	3	0
+Fmt15={W}42:E_Max	3	0
+Fmt16={W}42:Family_Status	3	0
+Fmt17={W}42:Flag_Direction	3	0
+Fmt18={W}42:Flag_Follow	3	0
+Fmt19={W}42:Flag_Island	3	0
+Fmt20={W}42:Flag_IslandStop	3	0
+Fmt21={W}42:Flag_Island_Another	3	0
+Fmt22={W}42:Flag_Island_Turn	3	0
+Fmt23={W}42:Flag_Ramp	3	0
+Fmt24={W}42:Flag_Stop1	3	0
+Fmt25={W}42:Island_Error_Turn	3	0
+Fmt26={W}42:OverTake	3	0
+Fmt27={W}42:OverTake_CrossRoad	3	0
+Fmt28={W}42:OverTake_Straight	3	0
+Fmt29={W}42:Para_Slt	3	0
+Fmt30={W}42:SendCommand_Arise	3	0
+Fmt31={W}42:SendCommand_Arise_Cnt	3	0
+Fmt32={W}42:SendCommand_Clear	3	0
+Fmt33={W}42:SendData_Arise	3	0
+Fmt34={W}42:SendData_Status	3	0
+Fmt35={W}42:ShowOrDebug	3	0
+Fmt36={W}42:Show_Page_Slt	3	0
+Fmt37={W}42:Spd_Feedback	3	0
+Fmt38={W}42:Spd_Switch	3	0
+Fmt39={W}42:Stop_Behind	3	0
+Fmt40={W}42:Stop_Flag	3	0
+Fmt41={W}42:Turn_Around	3	0
+Fmt42={W}42:Ultra_Count	3	0
+Fmt43={W}42:Ultra_Flag	3	0
+Fmt44={W}42:error_all	0	9
+Fmt45={W}42:final	3	0
+Fmt46={W}42:peak	0	10
+Fmt47={W}42:text	3	0
+Fmt48={W}42:turn	3	0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[SWOTraceWindow]
+PcSampling=0
+InterruptLogs=0
+ForcedTimeStamps=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[PowerLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=0
+Title_0=I0
+Symbol_0=0 4 1
+LiveEnabled=0
+LiveFile=PowerLogLive.log
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[EventLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[PowerProbe]
+Frequency=10000
+Probe0=I0
+ProbeSetup0=2 1 1 2 0 0
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Aliases]
+A0=_ "C:\Users\15mr\Desktop\双车程序\LPLD_OSKinetis_V3\lib\CPU\startup_K60F12.s" ""
+A1=_ "C:\Users\15mr\Desktop\双车程序\LPLD_OSKinetis_V3\project\chase_after\app\Island_Judge.c" ""
+A2=_ "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\lib\CPU\startup_K60F12.s" ""
+A3=_ "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\lib\LPLD\HW\HW_FTM.c" ""
+A4=_ "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after0619（环岛跟随+环岛超车+直道超车get）备份\app\Island_Judge.c" ""
+A5=_ "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after3.27\app\Motor_Ctrl.c" ""
+A6=_ "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after4.29\app\Island_Judge.c" ""
+A7=_ "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after4.5\app\Motor_Ctrl.c" ""
+A8=_ "C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after合并程序(0310)\app\Motor_Ctrl.c" ""
+A9=_ "E:\chase after\LPLD_OSKinetis_V3\lib\CPU\startup_K60F12.s" ""
+A10=_ "E:\chase after\LPLD_OSKinetis_V3\project\chase_after4.8\app\Motor_Ctrl.c" ""
+A11=_ "E:\飞思卡尔\LPLD_OSKinetis_V3\lib\CPU\startup_K60F12.s" ""
+A12=_ "E:\飞思卡尔\LPLD_OSKinetis_V3\project\chase_after0608（环岛跟随+环岛超车+直道超车get）\app\Island_Judge.c" ""
+A13=_ "E:\飞思卡尔\LPLD_OSKinetis_V3\project\chase_after0620（环岛跟随+环岛超车+直道超车get）备份\app\Island_Judge.c" ""
+A14=_ "E:\飞思卡尔\LPLD_OSKinetis_V3\project\chase_after3.27\app\Motor_Ctrl.c" ""
+A15=_ "E:\飞思卡尔\LPLD_OSKinetis_V3\project\chase_after3.31\app\Motor_Ctrl.c" ""
+A16=_ "E:\飞思卡尔\LPLD_OSKinetis_V3\project\chase_after5.11\app\Island_Judge.c" ""
+A17=_ "E:\飞思卡尔\LPLD_OSKinetis_V3\project\chase_after5.8\app\Island_Judge.c" ""
+A18=_ "E:\飞思卡尔\LPLD_OSKinetis_V3\project\chase_after\app\Island_Judge.c" ""
+Count=19
+SuppressDialog=1

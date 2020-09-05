@@ -1,0 +1,536 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.2.7424/W32 for ARM        10/Jul/2017  21:37:34
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Ramp_Handle.c
+#    Command line =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Ramp_Handle.c
+#        -D LPLD_K60 -D USE_K60F12 -lCN
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\
+#        -lB
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\
+#        -o
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M4F -e --fpu=None --dlib_config
+#        D:\IAR\arm\INC\c\DLib_Config_Normal.h -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\app\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\CPU\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\HW\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\DEV\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\LPLD\FUNC\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\uCOS-II\Ports\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\uCOS-II\Source\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\FatFs\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\FatFs\option\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\common\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\driver\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\descriptor\
+#        -I
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\..\..\..\lib\USB\class\
+#        -Ol -I D:\IAR\arm\CMSIS\Include\ -D ARM_MATH_CM4
+#    List file    =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\List\Ramp_Handle.lst
+#    Object file  =  
+#        C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\iar\FLASH\Obj\Ramp_Handle.o
+#
+###############################################################################
+
+C:\Users\lenovo\Desktop\17智能车省赛\LPLD_OSKinetis_V3\project\chase_after（完整程序）\app\Ramp_Handle.c
+      1          #include "Includes.h"
+      2          
+      3          extern uint8 Family_Status;
+      4          extern uint8 final;
+      5          extern uint8 OverTake;
+      6          extern uint8 Flag_Island_Turn;
+      7          extern int peak[];
+      8          extern int Count;
+      9          extern int RampIn_Distance;
+     10          extern int RampAdmit_Distance;
+     11          extern long int IslandAdmit_Distance; 
+     12          extern int Mixed_Distance;
+     13          extern int Distance;
+     14          extern int CrossRoad_Distance;
+     15          extern int trendSum_Peak2[];
+     16          extern int Flag_Island_Confirm;
+     17          extern int Flag_Island_Confirm_Last;
+     18          extern uint8 SendCommand;
+     19          extern uint8 Flag_Island_Turn;
+     20          extern uint8 final;
+     21          extern uint8 Turn_Around;
+     22          extern uint8 Flag_Island;
+     23          extern uint8 Flag_Ramp;
+     24          extern uint8 Flag_Follow;
+     25          extern uint8 Island_SpdDown;
+     26          extern uint8 Stop_Behind_Flag;
+     27          extern uint8 Stop_Behind;
+     28          extern long int Behind_EnterRamp_AdmitDis;
+
+   \                                 In section .bss, align 4
+     29          int Sum_peak2;
+   \                     Sum_peak2:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     30          int Pre_peak2[5];
+   \                     Pre_peak2:
+   \   00000000                      DS8 20
+
+   \                                 In section .bss, align 4
+     31          int Sum_peak7;
+   \                     Sum_peak7:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     32          int Pre_peak7[5];
+   \                     Pre_peak7:
+   \   00000000                      DS8 20
+     33          
+     34          /*
+     35          Function:Solve the problem of the ramp
+     36          Return:Null
+     37          */
+
+   \                                 In section .text, align 4, keep-with-next
+     38          void Ramp_Handle()
+     39          {  
+   \                     Ramp_Handle: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     40             Sum_peak2 = 0;
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x498C             LDR.N    R1,??Ramp_Handle_0
+   \   00000006   0x6008             STR      R0,[R1, #+0]
+     41             Sum_peak7 = 0;
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0x498C             LDR.N    R1,??Ramp_Handle_0+0x4
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+     42             
+     43             for(uint8 i=0; i<5; i++)
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \   00000010   0xE009             B.N      ??Ramp_Handle_1
+     44                Sum_peak2 += Pre_peak2[i];
+   \                     ??Ramp_Handle_2: (+1)
+   \   00000012   0x4989             LDR.N    R1,??Ramp_Handle_0
+   \   00000014   0x6809             LDR      R1,[R1, #+0]
+   \   00000016   0x4A8A             LDR.N    R2,??Ramp_Handle_0+0x8
+   \   00000018   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001A   0xF852 0x2020      LDR      R2,[R2, R0, LSL #+2]
+   \   0000001E   0x1851             ADDS     R1,R2,R1
+   \   00000020   0x4A85             LDR.N    R2,??Ramp_Handle_0
+   \   00000022   0x6011             STR      R1,[R2, #+0]
+   \   00000024   0x1C40             ADDS     R0,R0,#+1
+   \                     ??Ramp_Handle_1: (+1)
+   \   00000026   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000028   0x2805             CMP      R0,#+5
+   \   0000002A   0xDBF2             BLT.N    ??Ramp_Handle_2
+     45             
+     46             for(uint8 i=0; i<4; i++)
+   \   0000002C   0x2000             MOVS     R0,#+0
+   \   0000002E   0xE009             B.N      ??Ramp_Handle_3
+     47                Pre_peak2[i] = Pre_peak2[i+1];
+   \                     ??Ramp_Handle_4: (+1)
+   \   00000030   0x4983             LDR.N    R1,??Ramp_Handle_0+0x8
+   \   00000032   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000034   0xEB11 0x0180      ADDS     R1,R1,R0, LSL #+2
+   \   00000038   0x6849             LDR      R1,[R1, #+4]
+   \   0000003A   0x4A81             LDR.N    R2,??Ramp_Handle_0+0x8
+   \   0000003C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000003E   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+   \   00000042   0x1C40             ADDS     R0,R0,#+1
+   \                     ??Ramp_Handle_3: (+1)
+   \   00000044   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000046   0x2804             CMP      R0,#+4
+   \   00000048   0xDBF2             BLT.N    ??Ramp_Handle_4
+     48             Pre_peak2[4] = peak[2];
+   \   0000004A   0x487E             LDR.N    R0,??Ramp_Handle_0+0xC
+   \   0000004C   0x6880             LDR      R0,[R0, #+8]
+   \   0000004E   0x497C             LDR.N    R1,??Ramp_Handle_0+0x8
+   \   00000050   0x6108             STR      R0,[R1, #+16]
+     49          
+     50             for(uint8 i=0; i<5; i++)
+   \   00000052   0x2000             MOVS     R0,#+0
+   \   00000054   0xE009             B.N      ??Ramp_Handle_5
+     51                Sum_peak7 += Pre_peak7[i];
+   \                     ??Ramp_Handle_6: (+1)
+   \   00000056   0x4979             LDR.N    R1,??Ramp_Handle_0+0x4
+   \   00000058   0x6809             LDR      R1,[R1, #+0]
+   \   0000005A   0x4A7B             LDR.N    R2,??Ramp_Handle_0+0x10
+   \   0000005C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000005E   0xF852 0x2020      LDR      R2,[R2, R0, LSL #+2]
+   \   00000062   0x1851             ADDS     R1,R2,R1
+   \   00000064   0x4A75             LDR.N    R2,??Ramp_Handle_0+0x4
+   \   00000066   0x6011             STR      R1,[R2, #+0]
+   \   00000068   0x1C40             ADDS     R0,R0,#+1
+   \                     ??Ramp_Handle_5: (+1)
+   \   0000006A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000006C   0x2805             CMP      R0,#+5
+   \   0000006E   0xDBF2             BLT.N    ??Ramp_Handle_6
+     52             
+     53             for(uint8 i=0; i<4; i++)
+   \   00000070   0x2000             MOVS     R0,#+0
+   \   00000072   0xE009             B.N      ??Ramp_Handle_7
+     54                Pre_peak7[i] = Pre_peak7[i+1];
+   \                     ??Ramp_Handle_8: (+1)
+   \   00000074   0x4974             LDR.N    R1,??Ramp_Handle_0+0x10
+   \   00000076   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000078   0xEB11 0x0180      ADDS     R1,R1,R0, LSL #+2
+   \   0000007C   0x6849             LDR      R1,[R1, #+4]
+   \   0000007E   0x4A72             LDR.N    R2,??Ramp_Handle_0+0x10
+   \   00000080   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000082   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+   \   00000086   0x1C40             ADDS     R0,R0,#+1
+   \                     ??Ramp_Handle_7: (+1)
+   \   00000088   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000008A   0x2804             CMP      R0,#+4
+   \   0000008C   0xDBF2             BLT.N    ??Ramp_Handle_8
+     55             Pre_peak7[4] = peak[7];
+   \   0000008E   0x486D             LDR.N    R0,??Ramp_Handle_0+0xC
+   \   00000090   0x69C0             LDR      R0,[R0, #+28]
+   \   00000092   0x496D             LDR.N    R1,??Ramp_Handle_0+0x10
+   \   00000094   0x6108             STR      R0,[R1, #+16]
+     56             
+     57             
+     58             //----------进坡道------------//   
+     59             if(     Flag_Ramp==0 && RampAdmit_Distance==0 && CrossRoad_Distance==0
+     60                && Flag_Island_Confirm==0 && Flag_Island==0 && final==0
+     61                && IslandAdmit_Distance==0 )
+   \   00000096   0x486D             LDR.N    R0,??Ramp_Handle_0+0x14
+   \   00000098   0x7800             LDRB     R0,[R0, #+0]
+   \   0000009A   0x496D             LDR.N    R1,??Ramp_Handle_0+0x18
+   \   0000009C   0x6809             LDR      R1,[R1, #+0]
+   \   0000009E   0x4308             ORRS     R0,R1,R0
+   \   000000A0   0x496C             LDR.N    R1,??Ramp_Handle_0+0x1C
+   \   000000A2   0x6809             LDR      R1,[R1, #+0]
+   \   000000A4   0x4308             ORRS     R0,R1,R0
+   \   000000A6   0x496C             LDR.N    R1,??Ramp_Handle_0+0x20
+   \   000000A8   0x6809             LDR      R1,[R1, #+0]
+   \   000000AA   0x4308             ORRS     R0,R1,R0
+   \   000000AC   0x2800             CMP      R0,#+0
+   \   000000AE   0xD14D             BNE.N    ??Ramp_Handle_9
+   \   000000B0   0x486A             LDR.N    R0,??Ramp_Handle_0+0x24
+   \   000000B2   0x7800             LDRB     R0,[R0, #+0]
+   \   000000B4   0x2800             CMP      R0,#+0
+   \   000000B6   0xD149             BNE.N    ??Ramp_Handle_9
+   \   000000B8   0x4869             LDR.N    R0,??Ramp_Handle_0+0x28
+   \   000000BA   0x7800             LDRB     R0,[R0, #+0]
+   \   000000BC   0x2800             CMP      R0,#+0
+   \   000000BE   0xD145             BNE.N    ??Ramp_Handle_9
+   \   000000C0   0x4868             LDR.N    R0,??Ramp_Handle_0+0x2C
+   \   000000C2   0x6800             LDR      R0,[R0, #+0]
+   \   000000C4   0x2800             CMP      R0,#+0
+   \   000000C6   0xD141             BNE.N    ??Ramp_Handle_9
+     62                  {
+     63                     //前车正常识别坡道
+     64                     if(Turn_Around == 0)  
+   \   000000C8   0x4867             LDR.N    R0,??Ramp_Handle_0+0x30
+   \   000000CA   0x7800             LDRB     R0,[R0, #+0]
+   \   000000CC   0x2800             CMP      R0,#+0
+   \   000000CE   0xD11C             BNE.N    ??Ramp_Handle_10
+     65                        {
+     66                           if(Sum_peak2/5>130 || Sum_peak7/5>130 || peak[1]>200  || peak[3]>200)
+   \   000000D0   0x4859             LDR.N    R0,??Ramp_Handle_0
+   \   000000D2   0x6800             LDR      R0,[R0, #+0]
+   \   000000D4   0x2105             MOVS     R1,#+5
+   \   000000D6   0xFB90 0xF0F1      SDIV     R0,R0,R1
+   \   000000DA   0x2883             CMP      R0,#+131
+   \   000000DC   0xDA0E             BGE.N    ??Ramp_Handle_11
+   \   000000DE   0x4857             LDR.N    R0,??Ramp_Handle_0+0x4
+   \   000000E0   0x6800             LDR      R0,[R0, #+0]
+   \   000000E2   0x2105             MOVS     R1,#+5
+   \   000000E4   0xFB90 0xF0F1      SDIV     R0,R0,R1
+   \   000000E8   0x2883             CMP      R0,#+131
+   \   000000EA   0xDA07             BGE.N    ??Ramp_Handle_11
+   \   000000EC   0x4855             LDR.N    R0,??Ramp_Handle_0+0xC
+   \   000000EE   0x6840             LDR      R0,[R0, #+4]
+   \   000000F0   0x28C9             CMP      R0,#+201
+   \   000000F2   0xDA03             BGE.N    ??Ramp_Handle_11
+   \   000000F4   0x4853             LDR.N    R0,??Ramp_Handle_0+0xC
+   \   000000F6   0x68C0             LDR      R0,[R0, #+12]
+   \   000000F8   0x28C9             CMP      R0,#+201
+   \   000000FA   0xDB27             BLT.N    ??Ramp_Handle_9
+     67                             { 
+     68                                Flag_Ramp = 1;
+   \                     ??Ramp_Handle_11: (+1)
+   \   000000FC   0x2001             MOVS     R0,#+1
+   \   000000FE   0x4953             LDR.N    R1,??Ramp_Handle_0+0x14
+   \   00000100   0x7008             STRB     R0,[R1, #+0]
+     69                                SendCommand = Ahead_EnterRamp;
+   \   00000102   0x206F             MOVS     R0,#+111
+   \   00000104   0x4959             LDR.N    R1,??Ramp_Handle_0+0x34
+   \   00000106   0x7008             STRB     R0,[R1, #+0]
+   \   00000108   0xE020             B.N      ??Ramp_Handle_9
+     70                             }
+     71                        } 
+     72                     //后车识别坡道时，两车距离不能太近
+     73                     else 
+     74                        {
+     75                           if(Mixed_Distance>50 && Behind_EnterRamp_AdmitDis!=0)
+   \                     ??Ramp_Handle_10: (+1)
+   \   0000010A   0x4859             LDR.N    R0,??Ramp_Handle_0+0x38
+   \   0000010C   0x6800             LDR      R0,[R0, #+0]
+   \   0000010E   0x2833             CMP      R0,#+51
+   \   00000110   0xDB1C             BLT.N    ??Ramp_Handle_9
+   \   00000112   0x4858             LDR.N    R0,??Ramp_Handle_0+0x3C
+   \   00000114   0x6800             LDR      R0,[R0, #+0]
+   \   00000116   0x2800             CMP      R0,#+0
+   \   00000118   0xD018             BEQ.N    ??Ramp_Handle_9
+     76                              if(Sum_peak2/5 > 130 || Sum_peak7/5>130 || peak[1]>200 || peak[3]>200)
+   \   0000011A   0x4847             LDR.N    R0,??Ramp_Handle_0
+   \   0000011C   0x6800             LDR      R0,[R0, #+0]
+   \   0000011E   0x2105             MOVS     R1,#+5
+   \   00000120   0xFB90 0xF0F1      SDIV     R0,R0,R1
+   \   00000124   0x2883             CMP      R0,#+131
+   \   00000126   0xDA0E             BGE.N    ??Ramp_Handle_12
+   \   00000128   0x4844             LDR.N    R0,??Ramp_Handle_0+0x4
+   \   0000012A   0x6800             LDR      R0,[R0, #+0]
+   \   0000012C   0x2105             MOVS     R1,#+5
+   \   0000012E   0xFB90 0xF0F1      SDIV     R0,R0,R1
+   \   00000132   0x2883             CMP      R0,#+131
+   \   00000134   0xDA07             BGE.N    ??Ramp_Handle_12
+   \   00000136   0x4843             LDR.N    R0,??Ramp_Handle_0+0xC
+   \   00000138   0x6840             LDR      R0,[R0, #+4]
+   \   0000013A   0x28C9             CMP      R0,#+201
+   \   0000013C   0xDA03             BGE.N    ??Ramp_Handle_12
+   \   0000013E   0x4841             LDR.N    R0,??Ramp_Handle_0+0xC
+   \   00000140   0x68C0             LDR      R0,[R0, #+12]
+   \   00000142   0x28C9             CMP      R0,#+201
+   \   00000144   0xDB02             BLT.N    ??Ramp_Handle_9
+     77                                 Flag_Ramp = 1;
+   \                     ??Ramp_Handle_12: (+1)
+   \   00000146   0x2001             MOVS     R0,#+1
+   \   00000148   0x4940             LDR.N    R1,??Ramp_Handle_0+0x14
+   \   0000014A   0x7008             STRB     R0,[R1, #+0]
+     78                        }           
+     79                  }
+     80                
+     81          
+     82           // peak2限幅
+     83            if(peak[2] > 100)
+   \                     ??Ramp_Handle_9: (+1)
+   \   0000014C   0x483D             LDR.N    R0,??Ramp_Handle_0+0xC
+   \   0000014E   0x6880             LDR      R0,[R0, #+8]
+   \   00000150   0x2865             CMP      R0,#+101
+   \   00000152   0xDB02             BLT.N    ??Ramp_Handle_13
+     84              peak[2] = 100;
+   \   00000154   0x2064             MOVS     R0,#+100
+   \   00000156   0x493B             LDR.N    R1,??Ramp_Handle_0+0xC
+   \   00000158   0x6088             STR      R0,[R1, #+8]
+     85            if(peak[7] > 100)
+   \                     ??Ramp_Handle_13: (+1)
+   \   0000015A   0x483A             LDR.N    R0,??Ramp_Handle_0+0xC
+   \   0000015C   0x69C0             LDR      R0,[R0, #+28]
+   \   0000015E   0x2865             CMP      R0,#+101
+   \   00000160   0xDB02             BLT.N    ??Ramp_Handle_14
+     86              peak[7] = 100; 
+   \   00000162   0x2064             MOVS     R0,#+100
+   \   00000164   0x4937             LDR.N    R1,??Ramp_Handle_0+0xC
+   \   00000166   0x61C8             STR      R0,[R1, #+28]
+     87             
+     88            //------------下坡道--------------// 
+     89            if(Flag_Ramp != 0)
+   \                     ??Ramp_Handle_14: (+1)
+   \   00000168   0x4838             LDR.N    R0,??Ramp_Handle_0+0x14
+   \   0000016A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000016C   0x2800             CMP      R0,#+0
+   \   0000016E   0xD00F             BEQ.N    ??Ramp_Handle_15
+     90              { 
+     91                if(RampAdmit_Distance == 0)
+   \   00000170   0x4837             LDR.N    R0,??Ramp_Handle_0+0x18
+   \   00000172   0x6800             LDR      R0,[R0, #+0]
+   \   00000174   0x2800             CMP      R0,#+0
+   \   00000176   0xD103             BNE.N    ??Ramp_Handle_16
+     92                   RampAdmit_Distance = Pulse_Distance*100;
+   \   00000178   0xF44F 0x707A      MOV      R0,#+1000
+   \   0000017C   0x4934             LDR.N    R1,??Ramp_Handle_0+0x18
+   \   0000017E   0x6008             STR      R0,[R1, #+0]
+     93                if(RampIn_Distance == 0)
+   \                     ??Ramp_Handle_16: (+1)
+   \   00000180   0x483D             LDR.N    R0,??Ramp_Handle_0+0x40
+   \   00000182   0x6800             LDR      R0,[R0, #+0]
+   \   00000184   0x2800             CMP      R0,#+0
+   \   00000186   0xD103             BNE.N    ??Ramp_Handle_15
+     94                   RampIn_Distance = Pulse_Distance*100;         
+   \   00000188   0xF44F 0x707A      MOV      R0,#+1000
+   \   0000018C   0x493A             LDR.N    R1,??Ramp_Handle_0+0x40
+   \   0000018E   0x6008             STR      R0,[R1, #+0]
+     95              }
+     96              
+     97            if(RampIn_Distance != 0)
+   \                     ??Ramp_Handle_15: (+1)
+   \   00000190   0x4839             LDR.N    R0,??Ramp_Handle_0+0x40
+   \   00000192   0x6800             LDR      R0,[R0, #+0]
+   \   00000194   0x2800             CMP      R0,#+0
+   \   00000196   0xD006             BEQ.N    ??Ramp_Handle_17
+     98                RampIn_Distance += Distance;
+   \   00000198   0x4837             LDR.N    R0,??Ramp_Handle_0+0x40
+   \   0000019A   0x6800             LDR      R0,[R0, #+0]
+   \   0000019C   0x4937             LDR.N    R1,??Ramp_Handle_0+0x44
+   \   0000019E   0x6809             LDR      R1,[R1, #+0]
+   \   000001A0   0x1808             ADDS     R0,R1,R0
+   \   000001A2   0x4935             LDR.N    R1,??Ramp_Handle_0+0x40
+   \   000001A4   0x6008             STR      R0,[R1, #+0]
+     99            if(Flag_Ramp!=0 && RampIn_Distance>RampIn_Dis*100)
+   \                     ??Ramp_Handle_17: (+1)
+   \   000001A6   0x4829             LDR.N    R0,??Ramp_Handle_0+0x14
+   \   000001A8   0x7800             LDRB     R0,[R0, #+0]
+   \   000001AA   0x2800             CMP      R0,#+0
+   \   000001AC   0xD00B             BEQ.N    ??Ramp_Handle_18
+   \   000001AE   0x4832             LDR.N    R0,??Ramp_Handle_0+0x40
+   \   000001B0   0x6800             LDR      R0,[R0, #+0]
+   \   000001B2   0xF247 0x5131      MOVW     R1,#+30001
+   \   000001B6   0x4288             CMP      R0,R1
+   \   000001B8   0xDB05             BLT.N    ??Ramp_Handle_18
+    100             {
+    101                Flag_Ramp = 0;
+   \   000001BA   0x2000             MOVS     R0,#+0
+   \   000001BC   0x4923             LDR.N    R1,??Ramp_Handle_0+0x14
+   \   000001BE   0x7008             STRB     R0,[R1, #+0]
+    102                RampIn_Distance = 0; 
+   \   000001C0   0x2000             MOVS     R0,#+0
+   \   000001C2   0x492D             LDR.N    R1,??Ramp_Handle_0+0x40
+   \   000001C4   0x6008             STR      R0,[R1, #+0]
+    103             }
+    104          
+    105            if(RampAdmit_Distance != 0)
+   \                     ??Ramp_Handle_18: (+1)
+   \   000001C6   0x4822             LDR.N    R0,??Ramp_Handle_0+0x18
+   \   000001C8   0x6800             LDR      R0,[R0, #+0]
+   \   000001CA   0x2800             CMP      R0,#+0
+   \   000001CC   0xD006             BEQ.N    ??Ramp_Handle_19
+    106               RampAdmit_Distance += Distance;
+   \   000001CE   0x4820             LDR.N    R0,??Ramp_Handle_0+0x18
+   \   000001D0   0x6800             LDR      R0,[R0, #+0]
+   \   000001D2   0x492A             LDR.N    R1,??Ramp_Handle_0+0x44
+   \   000001D4   0x6809             LDR      R1,[R1, #+0]
+   \   000001D6   0x1808             ADDS     R0,R1,R0
+   \   000001D8   0x491D             LDR.N    R1,??Ramp_Handle_0+0x18
+   \   000001DA   0x6008             STR      R0,[R1, #+0]
+    107            if(RampAdmit_Distance > RampAdmit_Dis*100)
+   \                     ??Ramp_Handle_19: (+1)
+   \   000001DC   0x481C             LDR.N    R0,??Ramp_Handle_0+0x18
+   \   000001DE   0x6800             LDR      R0,[R0, #+0]
+   \   000001E0   0xF649 0x4141      MOVW     R1,#+40001
+   \   000001E4   0x4288             CMP      R0,R1
+   \   000001E6   0xDB02             BLT.N    ??Ramp_Handle_20
+    108               RampAdmit_Distance = 0;
+   \   000001E8   0x2000             MOVS     R0,#+0
+   \   000001EA   0x4919             LDR.N    R1,??Ramp_Handle_0+0x18
+   \   000001EC   0x6008             STR      R0,[R1, #+0]
+    109            
+    110            
+    111            //---------坡道LED标志----------//
+    112            if(Flag_Ramp == 1)
+   \                     ??Ramp_Handle_20: (+1)
+   \   000001EE   0x4817             LDR.N    R0,??Ramp_Handle_0+0x14
+   \   000001F0   0x7800             LDRB     R0,[R0, #+0]
+   \   000001F2   0x2801             CMP      R0,#+1
+   \   000001F4   0xD10F             BNE.N    ??Ramp_Handle_21
+    113              {
+    114                 LPLD_GPIO_Output_b(PTD, 5, 1); 
+   \   000001F6   0x2201             MOVS     R2,#+1
+   \   000001F8   0x2105             MOVS     R1,#+5
+   \   000001FA   0x4821             LDR.N    R0,??Ramp_Handle_0+0x48  ;; 0x400ff0c0
+   \   000001FC   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    115                 LPLD_GPIO_Output_b(PTD, 2, 0); 
+   \   00000200   0x2200             MOVS     R2,#+0
+   \   00000202   0x2102             MOVS     R1,#+2
+   \   00000204   0x481E             LDR.N    R0,??Ramp_Handle_0+0x48  ;; 0x400ff0c0
+   \   00000206   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    116                 LPLD_GPIO_Output_b(PTD, 4, 0); 
+   \   0000020A   0x2200             MOVS     R2,#+0
+   \   0000020C   0x2104             MOVS     R1,#+4
+   \   0000020E   0x481C             LDR.N    R0,??Ramp_Handle_0+0x48  ;; 0x400ff0c0
+   \   00000210   0x.... 0x....      BL       LPLD_GPIO_Output_b
+   \   00000214   0xE00E             B.N      ??Ramp_Handle_22
+    117              }
+    118            else
+    119              {
+    120                 LPLD_GPIO_Output_b(PTD, 2, 0); 
+   \                     ??Ramp_Handle_21: (+1)
+   \   00000216   0x2200             MOVS     R2,#+0
+   \   00000218   0x2102             MOVS     R1,#+2
+   \   0000021A   0x4819             LDR.N    R0,??Ramp_Handle_0+0x48  ;; 0x400ff0c0
+   \   0000021C   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    121                 LPLD_GPIO_Output_b(PTD, 4, 0); 
+   \   00000220   0x2200             MOVS     R2,#+0
+   \   00000222   0x2104             MOVS     R1,#+4
+   \   00000224   0x4816             LDR.N    R0,??Ramp_Handle_0+0x48  ;; 0x400ff0c0
+   \   00000226   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    122                 LPLD_GPIO_Output_b(PTD, 5, 0);   
+   \   0000022A   0x2200             MOVS     R2,#+0
+   \   0000022C   0x2105             MOVS     R1,#+5
+   \   0000022E   0x4814             LDR.N    R0,??Ramp_Handle_0+0x48  ;; 0x400ff0c0
+   \   00000230   0x.... 0x....      BL       LPLD_GPIO_Output_b
+    123              }
+    124          }
+   \                     ??Ramp_Handle_22: (+1)
+   \   00000234   0xBD01             POP      {R0,PC}          ;; return
+   \   00000236   0xBF00             Nop      
+   \                     ??Ramp_Handle_0:
+   \   00000238   0x........         DC32     Sum_peak2
+   \   0000023C   0x........         DC32     Sum_peak7
+   \   00000240   0x........         DC32     Pre_peak2
+   \   00000244   0x........         DC32     peak
+   \   00000248   0x........         DC32     Pre_peak7
+   \   0000024C   0x........         DC32     Flag_Ramp
+   \   00000250   0x........         DC32     RampAdmit_Distance
+   \   00000254   0x........         DC32     CrossRoad_Distance
+   \   00000258   0x........         DC32     Flag_Island_Confirm
+   \   0000025C   0x........         DC32     Flag_Island
+   \   00000260   0x........         DC32     final
+   \   00000264   0x........         DC32     IslandAdmit_Distance
+   \   00000268   0x........         DC32     Turn_Around
+   \   0000026C   0x........         DC32     SendCommand
+   \   00000270   0x........         DC32     Mixed_Distance
+   \   00000274   0x........         DC32     Behind_EnterRamp_AdmitDis
+   \   00000278   0x........         DC32     RampIn_Distance
+   \   0000027C   0x........         DC32     Distance
+   \   00000280   0x400FF0C0         DC32     0x400ff0c0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Ramp_Handle
+         8   -> LPLD_GPIO_Output_b
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      20  Pre_peak2
+      20  Pre_peak7
+     644  Ramp_Handle
+       4  Sum_peak2
+       4  Sum_peak7
+
+ 
+  48 bytes in section .bss
+ 644 bytes in section .text
+ 
+ 644 bytes of CODE memory
+  48 bytes of DATA memory
+
+Errors: none
+Warnings: none
